@@ -14,7 +14,8 @@
 		"category": "Söguslóðir",
 		"lat": 65.076,
 		"lon": -21.554,
-		"description": "Endurgerður skáli Eiríks rauða — fæðingarstaður Leifs heppna. Lifandi leiðsögn í búningum."
+		"description": "Endurgerður skáli Eiríks rauða — fæðingarstaður Leifs heppna. Lifandi leiðsögn í búningum.",
+		"image": "spots/eiriksstadir.jpg"
 	},
 	{
 		"slug": "vinlandssetur",
@@ -29,7 +30,7 @@
 		"name": "Rjómabúið Erpsstaðir",
 		"category": "Matur",
 		"lat": 65.052,
-		"lon": -21.610,
+		"lon": -21.61,
 		"description": "Heimagerður ís beint frá býli — skylduheimsókn með börnin."
 	},
 	{
@@ -37,8 +38,9 @@
 		"name": "Guðrúnarlaug að Laugum",
 		"category": "Laug",
 		"lat": 65.235,
-		"lon": -21.780,
-		"description": "Endurgerð laug í Sælingsdal, kennd við Guðrúnu Ósvífursdóttur úr Laxdælu."
+		"lon": -21.78,
+		"description": "Endurgerð laug í Sælingsdal, kennd við Guðrúnu Ósvífursdóttur úr Laxdælu.",
+		"image": "spots/gudrunarlaug.jpg"
 	},
 	{
 		"slug": "krossholaborg",
@@ -54,7 +56,8 @@
 		"category": "Söguslóðir",
 		"lat": 65.226,
 		"lon": -21.885,
-		"description": "Landnámsjörð Auðar djúpúðgu og fæðingarstaður Snorra Sturlusonar."
+		"description": "Landnámsjörð Auðar djúpúðgu og fæðingarstaður Snorra Sturlusonar.",
+		"image": "spots/hvammur.jpg"
 	},
 	{
 		"slug": "stykkisholmur",
@@ -62,7 +65,8 @@
 		"category": "Bær",
 		"lat": 65.075,
 		"lon": -22.728,
-		"description": "Gamli bærinn, Súgandisey og sund í góðri laug. Ferjan Baldur siglir héðan út í Flatey."
+		"description": "Gamli bærinn, Súgandisey og sund í góðri laug. Ferjan Baldur siglir héðan út í Flatey.",
+		"image": "spots/stykkisholmur.jpg"
 	},
 	{
 		"slug": "helgafell",
@@ -70,7 +74,8 @@
 		"category": "Söguslóðir",
 		"lat": 65.046,
 		"lon": -22.734,
-		"description": "Fjallið helga úr Eyrbyggju og Laxdælu — leiði Guðrúnar Ósvífursdóttur við rætur þess. Óskastund á toppnum ef gengið er þögull upp."
+		"description": "Fjallið helga úr Eyrbyggju og Laxdælu — leiði Guðrúnar Ósvífursdóttur við rætur þess. Óskastund á toppnum ef gengið er þögull upp.",
+		"image": "spots/helgafell.jpg"
 	},
 	{
 		"slug": "berserkjahraun",
@@ -78,7 +83,8 @@
 		"category": "Náttúra",
 		"lat": 64.984,
 		"lon": -22.966,
-		"description": "Mosavaxið hraun úr Eyrbyggju — berserkirnir ruddu hér veg sem enn sést."
+		"description": "Mosavaxið hraun úr Eyrbyggju — berserkirnir ruddu hér veg sem enn sést.",
+		"image": "spots/berserkjahraun.jpg"
 	},
 	{
 		"slug": "flatey",
@@ -86,7 +92,8 @@
 		"category": "Bær",
 		"lat": 65.373,
 		"lon": -22.919,
-		"description": "Dagsferð með Baldri — gamla þorpið, fuglalíf og bókasafnið minnsta."
+		"description": "Dagsferð með Baldri — gamla þorpið, fuglalíf og bókasafnið minnsta.",
+		"image": "spots/flatey.jpg"
 	},
 	{
 		"slug": "thingvellir",
@@ -94,7 +101,8 @@
 		"category": "Söguslóðir",
 		"lat": 64.2591,
 		"lon": -21.1213,
-		"description": "Almannagjá, Öxarárfoss og flekaskilin. Heimamenn hafa komið hundrað sinnum — en gesturinn segir: gjáin er samt rétta byrjunin á vesturferð, og hún er beint við veginn."
+		"description": "Almannagjá, Öxarárfoss og flekaskilin. Heimamenn hafa komið hundrað sinnum — en gesturinn segir: gjáin er samt rétta byrjunin á vesturferð, og hún er beint við veginn.",
+		"image": "spots/thingvellir.jpg"
 	},
 	{
 		"slug": "kaldidalur",
@@ -102,7 +110,8 @@
 		"category": "Náttúra",
 		"lat": 64.5503,
 		"lon": -20.8435,
-		"description": "Hálendisstemning án fjallabíls: vegur 550 milli Oks og Þórisjökuls. Ok er jökullinn sem var lýstur dáinn 2019 og fékk minningarskjöld — 'bréf til framtíðarinnar'. Stoppið á háleiðinni og horfið á Langjökul."
+		"description": "Hálendisstemning án fjallabíls: vegur 550 milli Oks og Þórisjökuls. Ok er jökullinn sem var lýstur dáinn 2019 og fékk minningarskjöld — 'bréf til framtíðarinnar'. Stoppið á háleiðinni og horfið á Langjökul.",
+		"image": "spots/kaldidalur.jpg"
 	},
 	{
 		"slug": "vidgelmir",
@@ -111,7 +120,8 @@
 		"lat": 64.7502,
 		"lon": -20.8019,
 		"status": "kannski",
-		"description": "Stærsti hraunhellir landsins, í Hallmundarhrauni rétt hjá Húsafelli. Leiðsögn sem hentar allri fjölskyldunni — kostar, en gesturinn heldur að krakkarnir myndu tala um hellinn í marga daga."
+		"description": "Stærsti hraunhellir landsins, í Hallmundarhrauni rétt hjá Húsafelli. Leiðsögn sem hentar allri fjölskyldunni — kostar, en gesturinn heldur að krakkarnir myndu tala um hellinn í marga daga.",
+		"image": "spots/vidgelmir.jpg"
 	},
 	{
 		"slug": "husafell",
@@ -119,7 +129,8 @@
 		"category": "Bær",
 		"lat": 64.6994,
 		"lon": -20.8734,
-		"description": "Áningarstaðurinn þegar komið er niður af Kaldadal: kaffi, sundlaug og steinhörpur Páls Guðmundssonar ef færi gefst."
+		"description": "Áningarstaðurinn þegar komið er niður af Kaldadal: kaffi, sundlaug og steinhörpur Páls Guðmundssonar ef færi gefst.",
+		"image": "spots/husafell.jpg"
 	},
 	{
 		"slug": "hraunfossar",
@@ -127,15 +138,17 @@
 		"category": "Náttúra",
 		"lat": 64.7026,
 		"lon": -20.9806,
-		"description": "Vatnið sprettur undan Hallmundarhrauni á heils kílómetra kafla og steypist í Hvítá. Beint við veg 518 og tekur korter — ekkert stopp á leiðinni gefur meira fyrir minna."
+		"description": "Vatnið sprettur undan Hallmundarhrauni á heils kílómetra kafla og steypist í Hvítá. Beint við veg 518 og tekur korter — ekkert stopp á leiðinni gefur meira fyrir minna.",
+		"image": "spots/hraunfossar.jpg"
 	},
 	{
 		"slug": "reykholt",
 		"name": "Reykholt í Borgarfirði",
 		"category": "Söguslóðir",
 		"lat": 64.6648,
-		"lon": -21.2920,
-		"description": "Snorrastofa og Snorralaug. Gesturinn bendir á fallega tengingu við ferðina: Snorri Sturluson fæddist í Hvammi í Dölum — sem er líka á kortinu okkar — og var veginn hér."
+		"lon": -21.292,
+		"description": "Snorrastofa og Snorralaug. Gesturinn bendir á fallega tengingu við ferðina: Snorri Sturluson fæddist í Hvammi í Dölum — sem er líka á kortinu okkar — og var veginn hér.",
+		"image": "spots/reykholt.jpg"
 	},
 	{
 		"slug": "deildartunguhver",
@@ -144,7 +157,8 @@
 		"lat": 64.6636,
 		"lon": -21.4106,
 		"status": "kannski",
-		"description": "Vatnsmesti hver Evrópu, rýkur og bullar rétt við veginn — og Krauma-böðin við hliðina ef á að liggja í bleyti. Kannski frekar baðstopp á heimleiðinni?"
+		"description": "Vatnsmesti hver Evrópu, rýkur og bullar rétt við veginn — og Krauma-böðin við hliðina ef á að liggja í bleyti. Kannski frekar baðstopp á heimleiðinni?",
+		"image": "spots/deildartunguhver.jpg"
 	},
 	{
 		"slug": "grabrok",
@@ -156,12 +170,98 @@
 		"description": "Gígurinn við Bifröst — korters labb upp tröppurnar og hringinn á gígbarminum. Síðasta tækifæri fyrir börnin að fá útrás áður en rennt er norður Bröttubrekku."
 	},
 	{
+		"slug": "pollurinn",
+		"name": "Pollurinn í Tálknafirði",
+		"category": "Laug",
+		"lat": 65.6491,
+		"lon": -23.8944,
+		"status": "tillaga",
+		"description": "Heitu pottarnir í hlíðinni fyrir ofan Tálknafjörð, viðhaldið af heimamönnum, útsýnið yfir fjörðinn innifalið. Gestinum skilst að þetta sé eitt best geymda leyndarmál sunnanverðra Vestfjarða."
+	},
+	{
+		"slug": "skrimslasetrid",
+		"name": "Skrímslasetrið á Bíldudal",
+		"category": "Safn",
+		"lat": 65.6865,
+		"lon": -23.5971,
+		"status": "tillaga",
+		"description": "Safn um sjóskrímsli Arnarfjarðar — fjörulalli, skeljaskrímsli og vitnisburðir. Safn sem börnin draga foreldrana inn á, ekki öfugt."
+	},
+	{
+		"slug": "reykjafjardarlaug",
+		"name": "Reykjafjarðarlaug",
+		"category": "Laug",
+		"lat": 65.6231,
+		"lon": -23.469,
+		"status": "tillaga",
+		"description": "Steypt laug frá 1975 við sunnanverðan Arnarfjörð og heit náttúrulaug í brekkunni fyrir ofan — beint við veginn milli Bíldudals og Dynjanda."
+	},
+	{
+		"slug": "hnjotur",
+		"name": "Byggðasafnið á Hnjóti",
+		"category": "Safn",
+		"lat": 65.5616,
+		"lon": -24.1576,
+		"status": "tillaga",
+		"description": "Safn Egils Ólafssonar í Örlygshöfn: björgunarafrek, sjósókn og flugminjar — í leiðinni út á Látrabjarg."
+	},
+	{
+		"slug": "breidavik",
+		"name": "Breiðavík",
+		"category": "Náttúra",
+		"lat": 65.55,
+		"lon": -24.3513,
+		"status": "tillaga",
+		"description": "Gullin skeljasandsströnd við kirkjustaðinn í Breiðavík, rétt áður en komið er á Bjargtanga. Kannski flottasta strönd landsins sem enginn talar um — Rauðisandur stelur senunni.",
+		"image": "spots/breidavik.jpg"
+	},
+	{
+		"slug": "bolafjall",
+		"name": "Bolafjall",
+		"category": "Náttúra",
+		"lat": 66.1784,
+		"lon": -23.3316,
+		"status": "tillaga",
+		"description": "Útsýnispallurinn sem svífur fram af fjallsbrúninni 600 m yfir Djúpinu — Hornstrandir blasa við og Grænland í tærasta skyggni. Langt norður, en gesturinn varð að nefna hann.",
+		"image": "spots/bolafjall.jpg"
+	},
+	{
+		"slug": "osvor",
+		"name": "Ósvör í Bolungarvík",
+		"category": "Safn",
+		"lat": 66.1502,
+		"lon": -23.216,
+		"status": "tillaga",
+		"description": "Endurgerð verbúð frá árabátaöldinni — safnvörðurinn tekur á móti fólki í skinnklæðum. Passar með Bolafjalli ef leiðangur teygir sig alla leið norður.",
+		"image": "spots/osvor.jpg"
+	},
+	{
+		"slug": "raggagardur",
+		"name": "Raggagarður í Súðavík",
+		"category": "Fjölskylda",
+		"lat": 66.0399,
+		"lon": -22.9881,
+		"status": "tillaga",
+		"description": "Fjölskyldugarðurinn sem Súðvíkingar byggðu í sjálfboðavinnu — besta leiktækjastopp Vestfjarða og hugsaður nákvæmlega fyrir daga eins og þessa."
+	},
+	{
+		"slug": "vigur",
+		"name": "Vigur",
+		"category": "Náttúra",
+		"lat": 66.0476,
+		"lon": -22.829,
+		"status": "tillaga",
+		"description": "Bátsferð frá Ísafirði út í eyjuna: lundi, æðarvarp, kría og minnsta pósthús landsins. Hálfsdagsferð ef ferðin endar í Djúpinu.",
+		"image": "spots/vigur.jpg"
+	},
+	{
 		"slug": "djupavik",
 		"name": "Síldarverksmiðjan í Djúpavík",
 		"category": "Safn",
 		"lat": 65.9442,
 		"lon": -21.5573,
-		"description": "Gamla síldarverksmiðjan frá 1935 í Reykjarfirði — leiðsögn um verksmiðjuna og sýningar á sumrin."
+		"description": "Gamla síldarverksmiðjan frá 1935 í Reykjarfirði — leiðsögn um verksmiðjuna og sýningar á sumrin.",
+		"image": "spots/djupavik.jpg"
 	},
 	{
 		"slug": "ingolfsfjordur",
@@ -184,9 +284,10 @@
 		"name": "Krossneslaug",
 		"category": "Laug",
 		"lat": 66.0558,
-		"lon": -21.5070,
+		"lon": -21.507,
 		"status": "kannski",
-		"description": "Sundlaugin í fjöruborðinu við Krossnes, rétt utan við Norðurfjörð — baðstopp ferðarinnar ef tími gefst."
+		"description": "Sundlaugin í fjöruborðinu við Krossnes, rétt utan við Norðurfjörð — baðstopp ferðarinnar ef tími gefst.",
+		"image": "spots/krossneslaug.jpg"
 	},
 	{
 		"slug": "hvalarfoss",
@@ -202,15 +303,17 @@
 		"category": "Safn",
 		"lat": 65.706,
 		"lon": -21.686,
-		"description": "Galdrar, nábrækur og þjóðtrú Strandamanna."
+		"description": "Galdrar, nábrækur og þjóðtrú Strandamanna.",
+		"image": "spots/holmavik.jpg"
 	},
 	{
 		"slug": "drangsnes",
 		"name": "Heitu pottarnir á Drangsnesi",
 		"category": "Laug",
 		"lat": 65.689,
-		"lon": -21.450,
-		"description": "Pottar í fjöruborðinu með útsýni yfir Steingrímsfjörð og út í Grímsey."
+		"lon": -21.45,
+		"description": "Pottar í fjöruborðinu með útsýni yfir Steingrímsfjörð og út í Grímsey.",
+		"image": "spots/drangsnes.jpg"
 	},
 	{
 		"slug": "reykholar",
@@ -226,7 +329,8 @@
 		"category": "Laug",
 		"lat": 65.576,
 		"lon": -23.196,
-		"description": "Náttúrulaug í fjöruborðinu í Vatnsfirði."
+		"description": "Náttúrulaug í fjöruborðinu í Vatnsfirði.",
+		"image": "spots/hellulaug.jpg"
 	},
 	{
 		"slug": "raudisandur",
@@ -234,7 +338,8 @@
 		"category": "Náttúra",
 		"lat": 65.464,
 		"lon": -24.023,
-		"description": "Kílómetrar af rauðgylltum sandi — kaffi á Franska kaffihúsinu ef opið er."
+		"description": "Kílómetrar af rauðgylltum sandi — kaffi á Franska kaffihúsinu ef opið er.",
+		"image": "spots/raudisandur.jpg"
 	},
 	{
 		"slug": "latrabjarg",
@@ -242,7 +347,8 @@
 		"category": "Náttúra",
 		"lat": 65.503,
 		"lon": -24.531,
-		"description": "Vestasti oddi Evrópu og stærsta fuglabjarg landsins — lundinn upp á sitt besta í byrjun júlí."
+		"description": "Vestasti oddi Evrópu og stærsta fuglabjarg landsins — lundinn upp á sitt besta í byrjun júlí.",
+		"image": "spots/latrabjarg.jpg"
 	},
 	{
 		"slug": "gardar",
@@ -258,7 +364,8 @@
 		"category": "Bær",
 		"lat": 65.594,
 		"lon": -23.995,
-		"description": "Góður áningarstaður fyrir sunnanverða Vestfirði — sundlaugin með útsýni yfir fjörðinn."
+		"description": "Góður áningarstaður fyrir sunnanverða Vestfirði — sundlaugin með útsýni yfir fjörðinn.",
+		"image": "spots/patreksfjordur.jpg"
 	},
 	{
 		"slug": "selardalur",
@@ -266,7 +373,8 @@
 		"category": "Safn",
 		"lat": 65.749,
 		"lon": -24.108,
-		"description": "Listaverk og hús Samúels Jónssonar, „listamannsins með barnshjartað“, yst í Arnarfirði."
+		"description": "Listaverk og hús Samúels Jónssonar, „listamannsins með barnshjartað“, yst í Arnarfirði.",
+		"image": "spots/selardalur.jpg"
 	},
 	{
 		"slug": "dynjandi",
@@ -274,6 +382,7 @@
 		"category": "Náttúra",
 		"lat": 65.732,
 		"lon": -23.205,
-		"description": "Fallegasti foss Vestfjarða — hundrað metra breiður brúðarslæðufoss í Arnarfirði."
+		"description": "Fallegasti foss Vestfjarða — hundrað metra breiður brúðarslæðufoss í Arnarfirði.",
+		"image": "spots/dynjandi.jpg"
 	}
 ]

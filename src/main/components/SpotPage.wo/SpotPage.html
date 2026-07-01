@@ -5,7 +5,13 @@
 		<wo:if condition="$spot.maybe">
 			<span style="color: #b8860b">&middot; kannski?</span>
 		</wo:if>
+		<wo:if condition="$spot.suggestion">
+			<span style="color: #b8860b">&middot; tillaga — á eftir að flokka</span>
+		</wo:if>
 	</p>
+	<wo:if condition="$spot.image">
+		<wo:img filename="$spot.image" style="width: 100%; border-radius: 8px; margin-top: 8px" />
+	</wo:if>
 	<p><wo:str value="$spot.description" /></p>
 	<wo:if condition="$spot.url">
 		<p><wo:link href="$spot.url">Nánar á vefnum</wo:link></p>

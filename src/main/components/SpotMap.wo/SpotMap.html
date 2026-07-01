@@ -9,9 +9,8 @@
 		attribution: '&copy; OpenStreetMap'
 	} ).addTo( map );
 
-	// Red marker for the place we're staying at
-	const homeIcon = new L.Icon( {
-		iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+	const coloredIcon = color => new L.Icon( {
+		iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-${color}.png`,
 		shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
 		iconSize: [25, 41],
 		iconAnchor: [12, 41],
@@ -19,18 +18,30 @@
 		shadowSize: [41, 41]
 	} );
 
+	// Red marker for the place we're staying at, gold for unsorted suggestions
+	const homeIcon = coloredIcon( 'red' );
+	const suggestionIcon = coloredIcon( 'gold' );
+
 	const markers = spots.map( spot => {
 		const options = spot.category === 'Gisting' ? { icon: homeIcon, zIndexOffset: 1000 } : {};
 
-		// Undecided spots are semi-transparent
+		// Undecided spots are semi-transparent, unsorted suggestions gold
 		const kannski = spot.status === 'kannski';
+		const tillaga = spot.status === 'tillaga';
 		if( kannski ) {
 			options.opacity = 0.55;
 		}
+		if( tillaga ) {
+			options.icon = suggestionIcon;
+		}
+
+		const statusLabel = kannski ? ' (kannski?)' : tillaga ? ' (tillaga)' : '';
+		const image = spot.imageURL ? `<img src="${spot.imageURL}" style="width: 220px; border-radius: 4px; display: block; margin: 4px 0"><br>` : '';
 
 		const marker = L.marker( [spot.lat, spot.lon], options ).addTo( map );
 		marker.bindPopup( `
-			<strong>${spot.name}</strong>${kannski ? ' (kannski?)' : ''}<br>
+			<strong>${spot.name}</strong>${statusLabel}<br>
+			${image}
 			<span style="color: #555">${spot.category}</span><br>
 			<a href="/spot/${spot.slug}">Nánar</a>
 		` );
