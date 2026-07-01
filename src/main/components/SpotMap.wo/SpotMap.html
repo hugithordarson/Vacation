@@ -21,9 +21,16 @@
 
 	const markers = spots.map( spot => {
 		const options = spot.category === 'Gisting' ? { icon: homeIcon, zIndexOffset: 1000 } : {};
+
+		// Undecided spots are semi-transparent
+		const kannski = spot.status === 'kannski';
+		if( kannski ) {
+			options.opacity = 0.55;
+		}
+
 		const marker = L.marker( [spot.lat, spot.lon], options ).addTo( map );
 		marker.bindPopup( `
-			<strong>${spot.name}</strong><br>
+			<strong>${spot.name}</strong>${kannski ? ' (kannski?)' : ''}<br>
 			<span style="color: #555">${spot.category}</span><br>
 			<a href="/spot/${spot.slug}">Nánar</a>
 		` );

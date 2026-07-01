@@ -5,7 +5,12 @@
 		"color": "#1f78b4",
 		"distanceKm": 138,
 		"durationMin": 131,
-		"description": "Hringurinn um Fellsströnd og Skarðsströnd (vegur 590) — útsýni yfir Breiðafjarðareyjar, selalátur og Krosshólaborg í leiðinni."
+		"description": "Hringurinn um Fellsströnd og Skarðsströnd (vegur 590) — útsýni yfir Breiðafjarðareyjar, selalátur og Krosshólaborg í leiðinni.",
+		"spots": [
+			"hvammur",
+			"krossholaborg",
+			"gudrunarlaug"
+		]
 	},
 	{
 		"slug": "vestfirdir-sudur",
@@ -13,7 +18,14 @@
 		"color": "#33a02c",
 		"distanceKm": 306,
 		"durationMin": 271,
-		"description": "Fyrri dagur Vestfjarðaleiðangursins: Búðardalur → Flókalundur (Hellulaug) → Patreksfjörður → Látrabjarg."
+		"description": "Fyrri dagur Vestfjarðaleiðangursins: Búðardalur → Flókalundur (Hellulaug) → Patreksfjörður → Látrabjarg.",
+		"spots": [
+			"hellulaug",
+			"patreksfjordur",
+			"gardar",
+			"raudisandur",
+			"latrabjarg"
+		]
 	},
 	{
 		"slug": "dynjandi-heimferd",
@@ -21,7 +33,25 @@
 		"color": "#ff7f00",
 		"distanceKm": 309,
 		"durationMin": 268,
-		"description": "Seinni dagur leiðangursins: Patreksfjörður → Dynjandi → yfir Dynjandisheiði og heim í Búðardal."
+		"description": "Seinni dagur leiðangursins: Patreksfjörður → Dynjandi → yfir Dynjandisheiði og heim í Búðardal.",
+		"spots": [
+			"dynjandi"
+		]
+	},
+	{
+		"slug": "hvalarfoss",
+		"name": "Norður að Hvalárfossi",
+		"color": "#00838f",
+		"distanceKm": 207,
+		"durationMin": 250,
+		"description": "Dagsferð norður Strandir í Árneshrepp: um Hólmavík og Norðurfjörð að Hvalárfossi í Ófeigsfirði. Malarvegur síðasta spölinn og drjúgur akstur — Krossneslaug er svo rétt hjá Norðurfirði ef á að fara í bað. Vegalengd aðra leið.",
+		"spots": [
+			"djupavik",
+			"ingolfsfjordur",
+			"husarfoss",
+			"hvalarfoss",
+			"krossneslaug"
+		]
 	},
 	{
 		"slug": "strandir",
@@ -29,7 +59,11 @@
 		"color": "#6a3d9a",
 		"distanceKm": 113,
 		"durationMin": 103,
-		"description": "Galdrasafnið á Hólmavík og heitu pottarnir á Drangsnesi. Vegalengd aðra leið."
+		"description": "Galdrasafnið á Hólmavík og heitu pottarnir á Drangsnesi. Vegalengd aðra leið.",
+		"spots": [
+			"holmavik",
+			"drangsnes"
+		]
 	},
 	{
 		"slug": "snaefellsnes",
@@ -37,6 +71,10 @@
 		"color": "#b15928",
 		"distanceKm": 86,
 		"durationMin": 80,
-		"description": "Um Skógarströnd í Stykkishólm — Helgafell og Berserkjahraun í leiðinni. Vegalengd aðra leið."
+		"description": "Um Skógarströnd í Stykkishólm — Helgafell og Berserkjahraun í leiðinni. Vegalengd aðra leið.",
+		"spots": [
+			"helgafell",
+			"stykkisholmur"
+		]
 	}
 ]

@@ -1,6 +1,11 @@
 <wo:PageWrapper title="$spot.name">
 	<h1><wo:str value="$spot.name" /></h1>
-	<p style="color: #555; margin-top: 4px"><wo:str value="$spot.category" /></p>
+	<p style="color: #555; margin-top: 4px">
+		<wo:str value="$spot.category" />
+		<wo:if condition="$spot.maybe">
+			<span style="color: #b8860b">&middot; kannski?</span>
+		</wo:if>
+	</p>
 	<p><wo:str value="$spot.description" /></p>
 	<wo:if condition="$spot.url">
 		<p><wo:link href="$spot.url">Nánar á vefnum</wo:link></p>

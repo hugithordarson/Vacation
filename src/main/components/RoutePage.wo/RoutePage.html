@@ -2,6 +2,22 @@
 	<h1><wo:str value="$route.name" /></h1>
 	<p style="color: #555; margin-top: 4px"><wo:str value="$route.distanceKm" /> km &middot; ~<wo:str value="$route.durationLabel" /> akstur</p>
 	<p><wo:str value="$route.description" /></p>
+
+	<wo:if condition="$hasStops">
+		<h2 style="font-size: 1.1em">Á leiðinni</h2>
+		<ol>
+			<wo:repetition list="$stops" item="$currentStop">
+				<li style="margin: 4px 0">
+					<wo:link href="$currentStopLink"><wo:str value="$currentStop.name" /></wo:link>
+					<wo:if condition="$currentStop.maybe">
+						<span style="color: #b8860b">(kannski?)</span>
+					</wo:if>
+					<span style="color: #777">&middot; <wo:str value="$currentStop.category" /></span>
+				</li>
+			</wo:repetition>
+		</ol>
+	</wo:if>
+
 	<div id="map" style="height: 400px; border-radius: 8px; margin-top: 24px"></div>
 	<script>
 		const map = L.map( 'map' );
@@ -10,6 +26,19 @@
 			maxZoom: 19,
 			attribution: '&copy; OpenStreetMap'
 		} ).addTo( map );
+
+		const stops = <wo:str value="$stopsJSON" escapeHTML="false" />;
+
+		stops.forEach( spot => {
+			const kannski = spot.status === 'kannski';
+			L.marker( [spot.lat, spot.lon], { opacity: kannski ? 0.55 : 1 } )
+				.bindPopup( `
+					<strong>${spot.name}</strong>${kannski ? ' (kannski?)' : ''}<br>
+					<span style="color: #555">${spot.category}</span><br>
+					<a href="/spot/${spot.slug}">Nánar</a>
+				` )
+				.addTo( map );
+		} );
 
 		fetch( '/route-geo/<wo:str value="$route.slug" />' )
 			.then( response => response.json() )

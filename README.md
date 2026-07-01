@@ -25,7 +25,7 @@ The port comes from `~/WebObjects.properties` (1200 on this machine) or `-WOPort
 
 ## Data
 
-`spots.json` holds the spots (slug, name, category, lat/lon, description). In development mode the file is reloaded on every request, so it can be edited while the app runs. **Coordinates are approximate** — good enough for the overview map, refine as needed.
+`spots.json` holds the spots (slug, name, category, lat/lon, description). `category` says what a place *is* (Náttúra, Laug, Safn…); the separate optional `status` field says how decided we are — `"status": "kannski"` renders the spot semi-transparent on maps and tagged "(kannski?)". Routes carry an ordered `spots` array of slugs — the stops along the way, listed on the route page and drawn on its map. In development mode the files are reloaded on every request, so they can be edited while the app runs. **Coordinates are approximate** — good enough for the overview map, refine as needed.
 
 `routes.json` holds driving-route metadata; `routes/<slug>.geojson` holds each route's road-following geometry, fetched **once** from the public OSRM API (`router.project-osrm.org`) and committed as a resource — nothing external is called at runtime. To add or change a route, pick waypoints (lon,lat pairs), fetch, and save:
 

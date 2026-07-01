@@ -89,6 +89,47 @@
 		"description": "Dagsferð með Baldri — gamla þorpið, fuglalíf og bókasafnið minnsta."
 	},
 	{
+		"slug": "djupavik",
+		"name": "Síldarverksmiðjan í Djúpavík",
+		"category": "Safn",
+		"lat": 65.9442,
+		"lon": -21.5573,
+		"description": "Gamla síldarverksmiðjan frá 1935 í Reykjarfirði — leiðsögn um verksmiðjuna og sýningar á sumrin."
+	},
+	{
+		"slug": "ingolfsfjordur",
+		"name": "Gamla síldarverksmiðjan í Ingólfsfirði",
+		"category": "Minjar",
+		"lat": 66.0236,
+		"lon": -21.6285,
+		"description": "Verksmiðjurústirnar á Eyri við Ingólfsfjörð, reistar 1942 — vegurinn út í Ófeigsfjörð liggur fram hjá þeim."
+	},
+	{
+		"slug": "husarfoss",
+		"name": "Húsárfoss",
+		"category": "Náttúra",
+		"lat": 66.0506,
+		"lon": -21.7131,
+		"description": "Fossinn í Húsá í Ófeigsfirði, rétt við veginn skammt áður en komið er að Hvalá."
+	},
+	{
+		"slug": "krossneslaug",
+		"name": "Krossneslaug",
+		"category": "Laug",
+		"lat": 66.0558,
+		"lon": -21.5070,
+		"status": "kannski",
+		"description": "Sundlaugin í fjöruborðinu við Krossnes, rétt utan við Norðurfjörð — baðstopp ferðarinnar ef tími gefst."
+	},
+	{
+		"slug": "hvalarfoss",
+		"name": "Hvalárfoss",
+		"category": "Náttúra",
+		"lat": 66.0739,
+		"lon": -21.7431,
+		"description": "Fossaröðin í Hvalá í Ófeigsfirði, nyrst í Árneshreppi — áfangastaður dagsferðarinnar norður Strandir."
+	},
+	{
 		"slug": "holmavik",
 		"name": "Galdrasafnið á Hólmavík",
 		"category": "Safn",
