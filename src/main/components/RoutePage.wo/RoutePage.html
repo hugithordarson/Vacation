@@ -1,0 +1,21 @@
+<wo:PageWrapper title="$route.name">
+	<h1><wo:str value="$route.name" /></h1>
+	<p style="color: #555; margin-top: 4px"><wo:str value="$route.distanceKm" /> km &middot; ~<wo:str value="$route.durationLabel" /> akstur</p>
+	<p><wo:str value="$route.description" /></p>
+	<div id="map" style="height: 400px; border-radius: 8px; margin-top: 24px"></div>
+	<script>
+		const map = L.map( 'map' );
+
+		L.tileLayer( 'https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			maxZoom: 19,
+			attribution: '&copy; OpenStreetMap'
+		} ).addTo( map );
+
+		fetch( '/route-geo/<wo:str value="$route.slug" />' )
+			.then( response => response.json() )
+			.then( doc => {
+				const line = L.geoJSON( doc.geometry, { style: { color: '<wo:str value="$route.color" />', weight: 4 } } ).addTo( map );
+				map.fitBounds( line.getBounds().pad( 0.08 ) );
+			} );
+	</script>
+</wo:PageWrapper>

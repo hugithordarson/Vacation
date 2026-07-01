@@ -31,4 +31,20 @@
 	} );
 
 	map.fitBounds( L.featureGroup( markers ).getBounds().pad( 0.08 ) );
+
+	const routes = <wo:str value="$routesJSON" escapeHTML="false" />;
+
+	routes.forEach( route => {
+		fetch( `/route-geo/${route.slug}` )
+			.then( response => response.json() )
+			.then( doc => {
+				L.geoJSON( doc.geometry, { style: { color: route.color, weight: 4, opacity: 0.7 } } )
+					.bindPopup( `
+						<strong>${route.name}</strong><br>
+						<span style="color: #555">${doc.distanceKm} km</span><br>
+						<a href="/route/${route.slug}">Nánar</a>
+					` )
+					.addTo( map );
+			} );
+	} );
 </script>

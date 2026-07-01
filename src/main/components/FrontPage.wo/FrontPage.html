@@ -5,5 +5,16 @@
 	<wo:SpotMap height="380px" />
 	<p><a href="/map/">Skoða kortið í fullri stærð &rarr;</a></p>
 
+	<h2>Bíltúrarnir</h2>
+	<ul style="list-style: none; padding: 0">
+		<wo:repetition list="$routes" item="$currentRoute">
+			<li style="margin: 6px 0">
+				<span style="$currentRouteDotStyle">&#9644;</span>
+				<wo:link href="$currentRouteLink"><wo:str value="$currentRoute.name" /></wo:link>
+				<span style="color: #777">&middot; <wo:str value="$currentRoute.distanceKm" /> km</span>
+			</li>
+		</wo:repetition>
+	</ul>
+
 	<p><a href="/calendar/">Dagatalið — hvað gerum við hvenær? &rarr;</a></p>
 </wo:PageWrapper>

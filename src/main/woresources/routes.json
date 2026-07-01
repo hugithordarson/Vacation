@@ -1,0 +1,42 @@
+[
+	{
+		"slug": "klofningshringur",
+		"name": "Klofningshringurinn",
+		"color": "#1f78b4",
+		"distanceKm": 138,
+		"durationMin": 131,
+		"description": "Hringurinn um Fellsströnd og Skarðsströnd (vegur 590) — útsýni yfir Breiðafjarðareyjar, selalátur og Krosshólaborg í leiðinni."
+	},
+	{
+		"slug": "vestfirdir-sudur",
+		"name": "Suður á Vestfirði",
+		"color": "#33a02c",
+		"distanceKm": 306,
+		"durationMin": 271,
+		"description": "Fyrri dagur Vestfjarðaleiðangursins: Búðardalur → Flókalundur (Hellulaug) → Patreksfjörður → Látrabjarg."
+	},
+	{
+		"slug": "dynjandi-heimferd",
+		"name": "Heim um Dynjanda",
+		"color": "#ff7f00",
+		"distanceKm": 309,
+		"durationMin": 268,
+		"description": "Seinni dagur leiðangursins: Patreksfjörður → Dynjandi → yfir Dynjandisheiði og heim í Búðardal."
+	},
+	{
+		"slug": "strandir",
+		"name": "Strandir",
+		"color": "#6a3d9a",
+		"distanceKm": 113,
+		"durationMin": 103,
+		"description": "Galdrasafnið á Hólmavík og heitu pottarnir á Drangsnesi. Vegalengd aðra leið."
+	},
+	{
+		"slug": "snaefellsnes",
+		"name": "Stykkishólmsferð",
+		"color": "#b15928",
+		"distanceKm": 86,
+		"durationMin": 80,
+		"description": "Um Skógarströnd í Stykkishólm — Helgafell og Berserkjahraun í leiðinni. Vegalengd aðra leið."
+	}
+]
