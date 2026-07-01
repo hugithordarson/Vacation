@@ -89,6 +89,73 @@
 		"description": "Dagsferð með Baldri — gamla þorpið, fuglalíf og bókasafnið minnsta."
 	},
 	{
+		"slug": "thingvellir",
+		"name": "Þingvellir",
+		"category": "Söguslóðir",
+		"lat": 64.2591,
+		"lon": -21.1213,
+		"description": "Almannagjá, Öxarárfoss og flekaskilin. Heimamenn hafa komið hundrað sinnum — en gesturinn segir: gjáin er samt rétta byrjunin á vesturferð, og hún er beint við veginn."
+	},
+	{
+		"slug": "kaldidalur",
+		"name": "Kaldidalur",
+		"category": "Náttúra",
+		"lat": 64.5503,
+		"lon": -20.8435,
+		"description": "Hálendisstemning án fjallabíls: vegur 550 milli Oks og Þórisjökuls. Ok er jökullinn sem var lýstur dáinn 2019 og fékk minningarskjöld — 'bréf til framtíðarinnar'. Stoppið á háleiðinni og horfið á Langjökul."
+	},
+	{
+		"slug": "vidgelmir",
+		"name": "Víðgelmir",
+		"category": "Náttúra",
+		"lat": 64.7502,
+		"lon": -20.8019,
+		"status": "kannski",
+		"description": "Stærsti hraunhellir landsins, í Hallmundarhrauni rétt hjá Húsafelli. Leiðsögn sem hentar allri fjölskyldunni — kostar, en gesturinn heldur að krakkarnir myndu tala um hellinn í marga daga."
+	},
+	{
+		"slug": "husafell",
+		"name": "Húsafell",
+		"category": "Bær",
+		"lat": 64.6994,
+		"lon": -20.8734,
+		"description": "Áningarstaðurinn þegar komið er niður af Kaldadal: kaffi, sundlaug og steinhörpur Páls Guðmundssonar ef færi gefst."
+	},
+	{
+		"slug": "hraunfossar",
+		"name": "Hraunfossar og Barnafoss",
+		"category": "Náttúra",
+		"lat": 64.7026,
+		"lon": -20.9806,
+		"description": "Vatnið sprettur undan Hallmundarhrauni á heils kílómetra kafla og steypist í Hvítá. Beint við veg 518 og tekur korter — ekkert stopp á leiðinni gefur meira fyrir minna."
+	},
+	{
+		"slug": "reykholt",
+		"name": "Reykholt í Borgarfirði",
+		"category": "Söguslóðir",
+		"lat": 64.6648,
+		"lon": -21.2920,
+		"description": "Snorrastofa og Snorralaug. Gesturinn bendir á fallega tengingu við ferðina: Snorri Sturluson fæddist í Hvammi í Dölum — sem er líka á kortinu okkar — og var veginn hér."
+	},
+	{
+		"slug": "deildartunguhver",
+		"name": "Deildartunguhver og Krauma",
+		"category": "Laug",
+		"lat": 64.6636,
+		"lon": -21.4106,
+		"status": "kannski",
+		"description": "Vatnsmesti hver Evrópu, rýkur og bullar rétt við veginn — og Krauma-böðin við hliðina ef á að liggja í bleyti. Kannski frekar baðstopp á heimleiðinni?"
+	},
+	{
+		"slug": "grabrok",
+		"name": "Grábrók",
+		"category": "Náttúra",
+		"lat": 64.7714,
+		"lon": -21.5312,
+		"status": "kannski",
+		"description": "Gígurinn við Bifröst — korters labb upp tröppurnar og hringinn á gígbarminum. Síðasta tækifæri fyrir börnin að fá útrás áður en rennt er norður Bröttubrekku."
+	},
+	{
 		"slug": "djupavik",
 		"name": "Síldarverksmiðjan í Djúpavík",
 		"category": "Safn",

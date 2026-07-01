@@ -1,5 +1,24 @@
 [
 	{
+		"slug": "komudagur",
+		"name": "Komudagurinn: yfir Kaldadal",
+		"color": "#d81b60",
+		"distanceKm": 229,
+		"durationMin": 216,
+		"spots": [
+			"thingvellir",
+			"kaldidalur",
+			"vidgelmir",
+			"husafell",
+			"hraunfossar",
+			"reykholt",
+			"deildartunguhver",
+			"grabrok",
+			"erpsstadir"
+		],
+		"description": "Sunnudagurinn 12. júlí: frá Hraunteigi á Þingvöll, yfir Uxahryggi (52) og niður Kaldadal (550), fram hjá Húsafelli og Hraunfossum (518), um Reykholt og norður Bröttubrekku í Dalina."
+	},
+	{
 		"slug": "klofningshringur",
 		"name": "Klofningshringurinn",
 		"color": "#1f78b4",
