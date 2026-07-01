@@ -1,0 +1,171 @@
+[
+	{
+		"slug": "gisting",
+		"name": "Húsið okkar í Búðardal",
+		"category": "Gisting",
+		"lat": 65.11126,
+		"lon": -21.76894,
+		"description": "Airbnb-húsið: 5 svefnherbergi, 9 rúm, heitur pottur og útsýni yfir Hvammsfjörð — við sjóinn rétt norðan við Búðardal.",
+		"url": "https://www.airbnb.com/rooms/52544081"
+	},
+	{
+		"slug": "eiriksstadir",
+		"name": "Eiríksstaðir í Haukadal",
+		"category": "Söguslóðir",
+		"lat": 65.076,
+		"lon": -21.554,
+		"description": "Endurgerður skáli Eiríks rauða — fæðingarstaður Leifs heppna. Lifandi leiðsögn í búningum."
+	},
+	{
+		"slug": "vinlandssetur",
+		"name": "Vínlandssetur í Búðardal",
+		"category": "Safn",
+		"lat": 65.107,
+		"lon": -21.771,
+		"description": "Sýning um Vínlandsferðirnar í Leifsbúð við höfnina í Búðardal."
+	},
+	{
+		"slug": "erpsstadir",
+		"name": "Rjómabúið Erpsstaðir",
+		"category": "Matur",
+		"lat": 65.052,
+		"lon": -21.610,
+		"description": "Heimagerður ís beint frá býli — skylduheimsókn með börnin."
+	},
+	{
+		"slug": "gudrunarlaug",
+		"name": "Guðrúnarlaug að Laugum",
+		"category": "Laug",
+		"lat": 65.235,
+		"lon": -21.780,
+		"description": "Endurgerð laug í Sælingsdal, kennd við Guðrúnu Ósvífursdóttur úr Laxdælu."
+	},
+	{
+		"slug": "krossholaborg",
+		"name": "Krosshólaborg",
+		"category": "Söguslóðir",
+		"lat": 65.226,
+		"lon": -21.925,
+		"description": "Klettaborgin þar sem Auður djúpúðga hafði bænahald — steinkross á toppnum og gott útsýni yfir Hvammsfjörð."
+	},
+	{
+		"slug": "hvammur",
+		"name": "Hvammur í Dölum",
+		"category": "Söguslóðir",
+		"lat": 65.226,
+		"lon": -21.885,
+		"description": "Landnámsjörð Auðar djúpúðgu og fæðingarstaður Snorra Sturlusonar."
+	},
+	{
+		"slug": "stykkisholmur",
+		"name": "Stykkishólmur",
+		"category": "Bær",
+		"lat": 65.075,
+		"lon": -22.728,
+		"description": "Gamli bærinn, Súgandisey og sund í góðri laug. Ferjan Baldur siglir héðan út í Flatey."
+	},
+	{
+		"slug": "helgafell",
+		"name": "Helgafell",
+		"category": "Söguslóðir",
+		"lat": 65.046,
+		"lon": -22.734,
+		"description": "Fjallið helga úr Eyrbyggju og Laxdælu — leiði Guðrúnar Ósvífursdóttur við rætur þess. Óskastund á toppnum ef gengið er þögull upp."
+	},
+	{
+		"slug": "berserkjahraun",
+		"name": "Berserkjahraun",
+		"category": "Náttúra",
+		"lat": 64.984,
+		"lon": -22.966,
+		"description": "Mosavaxið hraun úr Eyrbyggju — berserkirnir ruddu hér veg sem enn sést."
+	},
+	{
+		"slug": "flatey",
+		"name": "Flatey á Breiðafirði",
+		"category": "Bær",
+		"lat": 65.373,
+		"lon": -22.919,
+		"description": "Dagsferð með Baldri — gamla þorpið, fuglalíf og bókasafnið minnsta."
+	},
+	{
+		"slug": "holmavik",
+		"name": "Galdrasafnið á Hólmavík",
+		"category": "Safn",
+		"lat": 65.706,
+		"lon": -21.686,
+		"description": "Galdrar, nábrækur og þjóðtrú Strandamanna."
+	},
+	{
+		"slug": "drangsnes",
+		"name": "Heitu pottarnir á Drangsnesi",
+		"category": "Laug",
+		"lat": 65.689,
+		"lon": -21.450,
+		"description": "Pottar í fjöruborðinu með útsýni yfir Steingrímsfjörð og út í Grímsey."
+	},
+	{
+		"slug": "reykholar",
+		"name": "Sjávarsmiðjan á Reykhólum",
+		"category": "Laug",
+		"lat": 65.447,
+		"lon": -22.205,
+		"description": "Þaraböð með útsýni yfir Breiðafjörð."
+	},
+	{
+		"slug": "hellulaug",
+		"name": "Hellulaug við Flókalund",
+		"category": "Laug",
+		"lat": 65.576,
+		"lon": -23.196,
+		"description": "Náttúrulaug í fjöruborðinu í Vatnsfirði."
+	},
+	{
+		"slug": "raudisandur",
+		"name": "Rauðisandur",
+		"category": "Náttúra",
+		"lat": 65.464,
+		"lon": -24.023,
+		"description": "Kílómetrar af rauðgylltum sandi — kaffi á Franska kaffihúsinu ef opið er."
+	},
+	{
+		"slug": "latrabjarg",
+		"name": "Látrabjarg",
+		"category": "Náttúra",
+		"lat": 65.503,
+		"lon": -24.531,
+		"description": "Vestasti oddi Evrópu og stærsta fuglabjarg landsins — lundinn upp á sitt besta í byrjun júlí."
+	},
+	{
+		"slug": "gardar",
+		"name": "Garðar BA 64",
+		"category": "Safn",
+		"lat": 65.578,
+		"lon": -24.073,
+		"description": "Elsta stálskip Íslands, strandað í fjörunni við Patreksfjörð."
+	},
+	{
+		"slug": "patreksfjordur",
+		"name": "Patreksfjörður",
+		"category": "Bær",
+		"lat": 65.594,
+		"lon": -23.995,
+		"description": "Góður áningarstaður fyrir sunnanverða Vestfirði — sundlaugin með útsýni yfir fjörðinn."
+	},
+	{
+		"slug": "selardalur",
+		"name": "Listasafn Samúels í Selárdal",
+		"category": "Safn",
+		"lat": 65.749,
+		"lon": -24.108,
+		"description": "Listaverk og hús Samúels Jónssonar, „listamannsins með barnshjartað“, yst í Arnarfirði."
+	},
+	{
+		"slug": "dynjandi",
+		"name": "Dynjandi",
+		"category": "Náttúra",
+		"lat": 65.732,
+		"lon": -23.205,
+		"description": "Fallegasti foss Vestfjarða — hundrað metra breiður brúðarslæðufoss í Arnarfirði."
+	}
+]

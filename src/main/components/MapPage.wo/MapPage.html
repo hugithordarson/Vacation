@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Kortið — Búðardalur 2026</title>
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+		<style>
+			html, body { margin: 0; height: 100%; font-family: system-ui, sans-serif; }
+			#title {
+				position: absolute;
+				top: 12px;
+				left: 54px;
+				z-index: 1000;
+				background: rgba(255, 255, 255, 0.9);
+				padding: 8px 16px;
+				border-radius: 8px;
+				box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+			}
+			#title h1 { margin: 0; font-size: 1.1em; }
+			#title p { margin: 0; font-size: 0.8em; }
+		</style>
+	</head>
+	<body>
+		<div id="title">
+			<h1>Búðardalur 2026</h1>
+			<p><a href="/">&larr; Heim</a></p>
+		</div>
+		<wo:SpotMap height="100vh" />
+	</body>
+</html>

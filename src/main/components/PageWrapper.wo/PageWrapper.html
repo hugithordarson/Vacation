@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="is">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title><wo:str value="$title" /></title>
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+		<style>
+			body { margin: 0; font-family: system-ui, sans-serif; color: #222; }
+			nav { background: #14385c; padding: 12px 16px; display: flex; gap: 20px; align-items: baseline; }
+			nav a { color: #cfe0f2; text-decoration: none; }
+			nav a:hover { color: #fff; }
+			nav .brand { font-weight: bold; }
+			nav .brand a { color: #fff; }
+			main { max-width: 720px; margin: 0 auto; padding: 24px 16px; }
+			h1 { margin-bottom: 0; }
+			a { color: #0b62a4; }
+		</style>
+	</head>
+	<body>
+		<nav>
+			<span class="brand"><a href="/">Búðardalur 2026</a></span>
+			<a href="/map/">Kortið</a>
+			<a href="/calendar/">Dagatalið</a>
+		</nav>
+		<main>
+			<wo:content />
+		</main>
+	</body>
+</html>

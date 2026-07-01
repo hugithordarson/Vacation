@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>is.rebbi</groupId>
+	<artifactId>Vacation</artifactId>
+	<packaging>woapplication</packaging>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>Vacation</name>
+
+	<properties>
+		<maven.compiler.release>25</maven.compiler.release>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<webobjects.group>com.webobjects</webobjects.group>
+		<webobjects.version>5.4.3</webobjects.version>
+
+		<wonder.group>is.rebbi.slim</wonder.group>
+		<wonder.version>8.0.4-SNAPSHOT</wonder.version>
+	</properties>
+
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>is.rebbi</groupId>
+				<artifactId>vermilingua-maven-plugin</artifactId>
+				<version>1.1.6-SNAPSHOT</version>
+				<extensions>true</extensions>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>${wonder.group}</groupId>
+			<artifactId>ERExtensions</artifactId>
+			<version>${wonder.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>is.rebbi</groupId>
+			<artifactId>wo-adaptor-jetty</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>${wonder.group}</groupId>
+			<artifactId>ERLoggingReload4j</artifactId>
+			<version>${wonder.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${wonder.group}</groupId>
+			<artifactId>AjaxSlim</artifactId>
+			<version>${wonder.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${webobjects.group}</groupId>
+			<artifactId>JavaWebObjects</artifactId>
+			<version>${webobjects.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>${webobjects.group}</groupId>
+					<artifactId>JavaXML</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>2.0.18</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.14.0</version>
+		</dependency>
+	</dependencies>
+</project>

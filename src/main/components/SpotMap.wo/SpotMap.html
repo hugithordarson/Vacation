@@ -1,0 +1,34 @@
+<wo:element elementName="div" id="map" style="$style"></wo:element>
+<script>
+	const spots = <wo:str value="$spotsJSON" escapeHTML="false" />;
+
+	const map = L.map( 'map' );
+
+	L.tileLayer( 'https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		maxZoom: 19,
+		attribution: '&copy; OpenStreetMap'
+	} ).addTo( map );
+
+	// Red marker for the place we're staying at
+	const homeIcon = new L.Icon( {
+		iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+		shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+		iconSize: [25, 41],
+		iconAnchor: [12, 41],
+		popupAnchor: [1, -34],
+		shadowSize: [41, 41]
+	} );
+
+	const markers = spots.map( spot => {
+		const options = spot.category === 'Gisting' ? { icon: homeIcon, zIndexOffset: 1000 } : {};
+		const marker = L.marker( [spot.lat, spot.lon], options ).addTo( map );
+		marker.bindPopup( `
+			<strong>${spot.name}</strong><br>
+			<span style="color: #555">${spot.category}</span><br>
+			<a href="/spot/${spot.slug}">Nánar</a>
+		` );
+		return marker;
+	} );
+
+	map.fitBounds( L.featureGroup( markers ).getBounds().pad( 0.08 ) );
+</script>

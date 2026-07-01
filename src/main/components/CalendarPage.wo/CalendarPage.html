@@ -1,0 +1,27 @@
+<wo:PageWrapper title="Dagatalið">
+	<h1>Dagatalið</h1>
+	<p>12.–19. júlí 2026</p>
+
+	<wo:repetition list="$days" item="$currentDay">
+		<section class="day" style="border-top: 1px solid #ddd; padding: 8px 0">
+			<h2 style="font-size: 1.1em; margin: 4px 0"><wo:str value="$currentDayLabel" /></h2>
+			<wo:if condition="$currentDayIsEmpty">
+				<p style="color: #999; margin: 4px 0">Ekkert planað enn</p>
+			</wo:if>
+			<wo:if condition="$currentDayIsEmpty" negate="$true">
+				<ul style="margin: 4px 0">
+					<wo:repetition list="$currentDayEvents" item="$currentEvent">
+						<li>
+							<strong><wo:str value="$currentEvent.title" /></strong>
+							<wo:if condition="$currentEvent.period">
+								<span style="color: #777">(<wo:str value="$currentEvent.spanLabel" />)</span>
+							</wo:if>
+							<br>
+							<wo:str value="$currentEvent.description" />
+						</li>
+					</wo:repetition>
+				</ul>
+			</wo:if>
+		</section>
+	</wo:repetition>
+</wo:PageWrapper>
