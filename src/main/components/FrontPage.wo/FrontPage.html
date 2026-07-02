@@ -2,7 +2,7 @@
 	<h1>Búðardalur 2026</h1>
 	<p>Vika í Dölunum, <strong>12.–19. júlí</strong>. Gistum í <a href="/spot/gisting">húsinu okkar við Hvammsfjörð</a>.</p>
 
-	<wo:SpotMap height="380px" />
+	<wo:SpotMap height="520px" />
 	<p><a href="/map/">Skoða kortið í fullri stærð &rarr;</a></p>
 
 	<h2>Bíltúrarnir</h2>
@@ -17,4 +17,16 @@
 	</ul>
 
 	<p><a href="/calendar/">Dagatalið — hvað gerum við hvenær? &rarr;</a></p>
+
+	<wo:if condition="$hasHouseImage">
+		<h2>Húsið okkar</h2>
+		<wo:link href="/spot/gisting" style="display: flex; flex-wrap: wrap; align-items: stretch; text-decoration: none; color: inherit; background: #f0f4f8; border-radius: 10px; overflow: hidden">
+			<wo:img filename="$gisting.image" style="width: 300px; height: auto; max-width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; flex: 0 0 auto" />
+			<div style="flex: 1 1 260px; min-width: 240px; padding: 14px 18px">
+				<strong>Húsið okkar við Hvammsfjörð</strong>
+				<p style="color: #555; margin: 8px 0"><wo:str value="$gisting.description" /></p>
+				<span style="color: #0b62a4">Nánar um húsið &rarr;</span>
+			</div>
+		</wo:link>
+	</wo:if>
 </wo:PageWrapper>

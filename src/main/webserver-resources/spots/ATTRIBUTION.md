@@ -1,6 +1,9 @@
 # Image sources
 
-All images from Wikimedia Commons via Wikipedia page summaries (free licenses — see each file page for author/license).
+All images from Wikimedia Commons via Wikipedia page summaries (free licenses — see each file page for author/license), except where noted.
+
+- `gisting.jpg` — hero photo from our Airbnb listing (https://www.airbnb.com/rooms/52544081), © the host — family use, not freely licensed
+- `ingolfsfjordur.jpg` — "factory at eyri" by siggimus, CC BY-NC-SA 2.0, https://www.flickr.com/photos/59244210@N00/4699335202
 
 - `dynjandi.jpg` — from [https://is.wikipedia.org/wiki/Dynjandi](https://is.wikipedia.org/wiki/Dynjandi), original: https://upload.wikimedia.org/wikipedia/commons/c/c5/Cascada_Dynjandi%2C_Vestfir%C3%B0ir%2C_Islandia%2C_2014-08-14%2C_DD_136-138_HDR.JPG
 - `latrabjarg.jpg` — from [https://is.wikipedia.org/wiki/L%C3%A1trabjarg](https://is.wikipedia.org/wiki/L%C3%A1trabjarg), original: https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/L%C3%A1trabjarg_929.jpg/3840px-L%C3%A1trabjarg_929.jpg

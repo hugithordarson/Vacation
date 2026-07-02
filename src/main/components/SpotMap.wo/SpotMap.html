@@ -1,4 +1,4 @@
-<wo:element elementName="div" id="map" style="$style"></wo:element>
+<wo:container elementName="div" id="map" style="$style"></wo:container>
 <script>
 	const spots = <wo:str value="$spotsJSON" escapeHTML="false" />;
 
@@ -21,6 +21,8 @@
 	// Red marker for the place we're staying at, gold for unsorted suggestions
 	const homeIcon = coloredIcon( 'red' );
 	const suggestionIcon = coloredIcon( 'gold' );
+
+	const markerBySlug = {};
 
 	const markers = spots.map( spot => {
 		const options = spot.category === 'Gisting' ? { icon: homeIcon, zIndexOffset: 1000 } : {};
@@ -45,10 +47,19 @@
 			<span style="color: #555">${spot.category}</span><br>
 			<a href="/spot/${spot.slug}">Nánar</a>
 		` );
+		markerBySlug[spot.slug] = marker;
 		return marker;
 	} );
 
 	map.fitBounds( L.featureGroup( markers ).getBounds().pad( 0.08 ) );
+
+	// ?spot=slug focuses the map on that spot and opens its popup
+	const focusMarker = markerBySlug[new URLSearchParams( window.location.search ).get( 'spot' )];
+
+	if( focusMarker ) {
+		map.setView( focusMarker.getLatLng(), 12 );
+		focusMarker.openPopup();
+	}
 
 	const routes = <wo:str value="$routesJSON" escapeHTML="false" />;
 

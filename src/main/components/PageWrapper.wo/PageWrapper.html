@@ -13,7 +13,6 @@
 			nav a:hover { color: #fff; }
 			nav .brand { font-weight: bold; }
 			nav .brand a { color: #fff; }
-			main { max-width: 720px; margin: 0 auto; padding: 24px 16px; }
 			h1 { margin-bottom: 0; }
 			a { color: #0b62a4; }
 		</style>
@@ -23,9 +22,10 @@
 			<span class="brand"><a href="/">Búðardalur 2026</a></span>
 			<a href="/map/">Kortið</a>
 			<a href="/calendar/">Dagatalið</a>
+			<a href="/photos/">Myndirnar</a>
 		</nav>
-		<main>
+		<wo:container elementName="main" style="$mainStyle">
 			<wo:content />
-		</main>
+		</wo:container>
 	</body>
 </html>

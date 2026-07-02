@@ -6,7 +6,8 @@
 		"lat": 65.11126,
 		"lon": -21.76894,
 		"description": "Airbnb-húsið: 5 svefnherbergi, 9 rúm, heitur pottur og útsýni yfir Hvammsfjörð — við sjóinn rétt norðan við Búðardal.",
-		"url": "https://www.airbnb.com/rooms/52544081"
+		"url": "https://www.airbnb.com/rooms/52544081",
+		"image": "spots/gisting.jpg"
 	},
 	{
 		"slug": "eiriksstadir",
@@ -269,7 +270,8 @@
 		"category": "Minjar",
 		"lat": 66.0236,
 		"lon": -21.6285,
-		"description": "Verksmiðjurústirnar á Eyri við Ingólfsfjörð, reistar 1942 — vegurinn út í Ófeigsfjörð liggur fram hjá þeim."
+		"description": "Verksmiðjurústirnar á Eyri við Ingólfsfjörð, reistar 1942 — vegurinn út í Ófeigsfjörð liggur fram hjá þeim.",
+		"image": "spots/ingolfsfjordur.jpg"
 	},
 	{
 		"slug": "husarfoss",

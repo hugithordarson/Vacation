@@ -18,4 +18,8 @@ public class PageWrapper extends VacationComponent {
 	public String title() {
 		return stringValueForBinding( "title", "Búðardalur 2026" );
 	}
+
+	public String mainStyle() {
+		return "max-width: %s; margin: 0 auto; padding: 24px 16px".formatted( stringValueForBinding( "width", "720px" ) );
+	}
 }

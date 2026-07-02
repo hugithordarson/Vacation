@@ -13,6 +13,7 @@ import vacation.Spots;
 import vacation.components.CalendarPage;
 import vacation.components.FrontPage;
 import vacation.components.MapPage;
+import vacation.components.PhotosPage;
 import vacation.components.RoutePage;
 import vacation.components.SpotPage;
 
@@ -26,6 +27,7 @@ public class Application extends ERXApplication {
 		RouteTable.defaultRouteTable().map( "/", FrontPage.class );
 		RouteTable.defaultRouteTable().map( "/map/", MapPage.class );
 		RouteTable.defaultRouteTable().map( "/calendar/", CalendarPage.class );
+		RouteTable.defaultRouteTable().map( "/photos/", PhotosPage.class );
 		RouteTable.defaultRouteTable().map( "/spot/*", this::spotPage );
 		RouteTable.defaultRouteTable().map( "/route/*", this::routePage );
 		RouteTable.defaultRouteTable().map( "/route-geo/*", this::routeGeometry );

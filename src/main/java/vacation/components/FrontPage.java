@@ -7,6 +7,8 @@ import com.webobjects.appserver.WOContext;
 import app.VacationComponent;
 import vacation.DrivingRoute;
 import vacation.Routes;
+import vacation.Spot;
+import vacation.Spots;
 
 public class FrontPage extends VacationComponent {
 
@@ -18,6 +20,14 @@ public class FrontPage extends VacationComponent {
 
 	public List<DrivingRoute> routes() {
 		return Routes.all();
+	}
+
+	public Spot gisting() {
+		return Spots.bySlug( "gisting" );
+	}
+
+	public boolean hasHouseImage() {
+		return gisting() != null && gisting().image() != null;
 	}
 
 	public String currentRouteLink() {

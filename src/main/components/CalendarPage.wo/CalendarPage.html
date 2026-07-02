@@ -1,27 +1,41 @@
-<wo:PageWrapper title="Dagatalið">
+<wo:PageWrapper title="Dagatalið" width="1100px">
 	<h1>Dagatalið</h1>
-	<p>12.–19. júlí 2026</p>
+	<p style="color: #555">Búðardalur &middot; 12.&ndash;19. júlí 2026</p>
 
-	<wo:repetition list="$days" item="$currentDay">
-		<section class="day" style="border-top: 1px solid #ddd; padding: 8px 0">
-			<h2 style="font-size: 1.1em; margin: 4px 0"><wo:str value="$currentDayLabel" /></h2>
-			<wo:if condition="$currentDayIsEmpty">
-				<p style="color: #999; margin: 4px 0">Ekkert planað enn</p>
-			</wo:if>
-			<wo:if condition="$currentDayIsEmpty" negate="$true">
-				<ul style="margin: 4px 0">
-					<wo:repetition list="$currentDayEvents" item="$currentEvent">
-						<li>
-							<strong><wo:str value="$currentEvent.title" /></strong>
-							<wo:if condition="$currentEvent.period">
-								<span style="color: #777">(<wo:str value="$currentEvent.spanLabel" />)</span>
-							</wo:if>
-							<br>
-							<wo:str value="$currentEvent.description" />
-						</li>
-					</wo:repetition>
-				</ul>
-			</wo:if>
-		</section>
-	</wo:repetition>
+	<div style="overflow-x: auto; margin-top: 16px">
+		<div style="display: grid; grid-template-columns: repeat(8, minmax(115px, 1fr)); gap: 6px; min-width: 980px">
+
+			<wo:repetition list="$days" item="$currentDay">
+				<div style="text-align: center; font-weight: 600; font-size: 0.95em; padding: 10px 2px; background: #14385c; color: #fff; border-radius: 6px 6px 0 0">
+					<wo:str value="$currentDayHeaderLabel" />
+				</div>
+			</wo:repetition>
+
+			<wo:repetition list="$periodEvents" item="$currentEvent">
+				<wo:container elementName="div" style="$currentPeriodEventStyle" title="$currentEvent.description">
+					<div style="background: #1f78b4; color: #fff; border-radius: 6px; padding: 8px 12px; font-size: 0.95em">
+						<strong><wo:str value="$currentEvent.title" /></strong>
+						<span style="opacity: 0.8">&middot; <wo:str value="$currentEvent.spanLabel" /></span>
+					</div>
+				</wo:container>
+			</wo:repetition>
+
+			<wo:repetition list="$days" item="$currentDay">
+				<wo:container elementName="div" style="$currentDayCellStyle">
+					<div style="min-height: 190px; height: 100%; background: #f0f4f8; border-radius: 0 0 6px 6px; padding: 6px; box-sizing: border-box">
+						<wo:repetition list="$currentDaySingleEvents" item="$currentEvent">
+							<wo:container elementName="div" title="$currentEvent.description">
+								<div style="background: #fff; border-left: 3px solid #33a02c; border-radius: 4px; padding: 7px 8px; margin-bottom: 6px; font-size: 0.88em; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1)">
+									<wo:str value="$currentEvent.title" />
+								</div>
+							</wo:container>
+						</wo:repetition>
+					</div>
+				</wo:container>
+			</wo:repetition>
+
+		</div>
+	</div>
+
+	<p style="color: #777; font-size: 0.85em; margin-top: 12px">Haltu músinni yfir viðburði til að sjá nánari lýsingu.</p>
 </wo:PageWrapper>
