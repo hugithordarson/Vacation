@@ -16,7 +16,7 @@ public class PageWrapper extends VacationComponent {
 	}
 
 	public String title() {
-		return stringValueForBinding( "title", "Búðardalur 2026" );
+		return stringValueForBinding( "title", "Svaka partí" );
 	}
 
 	public String mainStyle() {

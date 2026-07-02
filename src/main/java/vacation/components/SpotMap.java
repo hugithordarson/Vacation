@@ -40,7 +40,7 @@ public class SpotMap extends VacationComponent {
 			map.put( "category", spot.category() );
 			map.put( "lat", spot.lat() );
 			map.put( "lon", spot.lon() );
-			map.put( "status", spot.status() );
+			map.put( "status", spot.visitStatus() );
 
 			if( spot.image() != null ) {
 				map.put( "imageURL", application().resourceManager().urlForResourceNamed( spot.image(), null, null, context().request() ) );

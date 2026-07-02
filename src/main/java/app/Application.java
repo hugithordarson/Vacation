@@ -1,5 +1,8 @@
 package app;
 
+import java.time.YearMonth;
+import java.time.format.DateTimeParseException;
+
 import com.webobjects.appserver.WOActionResults;
 import com.webobjects.appserver.WOResponse;
 
@@ -9,8 +12,10 @@ import er.extensions.routes.RouteTable;
 import vacation.Routes;
 import vacation.SeedData;
 import vacation.Spots;
+import vacation.Trips;
 import vacation.data.DrivingRoute;
 import vacation.data.Spot;
+import vacation.data.Trip;
 import vacation.components.CalendarPage;
 import vacation.components.FrontPage;
 import vacation.components.MapPage;
@@ -29,7 +34,7 @@ public class Application extends ERXApplication {
 	private void setupRoutes() {
 		RouteTable.defaultRouteTable().map( "/", FrontPage.class );
 		RouteTable.defaultRouteTable().map( "/map/", MapPage.class );
-		RouteTable.defaultRouteTable().map( "/calendar/", CalendarPage.class );
+		RouteTable.defaultRouteTable().map( "/calendar/*", this::calendarPage );
 		RouteTable.defaultRouteTable().map( "/photos/", PhotosPage.class );
 		RouteTable.defaultRouteTable().map( "/spot/*", this::spotPage );
 		RouteTable.defaultRouteTable().map( "/route/*", this::routePage );
@@ -76,6 +81,39 @@ public class Application extends ERXApplication {
 		response.setStatus( 404 );
 		response.setContent( message );
 		return response;
+	}
+
+	private WOActionResults calendarPage( RouteInvocation invocation ) {
+		final String slug = lastPathComponent( invocation, "/calendar/" );
+
+		// No slug shows the whole plan (all trips); a slug shows that trip's calendar
+		Trip trip = null;
+
+		if( !slug.isEmpty() ) {
+			trip = Trips.bySlug( slug );
+
+			if( trip == null ) {
+				return notFound( "Engin ferð með þessari slóð" );
+			}
+		}
+
+		YearMonth month = trip != null ? YearMonth.from( trip.start() ) : YearMonth.now();
+
+		final String monthParam = invocation.request().stringFormValueForKey( "month" );
+
+		if( monthParam != null ) {
+			try {
+				month = YearMonth.parse( monthParam );
+			}
+			catch( DateTimeParseException e ) {
+				// Malformed month parameter — keep the default
+			}
+		}
+
+		final CalendarPage page = pageWithName( CalendarPage.class, invocation.context() );
+		page.trip = trip;
+		page.month = month;
+		return page;
 	}
 
 	private WOActionResults spotPage( RouteInvocation invocation ) {

@@ -1,6 +1,6 @@
 <wo:PageWrapper>
-	<h1>Búðardalur 2026</h1>
-	<p>Vika í Dölunum, <strong>12.–19. júlí</strong>. Gistum í <a href="/spot/gisting">húsinu okkar við Hvammsfjörð</a>.</p>
+	<h1><wo:str value="$trip.name" /></h1>
+	<p><strong><wo:str value="$trip.spanLabel" /></strong> — <wo:str value="$trip.description" /></p>
 
 	<wo:SpotMap height="520px" />
 	<p><a href="/map/">Skoða kortið í fullri stærð &rarr;</a></p>
@@ -17,6 +17,16 @@
 	</ul>
 
 	<p><a href="/calendar/">Dagatalið — hvað gerum við hvenær? &rarr;</a></p>
+
+	<h2>Ferðirnar</h2>
+	<ul style="list-style: none; padding: 0">
+		<wo:repetition list="$trips" item="$currentTrip">
+			<li style="margin: 6px 0">
+				<wo:link href="$currentTripLink"><wo:str value="$currentTrip.name" /></wo:link>
+				<span style="color: #777">&middot; <wo:str value="$currentTrip.spanLabel" /> &middot; <wo:str value="$currentTrip.statusLabel" /></span>
+			</li>
+		</wo:repetition>
+	</ul>
 
 	<wo:if condition="$hasHouseImage">
 		<h2>Húsið okkar</h2>

@@ -7,15 +7,30 @@ import com.webobjects.appserver.WOContext;
 import app.VacationComponent;
 import vacation.Routes;
 import vacation.Spots;
+import vacation.Trips;
 import vacation.data.DrivingRoute;
 import vacation.data.Spot;
+import vacation.data.Trip;
 
 public class FrontPage extends VacationComponent {
 
 	public DrivingRoute currentRoute;
+	public Trip currentTrip;
 
 	public FrontPage( WOContext context ) {
 		super( context );
+	}
+
+	public Trip trip() {
+		return Trips.current();
+	}
+
+	public List<Trip> trips() {
+		return Trips.all();
+	}
+
+	public String currentTripLink() {
+		return "/calendar/" + currentTrip.slug();
 	}
 
 	public List<DrivingRoute> routes() {

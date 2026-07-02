@@ -43,7 +43,7 @@ public class RoutePage extends VacationComponent {
 			map.put( "category", spot.category() );
 			map.put( "lat", spot.lat() );
 			map.put( "lon", spot.lon() );
-			map.put( "status", spot.status() );
+			map.put( "status", spot.visitStatus() );
 			result.add( map );
 		}
 

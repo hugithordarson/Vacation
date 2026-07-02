@@ -16,7 +16,8 @@
 			"grabrok",
 			"erpsstadir"
 		],
-		"description": "Sunnudagurinn 12. júlí: frá Hraunteigi á Þingvöll, yfir Uxahryggi (52) og niður Kaldadal (550), fram hjá Húsafelli og Hraunfossum (518), um Reykholt og norður Bröttubrekku í Dalina."
+		"description": "Sunnudagurinn 12. júlí: frá Hraunteigi á Þingvöll, yfir Uxahryggi (52) og niður Kaldadal (550), fram hjá Húsafelli og Hraunfossum (518), um Reykholt og norður Bröttubrekku í Dalina.",
+		"trip": "budardalur-2026"
 	},
 	{
 		"slug": "klofningshringur",
@@ -29,7 +30,8 @@
 			"hvammur",
 			"krossholaborg",
 			"gudrunarlaug"
-		]
+		],
+		"trip": "budardalur-2026"
 	},
 	{
 		"slug": "vestfirdir-sudur",
@@ -44,7 +46,8 @@
 			"gardar",
 			"raudisandur",
 			"latrabjarg"
-		]
+		],
+		"trip": "budardalur-2026"
 	},
 	{
 		"slug": "dynjandi-heimferd",
@@ -55,7 +58,8 @@
 		"description": "Seinni dagur leiðangursins: Patreksfjörður → Dynjandi → yfir Dynjandisheiði og heim í Búðardal.",
 		"spots": [
 			"dynjandi"
-		]
+		],
+		"trip": "budardalur-2026"
 	},
 	{
 		"slug": "hvalarfoss",
@@ -70,7 +74,8 @@
 			"husarfoss",
 			"hvalarfoss",
 			"krossneslaug"
-		]
+		],
+		"trip": "budardalur-2026"
 	},
 	{
 		"slug": "strandir",
@@ -82,7 +87,8 @@
 		"spots": [
 			"holmavik",
 			"drangsnes"
-		]
+		],
+		"trip": "budardalur-2026"
 	},
 	{
 		"slug": "snaefellsnes",
@@ -94,6 +100,7 @@
 		"spots": [
 			"helgafell",
 			"stykkisholmur"
-		]
+		],
+		"trip": "budardalur-2026"
 	}
 ]

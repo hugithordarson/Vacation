@@ -45,7 +45,12 @@
 			<strong>${spot.name}</strong>${statusLabel}<br>
 			${image}
 			<span style="color: #555">${spot.category}</span><br>
-			<a href="/spot/${spot.slug}">Nánar</a>
+			<a href="/spot/${spot.slug}">Nánar</a><br>
+			<span style="font-size: 0.85em">Opna í:
+				<a href="https://www.google.com/maps?q=${spot.lat},${spot.lon}">Google</a> ·
+				<a href="https://maps.apple.com/?ll=${spot.lat},${spot.lon}&q=${encodeURIComponent( spot.name )}">Apple</a> ·
+				<a href="https://www.openstreetmap.org/?mlat=${spot.lat}&mlon=${spot.lon}#map=14/${spot.lat}/${spot.lon}">OSM</a>
+			</span>
 		` );
 		markerBySlug[spot.slug] = marker;
 		return marker;

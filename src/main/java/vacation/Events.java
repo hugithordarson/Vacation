@@ -6,16 +6,16 @@ import java.util.List;
 import org.apache.cayenne.query.ObjectSelect;
 
 import app.VacationCore;
-import vacation.data.TripEvent;
+import vacation.data.CalendarEvent;
 
 public class Events {
 
-	public static List<TripEvent> all() {
-		return ObjectSelect.query( TripEvent.class )
+	public static List<CalendarEvent> all() {
+		return ObjectSelect.query( CalendarEvent.class )
 				.select( VacationCore.sharedContext() );
 	}
 
-	public static List<TripEvent> on( final LocalDate day ) {
+	public static List<CalendarEvent> on( final LocalDate day ) {
 		return all()
 				.stream()
 				.filter( event -> event.occursOn( day ) )

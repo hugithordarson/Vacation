@@ -16,6 +16,12 @@
 	<wo:if condition="$spot.url">
 		<p><wo:link href="$spot.url">Nánar á vefnum</wo:link></p>
 	</wo:if>
+	<p style="font-size: 0.9em; color: #777">
+		Opna í:
+		<wo:link href="$spot.googleMapsURL">Google Maps</wo:link> &middot;
+		<wo:link href="$spot.appleMapsURL">Apple Maps</wo:link> &middot;
+		<wo:link href="$spot.openStreetMapURL">OpenStreetMap</wo:link>
+	</p>
 	<div id="map" style="height: 320px; border-radius: 8px; margin-top: 24px"></div>
 	<script>
 		const map = L.map( 'map' ).setView( [<wo:str value="$spot.lat" />, <wo:str value="$spot.lon" />], 12 );

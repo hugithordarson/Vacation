@@ -4,17 +4,21 @@
 	 xsi:schemaLocation="http://cayenne.apache.org/schema/12/modelMap https://cayenne.apache.org/schema/12/modelMap.xsd"
 	 project-version="12">
 	<property name="defaultPackage" value="vacation.data"/>
-	<db-entity name="v_spot">
-		<db-attribute name="category" type="VARCHAR" length="1024"/>
-		<db-attribute name="description" type="VARCHAR" length="1000000"/>
+	<db-entity name="v_journal_entry">
+		<db-attribute name="author" type="VARCHAR" length="1024"/>
+		<db-attribute name="date" type="DATE" isMandatory="true"/>
 		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isGenerated="true" isMandatory="true"/>
-		<db-attribute name="image" type="VARCHAR" length="1024"/>
-		<db-attribute name="lat" type="DOUBLE" isMandatory="true"/>
-		<db-attribute name="lon" type="DOUBLE" isMandatory="true"/>
-		<db-attribute name="name" type="VARCHAR" isMandatory="true" length="1024"/>
-		<db-attribute name="slug" type="VARCHAR" isMandatory="true" length="1024"/>
-		<db-attribute name="status" type="VARCHAR" length="1024"/>
-		<db-attribute name="url" type="VARCHAR" length="1024"/>
+		<db-attribute name="text" type="VARCHAR" length="1000000"/>
+		<db-attribute name="title" type="VARCHAR" length="1024"/>
+		<db-attribute name="trip_id" type="INTEGER" isMandatory="true"/>
+	</db-entity>
+	<db-entity name="v_photo">
+		<db-attribute name="caption" type="VARCHAR" length="1024"/>
+		<db-attribute name="filename" type="VARCHAR" isMandatory="true" length="1024"/>
+		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isGenerated="true" isMandatory="true"/>
+		<db-attribute name="spot_id" type="INTEGER"/>
+		<db-attribute name="taken" type="TIMESTAMP"/>
+		<db-attribute name="trip_id" type="INTEGER"/>
 	</db-entity>
 	<db-entity name="v_route">
 		<db-attribute name="color" type="VARCHAR" length="1024"/>
@@ -24,6 +28,7 @@
 		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isGenerated="true" isMandatory="true"/>
 		<db-attribute name="name" type="VARCHAR" isMandatory="true" length="1024"/>
 		<db-attribute name="slug" type="VARCHAR" isMandatory="true" length="1024"/>
+		<db-attribute name="trip_id" type="INTEGER"/>
 	</db-entity>
 	<db-entity name="v_route_stop">
 		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isGenerated="true" isMandatory="true"/>
@@ -31,19 +36,46 @@
 		<db-attribute name="sort_order" type="INTEGER" isMandatory="true"/>
 		<db-attribute name="spot_id" type="INTEGER" isMandatory="true"/>
 	</db-entity>
-	<db-entity name="v_trip">
-		<db-attribute name="end_date" type="DATE" isMandatory="true"/>
+	<db-entity name="v_spot">
+		<db-attribute name="category" type="VARCHAR" length="1024"/>
+		<db-attribute name="description" type="VARCHAR" length="1000000"/>
 		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isGenerated="true" isMandatory="true"/>
+		<db-attribute name="image" type="VARCHAR" length="1024"/>
+		<db-attribute name="lat" type="DOUBLE" isMandatory="true"/>
+		<db-attribute name="lon" type="DOUBLE" isMandatory="true"/>
 		<db-attribute name="name" type="VARCHAR" isMandatory="true" length="1024"/>
-		<db-attribute name="start_date" type="DATE" isMandatory="true"/>
+		<db-attribute name="slug" type="VARCHAR" isMandatory="true" length="1024"/>
+		<db-attribute name="url" type="VARCHAR" length="1024"/>
 	</db-entity>
-	<db-entity name="v_trip_event">
+	<db-entity name="v_visit">
+		<db-attribute name="date" type="DATE"/>
+		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isGenerated="true" isMandatory="true"/>
+		<db-attribute name="notes" type="VARCHAR" length="1000000"/>
+		<db-attribute name="spot_id" type="INTEGER" isMandatory="true"/>
+		<db-attribute name="status" type="VARCHAR" length="1024"/>
+		<db-attribute name="trip_id" type="INTEGER"/>
+	</db-entity>
+	<db-entity name="v_trip">
 		<db-attribute name="description" type="VARCHAR" length="1000000"/>
 		<db-attribute name="end_date" type="DATE" isMandatory="true"/>
 		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isGenerated="true" isMandatory="true"/>
+		<db-attribute name="name" type="VARCHAR" isMandatory="true" length="1024"/>
+		<db-attribute name="slug" type="VARCHAR" isMandatory="true" length="1024"/>
 		<db-attribute name="start_date" type="DATE" isMandatory="true"/>
+		<db-attribute name="status" type="VARCHAR" length="1024"/>
+	</db-entity>
+	<db-entity name="v_event">
+		<db-attribute name="description" type="VARCHAR" length="1000000"/>
+		<db-attribute name="end_date" type="DATE" isMandatory="true"/>
+		<db-attribute name="end_time" type="TIME"/>
+		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isGenerated="true" isMandatory="true"/>
+		<db-attribute name="person" type="VARCHAR" length="1024"/>
+		<db-attribute name="route_id" type="INTEGER"/>
+		<db-attribute name="spot_id" type="INTEGER"/>
+		<db-attribute name="start_date" type="DATE" isMandatory="true"/>
+		<db-attribute name="start_time" type="TIME"/>
 		<db-attribute name="title" type="VARCHAR" isMandatory="true" length="1024"/>
-		<db-attribute name="trip_id" type="INTEGER" isMandatory="true"/>
+		<db-attribute name="trip_id" type="INTEGER"/>
 	</db-entity>
 	<obj-entity name="DrivingRoute" className="vacation.data.DrivingRoute" dbEntityName="v_route">
 		<obj-attribute name="color" type="java.lang.String" db-attribute-path="color"/>
@@ -52,6 +84,17 @@
 		<obj-attribute name="durationMin" type="int" db-attribute-path="duration_min"/>
 		<obj-attribute name="name" type="java.lang.String" db-attribute-path="name"/>
 		<obj-attribute name="slug" type="java.lang.String" db-attribute-path="slug"/>
+	</obj-entity>
+	<obj-entity name="JournalEntry" className="vacation.data.JournalEntry" dbEntityName="v_journal_entry">
+		<obj-attribute name="author" type="java.lang.String" db-attribute-path="author"/>
+		<obj-attribute name="date" type="java.time.LocalDate" db-attribute-path="date"/>
+		<obj-attribute name="text" type="java.lang.String" db-attribute-path="text"/>
+		<obj-attribute name="title" type="java.lang.String" db-attribute-path="title"/>
+	</obj-entity>
+	<obj-entity name="Photo" className="vacation.data.Photo" dbEntityName="v_photo">
+		<obj-attribute name="caption" type="java.lang.String" db-attribute-path="caption"/>
+		<obj-attribute name="filename" type="java.lang.String" db-attribute-path="filename"/>
+		<obj-attribute name="taken" type="java.time.LocalDateTime" db-attribute-path="taken"/>
 	</obj-entity>
 	<obj-entity name="RouteStop" className="vacation.data.RouteStop" dbEntityName="v_route_stop">
 		<obj-attribute name="sortOrder" type="int" db-attribute-path="sort_order"/>
@@ -64,21 +107,37 @@
 		<obj-attribute name="lon" type="double" db-attribute-path="lon"/>
 		<obj-attribute name="name" type="java.lang.String" db-attribute-path="name"/>
 		<obj-attribute name="slug" type="java.lang.String" db-attribute-path="slug"/>
-		<obj-attribute name="status" type="java.lang.String" db-attribute-path="status"/>
 		<obj-attribute name="url" type="java.lang.String" db-attribute-path="url"/>
 	</obj-entity>
-	<obj-entity name="Trip" className="vacation.data.Trip" dbEntityName="v_trip">
-		<obj-attribute name="end" type="java.time.LocalDate" db-attribute-path="end_date"/>
-		<obj-attribute name="name" type="java.lang.String" db-attribute-path="name"/>
-		<obj-attribute name="start" type="java.time.LocalDate" db-attribute-path="start_date"/>
+	<obj-entity name="Visit" className="vacation.data.Visit" dbEntityName="v_visit">
+		<obj-attribute name="date" type="java.time.LocalDate" db-attribute-path="date"/>
+		<obj-attribute name="notes" type="java.lang.String" db-attribute-path="notes"/>
+		<obj-attribute name="status" type="java.lang.String" db-attribute-path="status"/>
 	</obj-entity>
-	<obj-entity name="TripEvent" className="vacation.data.TripEvent" dbEntityName="v_trip_event">
+	<obj-entity name="Trip" className="vacation.data.Trip" dbEntityName="v_trip">
 		<obj-attribute name="description" type="java.lang.String" db-attribute-path="description"/>
 		<obj-attribute name="end" type="java.time.LocalDate" db-attribute-path="end_date"/>
+		<obj-attribute name="name" type="java.lang.String" db-attribute-path="name"/>
+		<obj-attribute name="slug" type="java.lang.String" db-attribute-path="slug"/>
 		<obj-attribute name="start" type="java.time.LocalDate" db-attribute-path="start_date"/>
+		<obj-attribute name="status" type="java.lang.String" db-attribute-path="status"/>
+	</obj-entity>
+	<obj-entity name="CalendarEvent" className="vacation.data.CalendarEvent" dbEntityName="v_event">
+		<obj-attribute name="description" type="java.lang.String" db-attribute-path="description"/>
+		<obj-attribute name="end" type="java.time.LocalDate" db-attribute-path="end_date"/>
+		<obj-attribute name="endTime" type="java.time.LocalTime" db-attribute-path="end_time"/>
+		<obj-attribute name="person" type="java.lang.String" db-attribute-path="person"/>
+		<obj-attribute name="start" type="java.time.LocalDate" db-attribute-path="start_date"/>
+		<obj-attribute name="startTime" type="java.time.LocalTime" db-attribute-path="start_time"/>
 		<obj-attribute name="title" type="java.lang.String" db-attribute-path="title"/>
 	</obj-entity>
 	<db-relationship name="routeStops" source="v_route" target="v_route_stop" toMany="true">
+		<db-attribute-pair source="id" target="route_id"/>
+	</db-relationship>
+	<db-relationship name="trip" source="v_route" target="v_trip">
+		<db-attribute-pair source="trip_id" target="id"/>
+	</db-relationship>
+	<db-relationship name="events" source="v_route" target="v_event" toMany="true">
 		<db-attribute-pair source="id" target="route_id"/>
 	</db-relationship>
 	<db-relationship name="route" source="v_route_stop" target="v_route">
@@ -90,16 +149,74 @@
 	<db-relationship name="routeStops" source="v_spot" target="v_route_stop" toMany="true">
 		<db-attribute-pair source="id" target="spot_id"/>
 	</db-relationship>
-	<db-relationship name="events" source="v_trip" target="v_trip_event" toMany="true">
-		<db-attribute-pair source="id" target="trip_id"/>
+	<db-relationship name="visits" source="v_spot" target="v_visit" toMany="true">
+		<db-attribute-pair source="id" target="spot_id"/>
 	</db-relationship>
-	<db-relationship name="trip" source="v_trip_event" target="v_trip">
+	<db-relationship name="spot" source="v_visit" target="v_spot">
+		<db-attribute-pair source="spot_id" target="id"/>
+	</db-relationship>
+	<db-relationship name="trip" source="v_visit" target="v_trip">
 		<db-attribute-pair source="trip_id" target="id"/>
 	</db-relationship>
+	<db-relationship name="visits" source="v_trip" target="v_visit" toMany="true">
+		<db-attribute-pair source="id" target="trip_id"/>
+	</db-relationship>
+	<db-relationship name="events" source="v_spot" target="v_event" toMany="true">
+		<db-attribute-pair source="id" target="spot_id"/>
+	</db-relationship>
+	<db-relationship name="photos" source="v_spot" target="v_photo" toMany="true">
+		<db-attribute-pair source="id" target="spot_id"/>
+	</db-relationship>
+	<db-relationship name="events" source="v_trip" target="v_event" toMany="true">
+		<db-attribute-pair source="id" target="trip_id"/>
+	</db-relationship>
+	<db-relationship name="journalEntries" source="v_trip" target="v_journal_entry" toMany="true">
+		<db-attribute-pair source="id" target="trip_id"/>
+	</db-relationship>
+	<db-relationship name="photos" source="v_trip" target="v_photo" toMany="true">
+		<db-attribute-pair source="id" target="trip_id"/>
+	</db-relationship>
+	<db-relationship name="routes" source="v_trip" target="v_route" toMany="true">
+		<db-attribute-pair source="id" target="trip_id"/>
+	</db-relationship>
+	<db-relationship name="trip" source="v_event" target="v_trip">
+		<db-attribute-pair source="trip_id" target="id"/>
+	</db-relationship>
+	<db-relationship name="spot" source="v_event" target="v_spot">
+		<db-attribute-pair source="spot_id" target="id"/>
+	</db-relationship>
+	<db-relationship name="route" source="v_event" target="v_route">
+		<db-attribute-pair source="route_id" target="id"/>
+	</db-relationship>
+	<db-relationship name="trip" source="v_journal_entry" target="v_trip">
+		<db-attribute-pair source="trip_id" target="id"/>
+	</db-relationship>
+	<db-relationship name="trip" source="v_photo" target="v_trip">
+		<db-attribute-pair source="trip_id" target="id"/>
+	</db-relationship>
+	<db-relationship name="spot" source="v_photo" target="v_spot">
+		<db-attribute-pair source="spot_id" target="id"/>
+	</db-relationship>
 	<obj-relationship name="routeStops" source="DrivingRoute" target="RouteStop" deleteRule="Cascade" db-relationship-path="routeStops"/>
+	<obj-relationship name="trip" source="DrivingRoute" target="Trip" deleteRule="Nullify" db-relationship-path="trip"/>
+	<obj-relationship name="events" source="DrivingRoute" target="CalendarEvent" deleteRule="Nullify" db-relationship-path="events"/>
+	<obj-relationship name="trip" source="JournalEntry" target="Trip" deleteRule="Nullify" db-relationship-path="trip"/>
+	<obj-relationship name="trip" source="Photo" target="Trip" deleteRule="Nullify" db-relationship-path="trip"/>
+	<obj-relationship name="spot" source="Photo" target="Spot" deleteRule="Nullify" db-relationship-path="spot"/>
 	<obj-relationship name="route" source="RouteStop" target="DrivingRoute" deleteRule="Nullify" db-relationship-path="route"/>
 	<obj-relationship name="spot" source="RouteStop" target="Spot" deleteRule="Nullify" db-relationship-path="spot"/>
 	<obj-relationship name="routeStops" source="Spot" target="RouteStop" deleteRule="Deny" db-relationship-path="routeStops"/>
-	<obj-relationship name="events" source="Trip" target="TripEvent" deleteRule="Cascade" db-relationship-path="events"/>
-	<obj-relationship name="trip" source="TripEvent" target="Trip" deleteRule="Nullify" db-relationship-path="trip"/>
+	<obj-relationship name="visits" source="Spot" target="Visit" deleteRule="Cascade" db-relationship-path="visits"/>
+	<obj-relationship name="spot" source="Visit" target="Spot" deleteRule="Nullify" db-relationship-path="spot"/>
+	<obj-relationship name="trip" source="Visit" target="Trip" deleteRule="Nullify" db-relationship-path="trip"/>
+	<obj-relationship name="visits" source="Trip" target="Visit" deleteRule="Cascade" db-relationship-path="visits"/>
+	<obj-relationship name="events" source="Spot" target="CalendarEvent" deleteRule="Nullify" db-relationship-path="events"/>
+	<obj-relationship name="photos" source="Spot" target="Photo" deleteRule="Nullify" db-relationship-path="photos"/>
+	<obj-relationship name="events" source="Trip" target="CalendarEvent" deleteRule="Cascade" db-relationship-path="events"/>
+	<obj-relationship name="journalEntries" source="Trip" target="JournalEntry" deleteRule="Cascade" db-relationship-path="journalEntries"/>
+	<obj-relationship name="photos" source="Trip" target="Photo" deleteRule="Nullify" db-relationship-path="photos"/>
+	<obj-relationship name="routes" source="Trip" target="DrivingRoute" deleteRule="Nullify" db-relationship-path="routes"/>
+	<obj-relationship name="trip" source="CalendarEvent" target="Trip" deleteRule="Nullify" db-relationship-path="trip"/>
+	<obj-relationship name="spot" source="CalendarEvent" target="Spot" deleteRule="Nullify" db-relationship-path="spot"/>
+	<obj-relationship name="route" source="CalendarEvent" target="DrivingRoute" deleteRule="Nullify" db-relationship-path="route"/>
 </data-map>

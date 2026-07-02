@@ -1,35 +1,52 @@
 [
 	{
+		"slug": "budardalur-2026",
 		"name": "Búðardalur 2026",
+		"status": "planning",
 		"start": "2026-07-12",
 		"end": "2026-07-19",
+		"description": "Vika í Dölunum — gistum á Búðarbraut 3 og gerum út þaðan: Dalirnir, Snæfellsnes, Strandir og Vestfirðirnir.",
 		"events": [
 			{
 				"title": "Ekið vestur: yfir Kaldadal",
 				"start": "2026-07-12",
+				"route": "komudagur",
 				"description": "Lagt af stað frá Hraunteigi — Þingvellir, Kaldidalur, Hraunfossar, Reykholt og ís á Erpsstöðum á leiðinni. 229 km, ~3:36 í akstur."
 			},
 			{
 				"title": "Innritun í húsið",
 				"start": "2026-07-12",
+				"spot": "gisting",
 				"description": "Húsið er okkar frá og með deginum."
 			},
 			{
 				"title": "Ísferð á Erpsstaði (tillaga)",
 				"start": "2026-07-13",
+				"spot": "erpsstadir",
 				"description": "Heimagerður ís og dýrin skoðuð."
 			},
 			{
 				"title": "Vestfjarðaleiðangur (tillaga)",
 				"start": "2026-07-15",
 				"end": "2026-07-16",
+				"route": "vestfirdir-sudur",
 				"description": "Látrabjarg, Rauðisandur og Dynjandi — gist eina nótt fyrir vestan."
 			},
 			{
 				"title": "Skil á húsinu",
 				"start": "2026-07-19",
+				"spot": "gisting",
 				"description": "Pakkað saman og haldið heim."
 			}
 		]
+	},
+	{
+		"slug": "austurland-2027",
+		"name": "Austurland 2027",
+		"status": "idea",
+		"start": "2027-07-10",
+		"end": "2027-07-17",
+		"description": "Hugmynd að næstu ferð: vika fyrir austan. Allt ómótað enn — staðir, leiðir og dagsetningar eftir hentugleika.",
+		"events": []
 	}
 ]

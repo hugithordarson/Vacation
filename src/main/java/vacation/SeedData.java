@@ -21,7 +21,8 @@ import vacation.data.DrivingRoute;
 import vacation.data.RouteStop;
 import vacation.data.Spot;
 import vacation.data.Trip;
-import vacation.data.TripEvent;
+import vacation.data.CalendarEvent;
+import vacation.data.Visit;
 
 /**
  * Populates the (in-memory) DB from the JSON datasets in woresources on startup.
@@ -32,14 +33,14 @@ public class SeedData {
 
 	private static final Logger logger = LoggerFactory.getLogger( SeedData.class );
 
-	// DTOs mirroring the JSON structure — dates as ISO strings
-	private record SpotJSON( String slug, String name, String category, double lat, double lon, String description, String url, String status, String image ) {}
+	// DTOs mirroring the JSON structure — dates as ISO strings, relations as slugs
+	private record SpotJSON( String slug, String name, String category, double lat, double lon, String description, String url, String status, String image, String trip ) {}
 
-	private record RouteJSON( String slug, String name, String color, int distanceKm, int durationMin, String description, List<String> spots ) {}
+	private record RouteJSON( String slug, String name, String color, int distanceKm, int durationMin, String description, List<String> spots, String trip ) {}
 
-	private record EventJSON( String title, String start, String end, String description ) {}
+	private record EventJSON( String title, String start, String end, String description, String spot, String route, String person ) {}
 
-	private record TripJSON( String name, String start, String end, List<EventJSON> events ) {}
+	private record TripJSON( String slug, String name, String status, String start, String end, String description, List<EventJSON> events ) {}
 
 	public static void load() {
 		final ObjectContext oc = VacationCore.newContext();
@@ -50,6 +51,19 @@ public class SeedData {
 		}
 
 		final Map<String, Spot> spotsBySlug = new HashMap<>();
+		final Map<String, DrivingRoute> routesBySlug = new HashMap<>();
+		final Map<String, Trip> tripsBySlug = new HashMap<>();
+
+		for( final TripJSON json : SeedData.<TripJSON> parse( "trips.json", new TypeToken<List<TripJSON>>() {}.getType() ) ) {
+			final Trip trip = oc.newObject( Trip.class );
+			trip.setSlug( json.slug() );
+			trip.setName( json.name() );
+			trip.setStatus( json.status() );
+			trip.setStart( LocalDate.parse( json.start() ) );
+			trip.setEnd( LocalDate.parse( json.end() ) );
+			trip.setDescription( json.description() );
+			tripsBySlug.put( json.slug(), trip );
+		}
 
 		for( final SpotJSON json : SeedData.<SpotJSON> parse( "spots.json", new TypeToken<List<SpotJSON>>() {}.getType() ) ) {
 			final Spot spot = oc.newObject( Spot.class );
@@ -60,9 +74,16 @@ public class SeedData {
 			spot.setLon( json.lon() );
 			spot.setDescription( json.description() );
 			spot.setUrl( json.url() );
-			spot.setStatus( json.status() );
 			spot.setImage( json.image() );
 			spotsBySlug.put( json.slug(), spot );
+
+			// The JSON entry's trip/status describe our plan to go there — that's a Visit, not part of the location
+			if( json.trip() != null || json.status() != null ) {
+				final Visit visit = oc.newObject( Visit.class );
+				visit.setSpot( spot );
+				visit.setTrip( tripsBySlug.get( json.trip() ) );
+				visit.setStatus( json.status() );
+			}
 		}
 
 		for( final RouteJSON json : SeedData.<RouteJSON> parse( "routes.json", new TypeToken<List<RouteJSON>>() {}.getType() ) ) {
@@ -73,6 +94,8 @@ public class SeedData {
 			route.setDistanceKm( json.distanceKm() );
 			route.setDurationMin( json.durationMin() );
 			route.setDescription( json.description() );
+			route.setTrip( tripsBySlug.get( json.trip() ) );
+			routesBySlug.put( json.slug(), route );
 
 			int sortOrder = 0;
 
@@ -91,24 +114,31 @@ public class SeedData {
 			}
 		}
 
+		// Trip events come nested in trips.json; standalone events (belonging to no trip) from events.json
 		for( final TripJSON json : SeedData.<TripJSON> parse( "trips.json", new TypeToken<List<TripJSON>>() {}.getType() ) ) {
-			final Trip trip = oc.newObject( Trip.class );
-			trip.setName( json.name() );
-			trip.setStart( LocalDate.parse( json.start() ) );
-			trip.setEnd( LocalDate.parse( json.end() ) );
-
 			for( final EventJSON eventJSON : json.events() == null ? List.<EventJSON> of() : json.events() ) {
-				final TripEvent event = oc.newObject( TripEvent.class );
-				event.setTrip( trip );
-				event.setTitle( eventJSON.title() );
-				event.setStart( LocalDate.parse( eventJSON.start() ) );
-				event.setEnd( LocalDate.parse( eventJSON.end() != null ? eventJSON.end() : eventJSON.start() ) );
-				event.setDescription( eventJSON.description() );
+				createEvent( oc, eventJSON, tripsBySlug.get( json.slug() ), spotsBySlug, routesBySlug );
 			}
+		}
+
+		for( final EventJSON json : SeedData.<EventJSON> parse( "events.json", new TypeToken<List<EventJSON>>() {}.getType() ) ) {
+			createEvent( oc, json, null, spotsBySlug, routesBySlug );
 		}
 
 		oc.commitChanges();
 		logger.info( "Seeded DB from JSON datasets" );
+	}
+
+	private static void createEvent( final ObjectContext oc, final EventJSON json, final Trip trip, final Map<String, Spot> spotsBySlug, final Map<String, DrivingRoute> routesBySlug ) {
+		final CalendarEvent event = oc.newObject( CalendarEvent.class );
+		event.setTrip( trip );
+		event.setTitle( json.title() );
+		event.setStart( LocalDate.parse( json.start() ) );
+		event.setEnd( LocalDate.parse( json.end() != null ? json.end() : json.start() ) );
+		event.setDescription( json.description() );
+		event.setPerson( json.person() );
+		event.setSpot( json.spot() != null ? spotsBySlug.get( json.spot() ) : null );
+		event.setRoute( json.route() != null ? routesBySlug.get( json.route() ) : null );
 	}
 
 	private static <T> List<T> parse( final String resourceName, final Type type ) {

@@ -1,41 +1,64 @@
-<wo:PageWrapper title="Dagatalið" width="1100px">
-	<h1>Dagatalið</h1>
-	<p style="color: #555">Búðardalur &middot; 12.&ndash;19. júlí 2026</p>
+<wo:PageWrapper title="$pageTitle" width="1200px">
+	<h1><wo:str value="$heading" /></h1>
 
-	<div style="overflow-x: auto; margin-top: 16px">
-		<div style="display: grid; grid-template-columns: repeat(8, minmax(115px, 1fr)); gap: 6px; min-width: 980px">
+	<p style="font-size: 1.15em; margin: 16px 0">
+		<wo:link href="$prevMonthLink" style="text-decoration: none">&larr;</wo:link>
+		<strong style="margin: 0 12px"><wo:str value="$monthTitle" /></strong>
+		<wo:link href="$nextMonthLink" style="text-decoration: none">&rarr;</wo:link>
+		<wo:if condition="$allMode" negate="$true">
+			<span style="margin-left: 16px; font-size: 0.8em"><a href="/calendar/">Sjá allt planið &rarr;</a></span>
+		</wo:if>
+	</p>
 
-			<wo:repetition list="$days" item="$currentDay">
-				<div style="text-align: center; font-weight: 600; font-size: 0.95em; padding: 10px 2px; background: #14385c; color: #fff; border-radius: 6px 6px 0 0">
-					<wo:str value="$currentDayHeaderLabel" />
-				</div>
+	<div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; min-width: 900px">
+		<wo:repetition list="$dayNames" item="$currentDayName">
+			<div style="text-align: center; font-weight: 600; font-size: 0.85em; padding: 6px 2px; background: #14385c; color: #fff; border-radius: 6px 6px 0 0">
+				<wo:str value="$currentDayName" />
+			</div>
+		</wo:repetition>
+	</div>
+
+	<wo:repetition list="$weeks" item="$currentWeek">
+		<div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; margin-top: 2px; min-width: 900px">
+
+			<wo:repetition list="$currentWeek.cells" item="$currentCell">
+				<wo:container elementName="div" style="$currentCell.numberStyle"><wo:str value="$currentCell.number" /></wo:container>
 			</wo:repetition>
 
-			<wo:repetition list="$periodEvents" item="$currentEvent">
-				<wo:container elementName="div" style="$currentPeriodEventStyle" title="$currentEvent.description">
-					<div style="background: #1f78b4; color: #fff; border-radius: 6px; padding: 8px 12px; font-size: 0.95em">
-						<strong><wo:str value="$currentEvent.title" /></strong>
-						<span style="opacity: 0.8">&middot; <wo:str value="$currentEvent.spanLabel" /></span>
-					</div>
+			<wo:repetition list="$currentWeek.bars" item="$currentBar">
+				<wo:container elementName="div" style="$currentBar.style" title="$currentBar.tooltip">
+					<wo:if condition="$currentBar.linked">
+						<wo:link href="$currentBar.href" style="color: #fff"><strong><wo:str value="$currentBar.title" /></strong></wo:link>
+					</wo:if>
+					<wo:if condition="$currentBar.linked" negate="$true">
+						<strong><wo:str value="$currentBar.title" /></strong>
+					</wo:if>
+					<span style="opacity: 0.75">&middot; <wo:str value="$currentBar.label" /></span>
 				</wo:container>
 			</wo:repetition>
 
-			<wo:repetition list="$days" item="$currentDay">
-				<wo:container elementName="div" style="$currentDayCellStyle">
-					<div style="min-height: 190px; height: 100%; background: #f0f4f8; border-radius: 0 0 6px 6px; padding: 6px; box-sizing: border-box">
-						<wo:repetition list="$currentDaySingleEvents" item="$currentEvent">
-							<wo:container elementName="div" title="$currentEvent.description">
-								<div style="background: #fff; border-left: 3px solid #33a02c; border-radius: 4px; padding: 7px 8px; margin-bottom: 6px; font-size: 0.88em; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1)">
+			<wo:repetition list="$currentWeek.cells" item="$currentCell">
+				<wo:container elementName="div" style="$currentCell.contentStyle">
+					<wo:repetition list="$currentCell.events" item="$currentEvent">
+						<wo:container elementName="div" title="$currentEvent.description">
+							<div style="background: #fff; border-left: 3px solid #33a02c; border-radius: 4px; padding: 5px 6px; margin-bottom: 4px; font-size: 0.78em; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1)">
+								<wo:if condition="$currentEventHasLink">
+									<wo:link href="$currentEventHref"><wo:str value="$currentEvent.title" /></wo:link>
+								</wo:if>
+								<wo:if condition="$currentEventHasLink" negate="$true">
 									<wo:str value="$currentEvent.title" />
-								</div>
-							</wo:container>
-						</wo:repetition>
-					</div>
+								</wo:if>
+								<wo:if condition="$currentEvent.person">
+									<span style="color: #777">&middot; <wo:str value="$currentEvent.person" /></span>
+								</wo:if>
+							</div>
+						</wo:container>
+					</wo:repetition>
 				</wo:container>
 			</wo:repetition>
 
 		</div>
-	</div>
+	</wo:repetition>
 
-	<p style="color: #777; font-size: 0.85em; margin-top: 12px">Haltu músinni yfir viðburði til að sjá nánari lýsingu.</p>
+	<p style="color: #777; font-size: 0.85em; margin-top: 12px">Haltu músinni yfir viðburði til að sjá nánari lýsingu. Ferðir eru dökkbláar, ferðaviðburðir bláir og fjölskylduviðburðir fjólubláir.</p>
 </wo:PageWrapper>
