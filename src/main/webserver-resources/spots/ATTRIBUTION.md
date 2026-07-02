@@ -33,3 +33,12 @@ All images from Wikimedia Commons via Wikipedia page summaries (free licenses �
 - `vigur.jpg` — geotagged Commons image [File:Vigur 01.JPG](https://commons.wikimedia.org/wiki/File:Vigur_01.JPG)
 - `helgafell.jpg` — geotagged Commons image [File:Helgafell (52388601203).jpg](https://commons.wikimedia.org/wiki/File:Helgafell_(52388601203).jpg)
 - `hellulaug.jpg` — geotagged Commons image [File:Hellulaug 20150823 141102.jpg](https://commons.wikimedia.org/wiki/File:Hellulaug_20150823_141102.jpg)
+- `vatnsdalsholar.jpg` — from [https://is.wikipedia.org/wiki/Vatnsdalsh%C3%B3lar](https://is.wikipedia.org/wiki/Vatnsdalsh%C3%B3lar), original: https://upload.wikimedia.org/wikipedia/commons/9/99/Vatnsdalholar.jpg
+- `hvitserkur.jpg` — from [https://en.wikipedia.org/wiki/Hv%C3%ADtserkur](https://en.wikipedia.org/wiki/Hv%C3%ADtserkur), original: https://upload.wikimedia.org/wikipedia/commons/d/d6/Hv%C3%ADtserkur.JPG
+- `kolugljufur.jpg` — from [https://is.wikipedia.org/wiki/Koluglj%C3%BAfur](https://is.wikipedia.org/wiki/Koluglj%C3%BAfur), original: https://upload.wikimedia.org/wikipedia/commons/c/cf/Kolufoss_waterfall_water_flowing_downstream%2C_July_2019.jpg
+- `borgarvirki.jpg` — from [https://is.wikipedia.org/wiki/Borgarvirki](https://is.wikipedia.org/wiki/Borgarvirki), original: https://upload.wikimedia.org/wikipedia/commons/c/cd/Borgarvirki.jpg
+- `thingeyrar.jpg` — from [https://is.wikipedia.org/wiki/%C3%9Eingeyrakirkja](https://is.wikipedia.org/wiki/%C3%9Eingeyrakirkja), original: https://upload.wikimedia.org/wikipedia/commons/5/5a/Thingeyrar_Kirche_01.jpg
+- `bordeyri.jpg` — from [https://en.wikipedia.org/wiki/Bor%C3%B0eyri](https://en.wikipedia.org/wiki/Bor%C3%B0eyri), original: https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Bor%C3%B0eyri_s%C3%A9%C3%B0_fr%C3%A1_fj%C3%B6ru.jpg/3840px-Bor%C3%B0eyri_s%C3%A9%C3%B0_fr%C3%A1_fj%C3%B6ru.jpg
+- `bjarg.jpg` — from [https://is.wikipedia.org/wiki/Bjarg_%28Mi%C3%B0fir%C3%B0i%29](https://is.wikipedia.org/wiki/Bjarg_%28Mi%C3%B0fir%C3%B0i%29), original: https://upload.wikimedia.org/wikipedia/commons/3/34/Bjarg1.jpg
+- `selasetrid.jpg` — from [https://is.wikipedia.org/wiki/Selasetur_%C3%8Dslands](https://is.wikipedia.org/wiki/Selasetur_%C3%8Dslands), original: https://upload.wikimedia.org/wikipedia/commons/2/22/Selasafnid-1.png
+- `thristapar.jpg` — geotagged Commons image [File:2005-05-25 14 27 28 Iceland-Þingeyrar.JPG](https://commons.wikimedia.org/wiki/File:2005-05-25_14_27_28_Iceland-%C3%9Eingeyrar.JPG)

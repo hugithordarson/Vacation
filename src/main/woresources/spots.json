@@ -429,5 +429,114 @@
 		"description": "Fallegasti foss Vestfjarða — hundrað metra breiður brúðarslæðufoss í Arnarfirði.",
 		"image": "spots/dynjandi.jpg",
 		"trip": "budardalur-2026"
+	},
+	{
+		"slug": "bordeyri",
+		"name": "Borðeyri",
+		"category": "Bær",
+		"lat": 65.2075,
+		"lon": -21.0988,
+		"status": "tillaga",
+		"description": "Eitt minnsta þorp landsins og gamall verslunarstaður við Hrútafjörð — komið niður af Laxárdalsheiði beint í kaffistopp.",
+		"trip": "budardalur-2026",
+		"image": "spots/bordeyri.jpg"
+	},
+	{
+		"slug": "bjarg",
+		"name": "Bjarg í Miðfirði",
+		"category": "Söguslóðir",
+		"lat": 65.2664,
+		"lon": -20.81,
+		"status": "tillaga",
+		"description": "Fæðingarstaður Grettis sterka Ásmundarsonar — minnisvarði um Gretti og Ásdísi móður hans, stutt frá vegi 704.",
+		"trip": "budardalur-2026",
+		"image": "spots/bjarg.jpg"
+	},
+	{
+		"slug": "selasetrid",
+		"name": "Selasetur Íslands",
+		"category": "Safn",
+		"lat": 65.3953,
+		"lon": -20.9478,
+		"status": "tillaga",
+		"description": "Selasetrið á Hvammstanga — selafræðsla fyrir alla fjölskylduna og upphafspunktur hringsins um Vatnsnes.",
+		"trip": "budardalur-2026",
+		"image": "spots/selasetrid.jpg"
+	},
+	{
+		"slug": "illugastadir",
+		"name": "Illugastaðir á Vatnsnesi",
+		"category": "Náttúra",
+		"lat": 65.608,
+		"lon": -20.8775,
+		"status": "tillaga",
+		"description": "Selalátur með skoðunarpalli — og sögusvið Natansmála 1828, morðanna sem enduðu með síðustu aftöku Íslandssögunnar á Þrístöpum.",
+		"trip": "budardalur-2026"
+	},
+	{
+		"slug": "hvitserkur",
+		"name": "Hvítserkur",
+		"category": "Náttúra",
+		"lat": 65.6059,
+		"lon": -20.6366,
+		"status": "tillaga",
+		"description": "15 metra brimsorfinn drangur við austanvert Vatnsnes — nashyrningur eða dreki að drekka, eftir smekk. Fjaran fær á lágfjöru.",
+		"trip": "budardalur-2026",
+		"image": "spots/hvitserkur.jpg"
+	},
+	{
+		"slug": "borgarvirki",
+		"name": "Borgarvirki",
+		"category": "Söguslóðir",
+		"lat": 65.4748,
+		"lon": -20.5972,
+		"status": "tillaga",
+		"description": "Stuðlabergsborgin milli Vesturhóps og Víðidals, notuð sem virki til forna — stutt labb upp og útsýni yfir allt héraðið.",
+		"trip": "budardalur-2026",
+		"image": "spots/borgarvirki.jpg"
+	},
+	{
+		"slug": "kolugljufur",
+		"name": "Kolugljúfur",
+		"category": "Náttúra",
+		"lat": 65.3319,
+		"lon": -20.5696,
+		"status": "tillaga",
+		"description": "Kolufossar steypast í gljúfrið sem tröllskessan Kola á að hafa grafið — rétt við veg 715 í Víðidal.",
+		"trip": "budardalur-2026",
+		"image": "spots/kolugljufur.jpg"
+	},
+	{
+		"slug": "thingeyrar",
+		"name": "Þingeyrar",
+		"category": "Söguslóðir",
+		"lat": 65.555,
+		"lon": -20.4043,
+		"status": "tillaga",
+		"description": "Klausturstaður frá 1133 þar sem margar Íslendingasögur voru færðar í letur — steinkirkjan frá 1877 stendur ein á sléttunni milli Hóps og Húnavatns.",
+		"trip": "budardalur-2026",
+		"image": "spots/thingeyrar.jpg"
+	},
+	{
+		"slug": "thristapar",
+		"name": "Þrístapar",
+		"category": "Söguslóðir",
+		"lat": 65.5024,
+		"lon": -20.3989,
+		"status": "tillaga",
+		"description": "Hér fór fram síðasta aftaka á Íslandi 1830 — Agnes og Friðrik, framhald sögunnar frá Illugastöðum. Minnismerki við hólana þrjá.",
+		"trip": "budardalur-2026",
+		"image": "spots/thristapar.jpg"
+	},
+	{
+		"slug": "vatnsdalsholar",
+		"name": "Vatnsdalshólar",
+		"category": "Náttúra",
+		"lat": 65.5018,
+		"lon": -20.3788,
+		"status": "kannski",
+		"description": "Hólarnir óteljandi í mynni Vatnsdals — ein af þremur 'óteljandi' náttúruundrum landsins ásamt eyjum Breiðafjarðar (sem við sjáum af Klofningshringnum) og vötnum Arnarvatnsheiðar.",
+		"trip": "budardalur-2026",
+		"image": "spots/vatnsdalsholar.jpg"
 	}
 ]

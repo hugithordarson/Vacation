@@ -102,5 +102,26 @@
 			"stykkisholmur"
 		],
 		"trip": "budardalur-2026"
+	},
+	{
+		"slug": "vatnsdalur",
+		"name": "Austur í Vatnsdal",
+		"color": "#c62828",
+		"distanceKm": 111,
+		"durationMin": 97,
+		"description": "Dagsferð austur í Húnaþing: yfir Laxárdalsheiði (59) á Borðeyri og þjóðveg eitt að Vatnsdalshólum. Vatnsnesið, Víðidalur og sögusvið Natansmála og Grettis sögu í leiðinni. Vegalengd aðra leið.",
+		"spots": [
+			"bordeyri",
+			"bjarg",
+			"selasetrid",
+			"illugastadir",
+			"hvitserkur",
+			"borgarvirki",
+			"kolugljufur",
+			"thingeyrar",
+			"thristapar",
+			"vatnsdalsholar"
+		],
+		"trip": "budardalur-2026"
 	}
 ]
