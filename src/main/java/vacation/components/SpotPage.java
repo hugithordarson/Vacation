@@ -3,7 +3,7 @@ package vacation.components;
 import com.webobjects.appserver.WOContext;
 
 import app.VacationComponent;
-import vacation.Spot;
+import vacation.data.Spot;
 
 public class SpotPage extends VacationComponent {
 

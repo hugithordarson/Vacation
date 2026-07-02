@@ -5,8 +5,8 @@ import java.util.List;
 import com.webobjects.appserver.WOContext;
 
 import app.VacationComponent;
-import vacation.Spot;
 import vacation.Spots;
+import vacation.data.Spot;
 
 public class PhotosPage extends VacationComponent {
 

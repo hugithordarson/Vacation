@@ -1,0 +1,35 @@
+[
+	{
+		"name": "Búðardalur 2026",
+		"start": "2026-07-12",
+		"end": "2026-07-19",
+		"events": [
+			{
+				"title": "Ekið vestur: yfir Kaldadal",
+				"start": "2026-07-12",
+				"description": "Lagt af stað frá Hraunteigi — Þingvellir, Kaldidalur, Hraunfossar, Reykholt og ís á Erpsstöðum á leiðinni. 229 km, ~3:36 í akstur."
+			},
+			{
+				"title": "Innritun í húsið",
+				"start": "2026-07-12",
+				"description": "Húsið er okkar frá og með deginum."
+			},
+			{
+				"title": "Ísferð á Erpsstaði (tillaga)",
+				"start": "2026-07-13",
+				"description": "Heimagerður ís og dýrin skoðuð."
+			},
+			{
+				"title": "Vestfjarðaleiðangur (tillaga)",
+				"start": "2026-07-15",
+				"end": "2026-07-16",
+				"description": "Látrabjarg, Rauðisandur og Dynjandi — gist eina nótt fyrir vestan."
+			},
+			{
+				"title": "Skil á húsinu",
+				"start": "2026-07-19",
+				"description": "Pakkað saman og haldið heim."
+			}
+		]
+	}
+]

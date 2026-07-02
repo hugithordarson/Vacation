@@ -10,8 +10,9 @@ import com.webobjects.appserver.WOContext;
 
 import app.VacationComponent;
 import vacation.Routes;
-import vacation.Spot;
 import vacation.Spots;
+import vacation.data.DrivingRoute;
+import vacation.data.Spot;
 
 /**
  * A Leaflet map showing all spots and driving routes. Expects Leaflet's CSS/JS to be included by the containing page.
@@ -52,7 +53,17 @@ public class SpotMap extends VacationComponent {
 	}
 
 	public String routesJSON() {
-		return Routes.asJSON();
+		final List<Map<String, Object>> result = new ArrayList<>();
+
+		for( final DrivingRoute route : Routes.all() ) {
+			final Map<String, Object> map = new LinkedHashMap<>();
+			map.put( "slug", route.slug() );
+			map.put( "name", route.name() );
+			map.put( "color", route.color() );
+			result.add( map );
+		}
+
+		return new GsonBuilder().create().toJson( result );
 	}
 
 	public String style() {

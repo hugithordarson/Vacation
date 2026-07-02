@@ -10,8 +10,9 @@ import com.webobjects.appserver.WOContext;
 
 import app.VacationComponent;
 import vacation.Events;
-import vacation.Trip;
-import vacation.TripEvent;
+import vacation.Trips;
+import vacation.data.Trip;
+import vacation.data.TripEvent;
 
 /**
  * Week-grid calendar for the trip: one column per day, period events as bars spanning
@@ -30,7 +31,7 @@ public class CalendarPage extends VacationComponent {
 	}
 
 	public Trip trip() {
-		return Trip.CURRENT;
+		return Trips.current();
 	}
 
 	public List<LocalDate> days() {

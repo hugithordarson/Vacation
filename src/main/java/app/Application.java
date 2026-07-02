@@ -6,10 +6,11 @@ import com.webobjects.appserver.WOResponse;
 import er.extensions.appserver.ERXApplication;
 import er.extensions.routes.RouteInvocation;
 import er.extensions.routes.RouteTable;
-import vacation.DrivingRoute;
 import vacation.Routes;
-import vacation.Spot;
+import vacation.SeedData;
 import vacation.Spots;
+import vacation.data.DrivingRoute;
+import vacation.data.Spot;
 import vacation.components.CalendarPage;
 import vacation.components.FrontPage;
 import vacation.components.MapPage;
@@ -20,6 +21,8 @@ import vacation.components.SpotPage;
 public class Application extends ERXApplication {
 
 	public Application() {
+		VacationCore.runtime();
+		SeedData.load();
 		setupRoutes();
 	}
 
