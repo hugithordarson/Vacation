@@ -2,7 +2,7 @@
 	<h1><wo:str value="$trip.name" /></h1>
 	<p><strong><wo:str value="$trip.spanLabel" /></strong> — <wo:str value="$trip.description" /></p>
 
-	<wo:SpotMap height="520px" />
+	<wo:SpotMap height="520px" trip="$trip" />
 	<p><a href="/map/">Skoða kortið í fullri stærð &rarr;</a></p>
 
 	<h2>Bíltúrarnir</h2>
@@ -23,7 +23,8 @@
 		<wo:repetition list="$trips" item="$currentTrip">
 			<li style="margin: 6px 0">
 				<wo:link href="$currentTripLink"><wo:str value="$currentTrip.name" /></wo:link>
-				<span style="color: #777">&middot; <wo:str value="$currentTrip.spanLabel" /> &middot; <wo:str value="$currentTrip.statusLabel" /></span>
+				<span style="color: #777">&middot; <wo:str value="$currentTrip.spanLabel" /> &middot; <wo:str value="$currentTrip.statusLabel" /> &middot;</span>
+				<wo:link href="$currentTripMapLink">kortið</wo:link>
 			</li>
 		</wo:repetition>
 	</ul>

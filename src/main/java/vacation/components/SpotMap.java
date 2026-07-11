@@ -13,10 +13,11 @@ import vacation.Routes;
 import vacation.Spots;
 import vacation.data.DrivingRoute;
 import vacation.data.Spot;
+import vacation.data.Trip;
 
 /**
- * A Leaflet map showing all spots and driving routes. Expects Leaflet's CSS/JS to be included by the containing page.
- * Bindings: height (CSS height for the map, defaults to 600px)
+ * A Leaflet map showing spots and driving routes. Expects Leaflet's CSS/JS to be included by the containing page.
+ * Bindings: height (CSS height for the map, defaults to 600px), trip (optional — scopes the map to that trip's visits and routes)
  */
 
 public class SpotMap extends VacationComponent {
@@ -30,10 +31,22 @@ public class SpotMap extends VacationComponent {
 		return false;
 	}
 
+	private Trip trip() {
+		return (Trip)valueForBinding( "trip" );
+	}
+
+	private List<Spot> scopedSpots() {
+		return trip() == null ? Spots.all() : Spots.forTrip( trip() );
+	}
+
+	private List<DrivingRoute> scopedRoutes() {
+		return trip() == null ? Routes.all() : trip().routes();
+	}
+
 	public String spotsJSON() {
 		final List<Map<String, Object>> result = new ArrayList<>();
 
-		for( final Spot spot : Spots.all() ) {
+		for( final Spot spot : scopedSpots() ) {
 			final Map<String, Object> map = new LinkedHashMap<>();
 			map.put( "slug", spot.slug() );
 			map.put( "name", spot.name() );
@@ -55,7 +68,7 @@ public class SpotMap extends VacationComponent {
 	public String routesJSON() {
 		final List<Map<String, Object>> result = new ArrayList<>();
 
-		for( final DrivingRoute route : Routes.all() ) {
+		for( final DrivingRoute route : scopedRoutes() ) {
 			final Map<String, Object> map = new LinkedHashMap<>();
 			map.put( "slug", route.slug() );
 			map.put( "name", route.name() );

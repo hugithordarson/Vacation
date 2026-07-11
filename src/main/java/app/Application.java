@@ -33,9 +33,9 @@ public class Application extends ERXApplication {
 
 	private void setupRoutes() {
 		RouteTable.defaultRouteTable().map( "/", FrontPage.class );
-		RouteTable.defaultRouteTable().map( "/map/", MapPage.class );
+		RouteTable.defaultRouteTable().map( "/map/*", this::mapPage );
 		RouteTable.defaultRouteTable().map( "/calendar/*", this::calendarPage );
-		RouteTable.defaultRouteTable().map( "/photos/", PhotosPage.class );
+		RouteTable.defaultRouteTable().map( "/photos/*", this::photosPage );
 		RouteTable.defaultRouteTable().map( "/spot/*", this::spotPage );
 		RouteTable.defaultRouteTable().map( "/route/*", this::routePage );
 		RouteTable.defaultRouteTable().map( "/route-geo/*", this::routeGeometry );
@@ -81,6 +81,32 @@ public class Application extends ERXApplication {
 		response.setStatus( 404 );
 		response.setContent( message );
 		return response;
+	}
+
+	private WOActionResults mapPage( RouteInvocation invocation ) {
+		final String slug = lastPathComponent( invocation, "/map/" );
+		final Trip trip = slug.isEmpty() ? null : Trips.bySlug( slug );
+
+		if( !slug.isEmpty() && trip == null ) {
+			return notFound( "Engin ferð með þessari slóð" );
+		}
+
+		final MapPage page = pageWithName( MapPage.class, invocation.context() );
+		page.trip = trip;
+		return page;
+	}
+
+	private WOActionResults photosPage( RouteInvocation invocation ) {
+		final String slug = lastPathComponent( invocation, "/photos/" );
+		final Trip trip = slug.isEmpty() ? null : Trips.bySlug( slug );
+
+		if( !slug.isEmpty() && trip == null ) {
+			return notFound( "Engin ferð með þessari slóð" );
+		}
+
+		final PhotosPage page = pageWithName( PhotosPage.class, invocation.context() );
+		page.trip = trip;
+		return page;
 	}
 
 	private WOActionResults calendarPage( RouteInvocation invocation ) {

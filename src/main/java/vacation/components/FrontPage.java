@@ -33,6 +33,10 @@ public class FrontPage extends VacationComponent {
 		return "/calendar/" + currentTrip.slug();
 	}
 
+	public String currentTripMapLink() {
+		return "/map/" + currentTrip.slug();
+	}
+
 	public List<DrivingRoute> routes() {
 		return Routes.all();
 	}
