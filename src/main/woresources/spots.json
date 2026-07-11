@@ -538,5 +538,34 @@
 		"description": "Hólarnir óteljandi í mynni Vatnsdals — ein af þremur 'óteljandi' náttúruundrum landsins ásamt eyjum Breiðafjarðar (sem við sjáum af Klofningshringnum) og vötnum Arnarvatnsheiðar.",
 		"trip": "budardalur-2026",
 		"image": "spots/vatnsdalsholar.jpg"
+	},
+	{
+		"slug": "nyidalur",
+		"name": "Nýidalur",
+		"category": "Náttúra",
+		"lat": 64.7359,
+		"lon": -18.0746,
+		"description": "Skálinn í miðju hálendinu við rætur Tungnafellsjökuls — stoppið okkar á miðri Sprengisandsleið í ágúst 2025.",
+		"trip": "neskaupstadur-2025"
+	},
+	{
+		"slug": "aldeyjarfoss",
+		"name": "Aldeyjarfoss",
+		"category": "Náttúra",
+		"lat": 65.3664,
+		"lon": -17.337,
+		"description": "Skjálfandafljót fellur fram af hálendisbrúninni í svartri stuðlabergsumgjörð — norðurendi Sprengisandsleiðar.",
+		"trip": "neskaupstadur-2025",
+		"image": "spots/aldeyjarfoss.jpg"
+	},
+	{
+		"slug": "neskaupstadur",
+		"name": "Neskaupstaður",
+		"category": "Bær",
+		"lat": 65.1487,
+		"lon": -13.6889,
+		"description": "Áfangastaðurinn austur á fjörðum — kaupstaðurinn undir Nípunni í Norðfirði.",
+		"trip": "neskaupstadur-2025",
+		"image": "spots/neskaupstadur.jpg"
 	}
 ]

@@ -48,5 +48,14 @@
 		"end": "2027-07-17",
 		"description": "Hugmynd að næstu ferð: vika fyrir austan. Allt ómótað enn — staðir, leiðir og dagsetningar eftir hentugleika.",
 		"events": []
+	},
+	{
+		"slug": "neskaupstadur-2025",
+		"name": "Neskaupstaður 2025",
+		"status": "done",
+		"start": "2025-08-09",
+		"end": "2025-08-09",
+		"description": "Dagleiðangurinn mikli austur: Reykjavík → Neskaupstaður yfir Sprengisand (F26) — 676 km og hálendið þvert á einum degi, með stoppi í Nýjadal.",
+		"events": []
 	}
 ]

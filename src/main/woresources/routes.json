@@ -123,5 +123,19 @@
 			"vatnsdalsholar"
 		],
 		"trip": "budardalur-2026"
+	},
+	{
+		"slug": "sprengisandur",
+		"name": "Yfir Sprengisand í Neskaupstað",
+		"color": "#546e7a",
+		"distanceKm": 680,
+		"durationMin": 682,
+		"description": "Leiðin sem var ekin 9. ágúst 2025: úr bænum um Hrauneyjar upp á Sprengisandsleið (F26), yfir hálendið um Nýjadal, niður hjá Aldeyjarfossi, sunnan Mývatns um Skútustaði og austur í Norðfjörð.",
+		"spots": [
+			"nyidalur",
+			"aldeyjarfoss",
+			"neskaupstadur"
+		],
+		"trip": "neskaupstadur-2025"
 	}
 ]
