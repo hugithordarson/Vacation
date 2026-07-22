@@ -175,5 +175,39 @@
 			"dalatangi"
 		],
 		"trip": "neskaupstadur-2026"
+	},
+	{
+		"slug": "vodlavik",
+		"name": "Í Vöðlavík",
+		"color": "#00897b",
+		"distanceKm": 43,
+		"durationMin": 54,
+		"description": "Ekið 2025: gegnum Norðfjarðargöng á Eskifjörð og jeppaslóðann yfir Vöðlavíkurheiði niður í eyðivíkina. Vegalengd aðra leið.",
+		"spots": [
+			"vodlavik"
+		],
+		"trip": "neskaupstadur-2025"
+	},
+	{
+		"slug": "oddsskard",
+		"name": "Yfir Oddsskarð í heimsókn til Jóns Knúts og Estherar",
+		"color": "#f9a825",
+		"distanceKm": 31,
+		"durationMin": 44,
+		"description": "Ekið 2025: gamli vegurinn yfir Oddsskarð — upp hjá skíðasvæðinu, gegnum gömlu göngin frá 1977 í 632 m hæð og niður hjá Eskifirði til Reyðarfjarðar. (Leiðin er handsaumuð gegnum gömlu göngin, sem eru merkt lokuð í OSM.) Vegalengd aðra leið.",
+		"spots": [
+			"reydarfjordur"
+		],
+		"trip": "neskaupstadur-2025"
+	},
+	{
+		"slug": "heimferd-2025",
+		"name": "Heimferðin: Þórdalsheiði, Öxi og suðurleiðin",
+		"color": "#3949ab",
+		"distanceKm": 659,
+		"durationMin": 575,
+		"description": "Heimferðin 2025: frá sumarhúsinu á Reyðarfjörð, gamli fjallvegurinn yfir Þórdalsheiði (F936) upp á veg 95 í Skriðdal, Öxi (939) niður í Berufjörð og þjóðvegur eitt suður um land alla leið heim á Hraunteig.",
+		"spots": [],
+		"trip": "neskaupstadur-2025"
 	}
 ]

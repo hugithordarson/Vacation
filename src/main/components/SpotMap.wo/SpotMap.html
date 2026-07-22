@@ -68,7 +68,16 @@
 
 	const routes = <wo:str value="$routesJSON" escapeHTML="false" />;
 
+	// Routes are grouped per trip; on maps spanning several trips a layer control lets you toggle each trip's routes
+	const tripGroups = {};
+
 	routes.forEach( route => {
+		const groupName = route.tripName || 'Annað';
+
+		if( !tripGroups[groupName] ) {
+			tripGroups[groupName] = L.layerGroup().addTo( map );
+		}
+
 		fetch( `/route-geo/${route.slug}` )
 			.then( response => response.json() )
 			.then( doc => {
@@ -78,7 +87,11 @@
 						<span style="color: #555">${doc.distanceKm} km</span><br>
 						<a href="/route/${route.slug}">Nánar</a>
 					` )
-					.addTo( map );
+					.addTo( tripGroups[groupName] );
 			} );
 	} );
+
+	if( Object.keys( tripGroups ).length > 1 ) {
+		L.control.layers( null, tripGroups, { collapsed: false, position: 'topright' } ).addTo( map );
+	}
 </script>

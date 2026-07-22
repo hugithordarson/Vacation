@@ -73,6 +73,7 @@ public class SpotMap extends VacationComponent {
 			map.put( "slug", route.slug() );
 			map.put( "name", route.name() );
 			map.put( "color", route.color() );
+			map.put( "tripName", route.trip() == null ? null : route.trip().name() );
 			result.add( map );
 		}
 

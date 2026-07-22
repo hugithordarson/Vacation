@@ -49,3 +49,6 @@ All images from Wikimedia Commons via Wikipedia page summaries (free licenses �
 - `lodmundarfjordur.jpg` — from [https://is.wikipedia.org/wiki/Lo%C3%B0mundarfj%C3%B6r%C3%B0ur](https://is.wikipedia.org/wiki/Lo%C3%B0mundarfj%C3%B6r%C3%B0ur), original: https://upload.wikimedia.org/wikipedia/commons/9/93/Lodmundarfjordur.jpg
 - `dalatangi.jpg` — from [https://is.wikipedia.org/wiki/Dalatangi](https://is.wikipedia.org/wiki/Dalatangi), original: https://upload.wikimedia.org/wikipedia/commons/f/f2/Dalatangi.jpg
 - `bakkagerdi.jpg` — from [https://is.wikipedia.org/wiki/Bakkager%C3%B0i](https://is.wikipedia.org/wiki/Bakkager%C3%B0i), original: https://upload.wikimedia.org/wikipedia/commons/c/c8/Borgarfj%C3%B6r%C3%B0ur_eystri_2023_A.jpg
+- `sumarhusid-nordfirdi.jpg` — hero photo from our Airbnb listing (https://www.airbnb.com/rooms/1539957386567816258), © the host — family use, not freely licensed
+- `vodlavik.jpg` — from [https://is.wikipedia.org/wiki/Vöðlavík](https://is.wikipedia.org/wiki/V%C3%B6%C3%B0lav%C3%ADk), original: https://upload.wikimedia.org/wikipedia/commons/3/38/Va%C3%B0lav%C3%ADk.jpg
+- `reydarfjordur.jpg` — from is.wikipedia.org Reyðarfjörður, original: https://upload.wikimedia.org/wikipedia/commons/0/02/Rei%C3%B0arfj%C3%B6r%C3%B0ur04.jpg

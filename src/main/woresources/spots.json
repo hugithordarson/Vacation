@@ -634,5 +634,36 @@
 		"description": "Álfaborgin og lundabyggðin í Hafnarhólma — náttúrulegt stopp á leiðinni í Loðmundarfjörð.",
 		"trip": "neskaupstadur-2026",
 		"image": "spots/bakkagerdi.jpg"
+	},
+	{
+		"slug": "sumarhusid-nordfirdi",
+		"name": "Sumarhúsið í Norðfirði",
+		"category": "Gisting",
+		"lat": 65.1109,
+		"lon": -13.8418,
+		"description": "Sumarhúsið sem við gistum í ágúst 2025: 3 svefnherbergi, 4 rúm, inn með firðinum vestan við bæinn. Staðsetning skv. Airbnb (þokað hnit).",
+		"url": "https://www.airbnb.com/rooms/1539957386567816258",
+		"image": "spots/sumarhusid-nordfirdi.jpg",
+		"trip": "neskaupstadur-2025"
+	},
+	{
+		"slug": "vodlavik",
+		"name": "Vöðlavík",
+		"category": "Náttúra",
+		"lat": 65.0247,
+		"lon": -13.5956,
+		"description": "Eyðivíkin austan Eskifjarðar — sandfjaran, gamla byggðin og björgunarsaga Gerpissvæðisins. Heimsótt á 2025-ferðinni.",
+		"trip": "neskaupstadur-2025",
+		"image": "spots/vodlavik.jpg"
+	},
+	{
+		"slug": "reydarfjordur",
+		"name": "Reyðarfjörður",
+		"category": "Bær",
+		"lat": 65.0341,
+		"lon": -14.2085,
+		"description": "Bærinn við lengsta og lygnasta fjörð Austfjarða — heimsóknarstoppið okkar 2025.",
+		"trip": "neskaupstadur-2025",
+		"image": "spots/reydarfjordur.jpg"
 	}
 ]
