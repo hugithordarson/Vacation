@@ -1,59 +1,81 @@
 package vacation.components;
 
+import java.util.Comparator;
 import java.util.List;
 
 import com.webobjects.appserver.WOContext;
 
 import app.VacationComponent;
-import vacation.Routes;
 import vacation.Spots;
 import vacation.Trips;
-import vacation.data.DrivingRoute;
 import vacation.data.Spot;
 import vacation.data.Trip;
 
+/**
+ * The overview: all trips grouped by lifecycle — in planning, ideas, and completed.
+ * Everything trip-specific lives on the trip's own page.
+ */
+
 public class FrontPage extends VacationComponent {
 
-	public DrivingRoute currentRoute;
 	public Trip currentTrip;
 
 	public FrontPage( WOContext context ) {
 		super( context );
 	}
 
-	public Trip trip() {
-		return Trips.current();
+	public List<Trip> planningTrips() {
+		return Trips.all()
+				.stream()
+				.filter( Trip::planning )
+				.toList();
 	}
 
-	public List<Trip> trips() {
-		return Trips.all();
+	public List<Trip> ideaTrips() {
+		return Trips.all()
+				.stream()
+				.filter( trip -> "idea".equals( trip.status() ) )
+				.toList();
+	}
+
+	public List<Trip> doneTrips() {
+		return Trips.all()
+				.stream()
+				.filter( trip -> "done".equals( trip.status() ) )
+				.sorted( Comparator.comparing( Trip::start ).reversed() )
+				.toList();
+	}
+
+	public boolean hasPlanningTrips() {
+		return !planningTrips().isEmpty();
+	}
+
+	public boolean hasIdeaTrips() {
+		return !ideaTrips().isEmpty();
+	}
+
+	public boolean hasDoneTrips() {
+		return !doneTrips().isEmpty();
 	}
 
 	public String currentTripLink() {
-		return "/calendar/" + currentTrip.slug();
+		return "/trip/" + currentTrip.slug();
 	}
 
-	public String currentTripMapLink() {
-		return "/map/" + currentTrip.slug();
+	/**
+	 * @return The trip's lodging image, for the planning-trip cards
+	 */
+	public String currentTripImage() {
+		return Spots.forTrip( currentTrip )
+				.stream()
+				.filter( spot -> "Gisting".equals( spot.category() ) )
+				.map( Spot::image )
+				.filter( image -> image != null )
+				.findFirst()
+				.orElse( null );
 	}
 
-	public List<DrivingRoute> routes() {
-		return Routes.all();
-	}
-
-	public Spot gisting() {
-		return Spots.bySlug( "gisting" );
-	}
-
-	public boolean hasHouseImage() {
-		return gisting() != null && gisting().image() != null;
-	}
-
-	public String currentRouteLink() {
-		return "/route/" + currentRoute.slug();
-	}
-
-	public String currentRouteDotStyle() {
-		return "color: " + currentRoute.color();
+	public boolean currentTripHasImage() {
+		return currentTripImage() != null;
 	}
 }

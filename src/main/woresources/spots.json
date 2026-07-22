@@ -566,6 +566,73 @@
 		"lon": -13.6889,
 		"description": "Áfangastaðurinn austur á fjörðum — kaupstaðurinn undir Nípunni í Norðfirði.",
 		"trip": "neskaupstadur-2025",
-		"image": "spots/neskaupstadur.jpg"
+		"image": "spots/neskaupstadur.jpg",
+		"visits": [
+			{
+				"trip": "neskaupstadur-2026"
+			}
+		]
+	},
+	{
+		"slug": "kofinn",
+		"name": "Kofinn okkar á Héraði",
+		"category": "Gisting",
+		"lat": 65.33605,
+		"lon": -14.31347,
+		"description": "Airbnb-kofinn: 'off-grid', 2 svefnherbergi, 6 rúm og foss í túnfætinum. Staðsetning skv. Airbnb (þokað hnit) — uppfærist þegar nákvæmt heimilisfang berst.",
+		"url": "https://www.airbnb.com/rooms/1425584760545652273",
+		"image": "spots/kofinn.jpg",
+		"trip": "neskaupstadur-2026"
+	},
+	{
+		"slug": "hengifoss",
+		"name": "Hengifoss",
+		"category": "Náttúra",
+		"lat": 65.0952,
+		"lon": -14.8895,
+		"description": "Þriðji hæsti foss landsins, 128 m, rauð leirlög milli basaltlaga — og Litlanesfoss í stuðlabergsumgjörð á göngunni upp. Um klukkutíma ganga frá bílastæðinu.",
+		"trip": "neskaupstadur-2026",
+		"image": "spots/hengifoss.jpg"
+	},
+	{
+		"slug": "lodmundarfjordur",
+		"name": "Loðmundarfjörður",
+		"category": "Náttúra",
+		"lat": 65.3492,
+		"lon": -13.7723,
+		"description": "Eyðifjörðurinn milli Seyðisfjarðar og Borgarfjarðar eystri — kirkjan á Klyppsstað, Skælingur og alger kyrrð. Fjallvegurinn þangað er ævintýrið sjálft.",
+		"trip": "neskaupstadur-2026",
+		"image": "spots/lodmundarfjordur.jpg"
+	},
+	{
+		"slug": "dalatangi",
+		"name": "Dalatangi",
+		"category": "Náttúra",
+		"lat": 65.2685,
+		"lon": -13.576,
+		"description": "Vitarnir tveir yst á nesinu milli Mjóafjarðar og Seyðisfjarðar — sá eldri frá 1895. Vegurinn út eftir er einn sá afskekktasti á landinu.",
+		"trip": "neskaupstadur-2026",
+		"image": "spots/dalatangi.jpg"
+	},
+	{
+		"slug": "klifbrekkufossar",
+		"name": "Klifbrekkufossar",
+		"category": "Náttúra",
+		"lat": 65.1795,
+		"lon": -14.0816,
+		"status": "tillaga",
+		"description": "Fossastiginn í botni Mjóafjarðar, beint við veginn niður af heiðinni — sjálfsagt stopp á Dalatangaleiðinni.",
+		"trip": "neskaupstadur-2026"
+	},
+	{
+		"slug": "bakkagerdi",
+		"name": "Bakkagerði í Borgarfirði eystri",
+		"category": "Bær",
+		"lat": 65.527,
+		"lon": -13.8161,
+		"status": "tillaga",
+		"description": "Álfaborgin og lundabyggðin í Hafnarhólma — náttúrulegt stopp á leiðinni í Loðmundarfjörð.",
+		"trip": "neskaupstadur-2026",
+		"image": "spots/bakkagerdi.jpg"
 	}
 ]

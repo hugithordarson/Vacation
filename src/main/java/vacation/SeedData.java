@@ -34,7 +34,9 @@ public class SeedData {
 	private static final Logger logger = LoggerFactory.getLogger( SeedData.class );
 
 	// DTOs mirroring the JSON structure — dates as ISO strings, relations as slugs
-	private record SpotJSON( String slug, String name, String category, double lat, double lon, String description, String url, String status, String image, String trip ) {}
+	private record VisitJSON( String trip, String status ) {}
+
+	private record SpotJSON( String slug, String name, String category, double lat, double lon, String description, String url, String status, String image, String trip, List<VisitJSON> visits ) {}
 
 	private record RouteJSON( String slug, String name, String color, int distanceKm, int durationMin, String description, List<String> spots, String trip ) {}
 
@@ -83,6 +85,14 @@ public class SeedData {
 				visit.setSpot( spot );
 				visit.setTrip( tripsBySlug.get( json.trip() ) );
 				visit.setStatus( json.status() );
+			}
+
+			// A spot visited on several trips lists additional visits explicitly
+			for( final VisitJSON visitJSON : json.visits() == null ? List.<VisitJSON> of() : json.visits() ) {
+				final Visit visit = oc.newObject( Visit.class );
+				visit.setSpot( spot );
+				visit.setTrip( tripsBySlug.get( visitJSON.trip() ) );
+				visit.setStatus( visitJSON.status() );
 			}
 		}
 

@@ -1,43 +1,48 @@
 <wo:PageWrapper>
-	<h1><wo:str value="$trip.name" /></h1>
-	<p><strong><wo:str value="$trip.spanLabel" /></strong> — <wo:str value="$trip.description" /></p>
+	<h1>Ferðirnar okkar</h1>
 
-	<wo:SpotMap height="520px" trip="$trip" />
-	<p><a href="/map/">Skoða kortið í fullri stærð &rarr;</a></p>
-
-	<h2>Bíltúrarnir</h2>
-	<ul style="list-style: none; padding: 0">
-		<wo:repetition list="$routes" item="$currentRoute">
-			<li style="margin: 6px 0">
-				<span style="$currentRouteDotStyle">&#9644;</span>
-				<wo:link href="$currentRouteLink"><wo:str value="$currentRoute.name" /></wo:link>
-				<span style="color: #777">&middot; <wo:str value="$currentRoute.distanceKm" /> km</span>
-			</li>
+	<wo:if condition="$hasPlanningTrips">
+		<h2>Í skipulagningu</h2>
+		<wo:repetition list="$planningTrips" item="$currentTrip">
+			<wo:link href="$currentTripLink" style="display: flex; flex-wrap: wrap; align-items: stretch; text-decoration: none; color: inherit; background: #f0f4f8; border-radius: 10px; overflow: hidden; margin-bottom: 12px">
+				<wo:if condition="$currentTripHasImage">
+					<wo:img filename="$currentTripImage" style="width: 300px; height: auto; max-width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; flex: 0 0 auto" />
+				</wo:if>
+				<div style="flex: 1 1 260px; min-width: 240px; padding: 14px 18px">
+					<strong style="font-size: 1.15em"><wo:str value="$currentTrip.name" /></strong>
+					<p style="color: #555; margin: 4px 0"><wo:str value="$currentTrip.spanLabel" /></p>
+					<p style="margin: 8px 0"><wo:str value="$currentTrip.description" /></p>
+					<span style="color: #0b62a4">Skipulagið &rarr;</span>
+				</div>
+			</wo:link>
 		</wo:repetition>
-	</ul>
-
-	<p><a href="/calendar/">Dagatalið — hvað gerum við hvenær? &rarr;</a></p>
-
-	<h2>Ferðirnar</h2>
-	<ul style="list-style: none; padding: 0">
-		<wo:repetition list="$trips" item="$currentTrip">
-			<li style="margin: 6px 0">
-				<wo:link href="$currentTripLink"><wo:str value="$currentTrip.name" /></wo:link>
-				<span style="color: #777">&middot; <wo:str value="$currentTrip.spanLabel" /> &middot; <wo:str value="$currentTrip.statusLabel" /> &middot;</span>
-				<wo:link href="$currentTripMapLink">kortið</wo:link>
-			</li>
-		</wo:repetition>
-	</ul>
-
-	<wo:if condition="$hasHouseImage">
-		<h2>Húsið okkar</h2>
-		<wo:link href="/spot/gisting" style="display: flex; flex-wrap: wrap; align-items: stretch; text-decoration: none; color: inherit; background: #f0f4f8; border-radius: 10px; overflow: hidden">
-			<wo:img filename="$gisting.image" style="width: 300px; height: auto; max-width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; flex: 0 0 auto" />
-			<div style="flex: 1 1 260px; min-width: 240px; padding: 14px 18px">
-				<strong>Húsið okkar við Hvammsfjörð</strong>
-				<p style="color: #555; margin: 8px 0"><wo:str value="$gisting.description" /></p>
-				<span style="color: #0b62a4">Nánar um húsið &rarr;</span>
-			</div>
-		</wo:link>
 	</wo:if>
+
+	<wo:if condition="$hasIdeaTrips">
+		<h2>Hugmyndir</h2>
+		<ul style="list-style: none; padding: 0">
+			<wo:repetition list="$ideaTrips" item="$currentTrip">
+				<li style="margin: 6px 0">
+					<wo:link href="$currentTripLink"><wo:str value="$currentTrip.name" /></wo:link>
+					<span style="color: #777">&middot; <wo:str value="$currentTrip.spanLabel" /></span>
+				</li>
+			</wo:repetition>
+		</ul>
+	</wo:if>
+
+	<wo:if condition="$hasDoneTrips">
+		<h2>Fyrri ferðir</h2>
+		<ul style="list-style: none; padding: 0">
+			<wo:repetition list="$doneTrips" item="$currentTrip">
+				<li style="margin: 6px 0">
+					<wo:link href="$currentTripLink"><wo:str value="$currentTrip.name" /></wo:link>
+					<span style="color: #777">&middot; <wo:str value="$currentTrip.spanLabel" /></span>
+				</li>
+			</wo:repetition>
+		</ul>
+	</wo:if>
+
+	<p style="margin-top: 24px; color: #777">
+		Sameiginlegt: <a href="/map/">allir staðirnir</a> &middot; <a href="/calendar/">fjölskyldudagatalið</a> &middot; <a href="/photos/">allar myndirnar</a>
+	</p>
 </wo:PageWrapper>

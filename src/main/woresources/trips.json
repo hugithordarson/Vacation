@@ -2,7 +2,7 @@
 	{
 		"slug": "budardalur-2026",
 		"name": "Búðardalur 2026",
-		"status": "planning",
+		"status": "done",
 		"start": "2026-07-12",
 		"end": "2026-07-19",
 		"description": "Vika í Dölunum — gistum á Búðarbraut 3 og gerum út þaðan: Dalirnir, Snæfellsnes, Strandir og Vestfirðirnir.",
@@ -41,15 +41,6 @@
 		]
 	},
 	{
-		"slug": "austurland-2027",
-		"name": "Austurland 2027",
-		"status": "idea",
-		"start": "2027-07-10",
-		"end": "2027-07-17",
-		"description": "Hugmynd að næstu ferð: vika fyrir austan. Allt ómótað enn — staðir, leiðir og dagsetningar eftir hentugleika.",
-		"events": []
-	},
-	{
 		"slug": "neskaupstadur-2025",
 		"name": "Neskaupstaður 2025",
 		"status": "done",
@@ -57,5 +48,27 @@
 		"end": "2025-08-09",
 		"description": "Dagleiðangurinn mikli austur: Reykjavík → Neskaupstaður yfir Sprengisand (F26) — 676 km og hálendið þvert á einum degi, með stoppi í Nýjadal.",
 		"events": []
+	},
+	{
+		"slug": "neskaupstadur-2026",
+		"name": "Neskaupstaður 2026",
+		"status": "planning",
+		"start": "2026-08-01",
+		"end": "2026-08-05",
+		"description": "Austur á firði: fimm dagar með bækistöð í 'off-grid' kofanum á Héraði — Norðfjörður, Hérað og firðirnir eftir hentugleika.",
+		"events": [
+			{
+				"title": "Innritun í kofann",
+				"start": "2026-08-01",
+				"spot": "kofinn",
+				"description": "Kofinn er okkar frá og með deginum."
+			},
+			{
+				"title": "Skil á kofanum",
+				"start": "2026-08-05",
+				"spot": "kofinn",
+				"description": "Pakkað saman og haldið heim."
+			}
+		]
 	}
 ]

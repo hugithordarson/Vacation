@@ -137,5 +137,43 @@
 			"neskaupstadur"
 		],
 		"trip": "neskaupstadur-2025"
+	},
+	{
+		"slug": "hengifoss",
+		"name": "Hengifoss",
+		"color": "#2e7d32",
+		"distanceKm": 45,
+		"durationMin": 55,
+		"description": "Frá kofanum inn með Lagarfljóti að vestan (931) að bílastæðinu undir Hengifossi — svo tekur gangan við. Vegalengd aðra leið.",
+		"spots": [
+			"hengifoss"
+		],
+		"trip": "neskaupstadur-2026"
+	},
+	{
+		"slug": "lodmundarfjordur",
+		"name": "Í Loðmundarfjörð",
+		"color": "#7b1fa2",
+		"distanceKm": 96,
+		"durationMin": 111,
+		"description": "Norður í Borgarfjörð eystri (94) og svo fjallveginn suður um Húsavíkurheiði í eyðifjörðinn. Vegalengd aðra leið — drjúgur dagur.",
+		"spots": [
+			"bakkagerdi",
+			"lodmundarfjordur"
+		],
+		"trip": "neskaupstadur-2026"
+	},
+	{
+		"slug": "dalatangi",
+		"name": "Út á Dalatanga",
+		"color": "#ef6c00",
+		"distanceKm": 65,
+		"durationMin": 71,
+		"description": "Yfir Mjóafjarðarheiði (953), niður fossastigann og út eftir öllum norðurströndum Mjóafjarðar á vitann. Vegalengd aðra leið.",
+		"spots": [
+			"klifbrekkufossar",
+			"dalatangi"
+		],
+		"trip": "neskaupstadur-2026"
 	}
 ]

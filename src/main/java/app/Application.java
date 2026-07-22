@@ -22,6 +22,7 @@ import vacation.components.MapPage;
 import vacation.components.PhotosPage;
 import vacation.components.RoutePage;
 import vacation.components.SpotPage;
+import vacation.components.TripPage;
 
 public class Application extends ERXApplication {
 
@@ -33,6 +34,7 @@ public class Application extends ERXApplication {
 
 	private void setupRoutes() {
 		RouteTable.defaultRouteTable().map( "/", FrontPage.class );
+		RouteTable.defaultRouteTable().map( "/trip/*", this::tripPage );
 		RouteTable.defaultRouteTable().map( "/map/*", this::mapPage );
 		RouteTable.defaultRouteTable().map( "/calendar/*", this::calendarPage );
 		RouteTable.defaultRouteTable().map( "/photos/*", this::photosPage );
@@ -81,6 +83,18 @@ public class Application extends ERXApplication {
 		response.setStatus( 404 );
 		response.setContent( message );
 		return response;
+	}
+
+	private WOActionResults tripPage( RouteInvocation invocation ) {
+		final Trip trip = Trips.bySlug( lastPathComponent( invocation, "/trip/" ) );
+
+		if( trip == null ) {
+			return notFound( "Engin ferð með þessari slóð" );
+		}
+
+		final TripPage page = pageWithName( TripPage.class, invocation.context() );
+		page.trip = trip;
+		return page;
 	}
 
 	private WOActionResults mapPage( RouteInvocation invocation ) {
