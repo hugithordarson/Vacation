@@ -70,5 +70,14 @@
 				"description": "Pakkað saman og haldið heim."
 			}
 		]
+	},
+	{
+		"slug": "varmahlid-2026",
+		"name": "Varmahlíð 2026",
+		"status": "done",
+		"start": "2026-02-20",
+		"end": "2026-02-22",
+		"description": "Vetrarhelgi í Skagafirði — bústaður með heitum potti í Varmahlíð. (Á eftir að fylla inn leiðir og staði.)",
+		"events": []
 	}
 ]

@@ -17,7 +17,8 @@
 			"erpsstadir"
 		],
 		"description": "Sunnudagurinn 12. júlí: frá Hraunteigi á Þingvöll, yfir Uxahryggi (52) og niður Kaldadal (550), fram hjá Húsafelli og Hraunfossum (518), um Reykholt og norður Bröttubrekku í Dalina.",
-		"trip": "budardalur-2026"
+		"trip": "budardalur-2026",
+		"status": "ekin"
 	},
 	{
 		"slug": "klofningshringur",
@@ -31,7 +32,8 @@
 			"krossholaborg",
 			"gudrunarlaug"
 		],
-		"trip": "budardalur-2026"
+		"trip": "budardalur-2026",
+		"status": "tillaga"
 	},
 	{
 		"slug": "vestfirdir-sudur",
@@ -47,7 +49,8 @@
 			"raudisandur",
 			"latrabjarg"
 		],
-		"trip": "budardalur-2026"
+		"trip": "budardalur-2026",
+		"status": "tillaga"
 	},
 	{
 		"slug": "dynjandi-heimferd",
@@ -59,7 +62,8 @@
 		"spots": [
 			"dynjandi"
 		],
-		"trip": "budardalur-2026"
+		"trip": "budardalur-2026",
+		"status": "tillaga"
 	},
 	{
 		"slug": "hvalarfoss",
@@ -75,7 +79,8 @@
 			"hvalarfoss",
 			"krossneslaug"
 		],
-		"trip": "budardalur-2026"
+		"trip": "budardalur-2026",
+		"status": "tillaga"
 	},
 	{
 		"slug": "strandir",
@@ -88,7 +93,8 @@
 			"holmavik",
 			"drangsnes"
 		],
-		"trip": "budardalur-2026"
+		"trip": "budardalur-2026",
+		"status": "tillaga"
 	},
 	{
 		"slug": "snaefellsnes",
@@ -101,7 +107,8 @@
 			"helgafell",
 			"stykkisholmur"
 		],
-		"trip": "budardalur-2026"
+		"trip": "budardalur-2026",
+		"status": "ekin"
 	},
 	{
 		"slug": "vatnsdalur",
@@ -122,7 +129,8 @@
 			"thristapar",
 			"vatnsdalsholar"
 		],
-		"trip": "budardalur-2026"
+		"trip": "budardalur-2026",
+		"status": "tillaga"
 	},
 	{
 		"slug": "sprengisandur",
@@ -136,7 +144,8 @@
 			"aldeyjarfoss",
 			"neskaupstadur"
 		],
-		"trip": "neskaupstadur-2025"
+		"trip": "neskaupstadur-2025",
+		"status": "ekin"
 	},
 	{
 		"slug": "hengifoss",
@@ -186,7 +195,8 @@
 		"spots": [
 			"vodlavik"
 		],
-		"trip": "neskaupstadur-2025"
+		"trip": "neskaupstadur-2025",
+		"status": "ekin"
 	},
 	{
 		"slug": "oddsskard",
@@ -198,7 +208,8 @@
 		"spots": [
 			"reydarfjordur"
 		],
-		"trip": "neskaupstadur-2025"
+		"trip": "neskaupstadur-2025",
+		"status": "ekin"
 	},
 	{
 		"slug": "heimferd-2025",
@@ -208,6 +219,47 @@
 		"durationMin": 575,
 		"description": "Heimferðin 2025: frá sumarhúsinu á Reyðarfjörð, gamli fjallvegurinn yfir Þórdalsheiði (F936) upp á veg 95 í Skriðdal, Öxi (939) niður í Berufjörð og þjóðvegur eitt suður um land alla leið heim á Hraunteig.",
 		"spots": [],
-		"trip": "neskaupstadur-2025"
+		"trip": "neskaupstadur-2025",
+		"status": "ekin"
+	},
+	{
+		"slug": "heimferd-kjolur",
+		"name": "Heimferðin um Haukadalsskarð og Kjöl",
+		"color": "#827717",
+		"distanceKm": 466,
+		"durationMin": 641,
+		"status": "ekin",
+		"description": "Heimferð annars bílsins: upp Haukadal og yfir Haukadalsskarð (586/F586) á þjóðveg eitt, norður fyrir og inn Blöndudal (724/731) á Kjalveg (35) — með útúrdúrum á Hveravelli (735) og í Kerlingarfjöll (F347) — svo niður hjá Gullfossi, um Laugarvatn (37/365) og norðan Þingvallavatns (36) heim.",
+		"spots": [
+			"hveravellir",
+			"kerlingarfjoll"
+		],
+		"trip": "budardalur-2026"
+	},
+	{
+		"slug": "varmahlid-nordur",
+		"name": "Norður í Varmahlíð",
+		"color": "#6d4c41",
+		"distanceKm": 370,
+		"durationMin": 334,
+		"status": "ekin",
+		"description": "Febrúarferðin norður — auðvitað ekki vanilluleiðin þegar til kom: um Borgarnes vestur í Búðardal, yfir Laxárdalsheiði (59) á Borðeyri, útúrdúr út Vatnsnes að Hvítserki (711) og svo þjóðvegur eitt í Varmahlíð.",
+		"spots": [
+			"hvitserkur"
+		],
+		"trip": "varmahlid-2026"
+	},
+	{
+		"slug": "skogarbodin",
+		"name": "Í Skógarböðin við Akureyri",
+		"color": "#00acc1",
+		"distanceKm": 100,
+		"durationMin": 92,
+		"status": "ekin",
+		"description": "Dagsferðin úr bústaðnum: þjóðvegur eitt yfir Öxnadalsheiði til Akureyrar og yfir fjörðinn í Skógarböðin í Vaðlaskógi. Vegalengd aðra leið.",
+		"spots": [
+			"skogarbodin"
+		],
+		"trip": "varmahlid-2026"
 	}
 ]

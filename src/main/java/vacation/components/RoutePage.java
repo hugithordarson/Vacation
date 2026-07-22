@@ -33,6 +33,10 @@ public class RoutePage extends VacationComponent {
 		return "/spot/" + currentStop.slug();
 	}
 
+	public String dashArrayJS() {
+		return route.dashed() ? "'8 8'" : "null";
+	}
+
 	public String stopsJSON() {
 		final List<Map<String, Object>> result = new ArrayList<>();
 

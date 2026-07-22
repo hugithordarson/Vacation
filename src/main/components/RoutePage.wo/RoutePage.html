@@ -1,6 +1,11 @@
 <wo:PageWrapper title="$route.name">
 	<h1><wo:str value="$route.name" /></h1>
-	<p style="color: #555; margin-top: 4px"><wo:str value="$route.distanceKm" /> km &middot; ~<wo:str value="$route.durationLabel" /> akstur</p>
+	<p style="color: #555; margin-top: 4px">
+		<wo:str value="$route.distanceKm" /> km &middot; ~<wo:str value="$route.durationLabel" /> akstur
+		<wo:if condition="$route.statusLabel">
+			<span style="color: #b8860b">&middot; <wo:str value="$route.statusLabel" /></span>
+		</wo:if>
+	</p>
 	<p><wo:str value="$route.description" /></p>
 
 	<wo:if condition="$hasStops">
@@ -48,7 +53,7 @@
 		fetch( '/route-geo/<wo:str value="$route.slug" />' )
 			.then( response => response.json() )
 			.then( doc => {
-				const line = L.geoJSON( doc.geometry, { style: { color: '<wo:str value="$route.color" />', weight: 4 } } ).addTo( map );
+				const line = L.geoJSON( doc.geometry, { style: { color: '<wo:str value="$route.color" />', weight: 4, dashArray: <wo:str value="$dashArrayJS" escapeHTML="false" /> } } ).addTo( map );
 				map.fitBounds( line.getBounds().pad( 0.08 ) );
 			} );
 	</script>

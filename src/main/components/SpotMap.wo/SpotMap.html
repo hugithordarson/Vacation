@@ -81,7 +81,7 @@
 		fetch( `/route-geo/${route.slug}` )
 			.then( response => response.json() )
 			.then( doc => {
-				L.geoJSON( doc.geometry, { style: { color: route.color, weight: 4, opacity: 0.7 } } )
+				L.geoJSON( doc.geometry, { style: { color: route.color, weight: 4, opacity: 0.7, dashArray: route.dashed ? '8 8' : null } } )
 					.bindPopup( `
 						<strong>${route.name}</strong><br>
 						<span style="color: #555">${doc.distanceKm} km</span><br>

@@ -14,6 +14,9 @@
 					<wo:container elementName="span" style="$currentRouteDotStyle">&#9644;</wo:container>
 					<wo:link href="$currentRouteLink"><wo:str value="$currentRoute.name" /></wo:link>
 					<span style="color: #777">&middot; <wo:str value="$currentRoute.distanceKm" /> km</span>
+					<wo:if condition="$currentRoute.statusLabel">
+						<span style="color: #b8860b">&middot; <wo:str value="$currentRoute.statusLabel" /></span>
+					</wo:if>
 				</li>
 			</wo:repetition>
 		</ul>

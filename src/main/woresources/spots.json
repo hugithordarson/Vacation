@@ -482,7 +482,12 @@
 		"status": "tillaga",
 		"description": "15 metra brimsorfinn drangur við austanvert Vatnsnes — nashyrningur eða dreki að drekka, eftir smekk. Fjaran fær á lágfjöru.",
 		"trip": "budardalur-2026",
-		"image": "spots/hvitserkur.jpg"
+		"image": "spots/hvitserkur.jpg",
+		"visits": [
+			{
+				"trip": "varmahlid-2026"
+			}
+		]
 	},
 	{
 		"slug": "borgarvirki",
@@ -665,5 +670,47 @@
 		"description": "Bærinn við lengsta og lygnasta fjörð Austfjarða — heimsóknarstoppið okkar 2025.",
 		"trip": "neskaupstadur-2025",
 		"image": "spots/reydarfjordur.jpg"
+	},
+	{
+		"slug": "hveravellir",
+		"name": "Hveravellir",
+		"category": "Laug",
+		"lat": 64.8665,
+		"lon": -19.5531,
+		"description": "Hveravinin á miðjum Kili — hverahrúður, blásandi gufuaugu og laugin góða. Útúrdúr heimferðarinnar 2026.",
+		"trip": "budardalur-2026",
+		"image": "spots/hveravellir.jpg"
+	},
+	{
+		"slug": "kerlingarfjoll",
+		"name": "Kerlingarfjöll (Hveradalir)",
+		"category": "Náttúra",
+		"lat": 64.6838,
+		"lon": -19.3033,
+		"description": "Rýólítfjöllin við Kjöl — Hveradalir með gufustrókum í öllum regnbogans litum. Útúrdúr heimferðarinnar 2026.",
+		"trip": "budardalur-2026",
+		"image": "spots/kerlingarfjoll.jpg"
+	},
+	{
+		"slug": "bustadurinn-varmahlid",
+		"name": "Bústaðurinn í Varmahlíð",
+		"category": "Gisting",
+		"lat": 65.54147,
+		"lon": -19.4664,
+		"description": "Bústaðurinn sem við gistum í febrúar 2026: 3 svefnherbergi, 6 rúm og heitur pottur. Staðsetning skv. Airbnb (þokað hnit).",
+		"url": "https://www.airbnb.com/rooms/28271396",
+		"image": "spots/bustadurinn-varmahlid.jpg",
+		"trip": "varmahlid-2026"
+	},
+	{
+		"slug": "skogarbodin",
+		"name": "Skógarböðin",
+		"category": "Laug",
+		"lat": 65.6699,
+		"lon": -18.0418,
+		"description": "Baðlónið í Vaðlaskógi gegnt Akureyri — heitt vatn milli trjánna með útsýni yfir Eyjafjörð. Heimsótt í febrúar 2026.",
+		"url": "https://www.forestlagoon.is",
+		"trip": "varmahlid-2026",
+		"image": "spots/skogarbodin.jpg"
 	}
 ]

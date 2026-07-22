@@ -38,7 +38,7 @@ public class SeedData {
 
 	private record SpotJSON( String slug, String name, String category, double lat, double lon, String description, String url, String status, String image, String trip, List<VisitJSON> visits ) {}
 
-	private record RouteJSON( String slug, String name, String color, int distanceKm, int durationMin, String description, List<String> spots, String trip ) {}
+	private record RouteJSON( String slug, String name, String color, int distanceKm, int durationMin, String description, List<String> spots, String trip, String status ) {}
 
 	private record EventJSON( String title, String start, String end, String description, String spot, String route, String person ) {}
 
@@ -104,6 +104,7 @@ public class SeedData {
 			route.setDistanceKm( json.distanceKm() );
 			route.setDurationMin( json.durationMin() );
 			route.setDescription( json.description() );
+			route.setStatus( json.status() );
 			route.setTrip( tripsBySlug.get( json.trip() ) );
 			routesBySlug.put( json.slug(), route );
 

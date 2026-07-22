@@ -40,6 +40,7 @@ public abstract class _DrivingRoute extends PersistentObject {
     public static final NumericProperty<Integer> DURATION_MIN = PropertyFactory.createNumeric("durationMin", Integer.class);
     public static final StringProperty<String> NAME = PropertyFactory.createString("name", String.class);
     public static final StringProperty<String> SLUG = PropertyFactory.createString("slug", String.class);
+    public static final StringProperty<String> STATUS = PropertyFactory.createString("status", String.class);
     public static final ListProperty<CalendarEvent> EVENTS = PropertyFactory.createList("events", CalendarEvent.class);
     public static final ListProperty<RouteStop> ROUTE_STOPS = PropertyFactory.createList("routeStops", RouteStop.class);
     public static final EntityProperty<Trip> TRIP = PropertyFactory.createEntity("trip", Trip.class);
@@ -50,6 +51,7 @@ public abstract class _DrivingRoute extends PersistentObject {
     protected int durationMin;
     protected String name;
     protected String slug;
+    protected String status;
 
     protected Object events;
     protected Object routeStops;
@@ -115,6 +117,16 @@ public abstract class _DrivingRoute extends PersistentObject {
         return this.slug;
     }
 
+    public void setStatus(String status) {
+        beforePropertyWrite("status", this.status, status);
+        this.status = status;
+    }
+
+    public String status() {
+        beforePropertyRead("status");
+        return this.status;
+    }
+
     public void addToEvents(CalendarEvent obj) {
         addToManyTarget("events", obj, true);
     }
@@ -168,6 +180,8 @@ public abstract class _DrivingRoute extends PersistentObject {
                 return this.name;
             case "slug":
                 return this.slug;
+            case "status":
+                return this.status;
             case "events":
                 return this.events;
             case "routeStops":
@@ -204,6 +218,9 @@ public abstract class _DrivingRoute extends PersistentObject {
             case "slug":
                 this.slug = (String)val;
                 break;
+            case "status":
+                this.status = (String)val;
+                break;
             case "events":
                 this.events = val;
                 break;
@@ -235,6 +252,7 @@ public abstract class _DrivingRoute extends PersistentObject {
         out.writeInt(this.durationMin);
         out.writeObject(this.name);
         out.writeObject(this.slug);
+        out.writeObject(this.status);
         out.writeObject(this.events);
         out.writeObject(this.routeStops);
         out.writeObject(this.trip);
@@ -249,6 +267,7 @@ public abstract class _DrivingRoute extends PersistentObject {
         this.durationMin = in.readInt();
         this.name = (String)in.readObject();
         this.slug = (String)in.readObject();
+        this.status = (String)in.readObject();
         this.events = in.readObject();
         this.routeStops = in.readObject();
         this.trip = in.readObject();

@@ -28,6 +28,7 @@
 		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isGenerated="true" isMandatory="true"/>
 		<db-attribute name="name" type="VARCHAR" isMandatory="true" length="1024"/>
 		<db-attribute name="slug" type="VARCHAR" isMandatory="true" length="1024"/>
+		<db-attribute name="status" type="VARCHAR" length="1024"/>
 		<db-attribute name="trip_id" type="INTEGER"/>
 	</db-entity>
 	<db-entity name="v_route_stop">
@@ -84,6 +85,7 @@
 		<obj-attribute name="durationMin" type="int" db-attribute-path="duration_min"/>
 		<obj-attribute name="name" type="java.lang.String" db-attribute-path="name"/>
 		<obj-attribute name="slug" type="java.lang.String" db-attribute-path="slug"/>
+		<obj-attribute name="status" type="java.lang.String" db-attribute-path="status"/>
 	</obj-entity>
 	<obj-entity name="JournalEntry" className="vacation.data.JournalEntry" dbEntityName="v_journal_entry">
 		<obj-attribute name="author" type="java.lang.String" db-attribute-path="author"/>
