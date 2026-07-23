@@ -5,6 +5,7 @@ import java.util.List;
 import com.webobjects.appserver.WOContext;
 
 import app.VacationComponent;
+import vacation.SharedAlbum;
 import vacation.Spots;
 import vacation.data.DrivingRoute;
 import vacation.data.Spot;
@@ -56,6 +57,29 @@ public class TripPage extends VacationComponent {
 	}
 
 	public Spot currentImageSpot;
+	public SharedAlbum.AlbumPhoto currentAlbumPhoto;
+
+	/**
+	 * @return Photos from the trip's linked iCloud shared album (empty when none linked or iCloud unreachable)
+	 */
+	public List<SharedAlbum.AlbumPhoto> albumPhotos() {
+		return SharedAlbum.photos( trip.sharedAlbumToken() );
+	}
+
+	public boolean hasAlbumPhotos() {
+		return !albumPhotos().isEmpty();
+	}
+
+	public List<SharedAlbum.AlbumPhoto> albumPreview() {
+		return albumPhotos()
+				.stream()
+				.limit( 12 )
+				.toList();
+	}
+
+	public int albumPhotoCount() {
+		return albumPhotos().size();
+	}
 
 	/**
 	 * @return The trip's spots that have an image

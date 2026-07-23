@@ -23,6 +23,13 @@ public class Trip extends _Trip {
 		return start().datesUntil( end().plusDays( 1 ) ).toList();
 	}
 
+	/**
+	 * @return The public iCloud page of the trip's shared photo album, if one is linked
+	 */
+	public String sharedAlbumURL() {
+		return sharedAlbumToken() == null ? null : "https://www.icloud.com/sharedalbum/#" + sharedAlbumToken();
+	}
+
 	public boolean planning() {
 		return "planning".equals( status() );
 	}

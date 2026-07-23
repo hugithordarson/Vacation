@@ -42,7 +42,7 @@ public class SeedData {
 
 	private record EventJSON( String title, String start, String end, String description, String spot, String route, String person ) {}
 
-	private record TripJSON( String slug, String name, String status, String start, String end, String description, List<EventJSON> events ) {}
+	private record TripJSON( String slug, String name, String status, String start, String end, String description, String sharedAlbum, List<EventJSON> events ) {}
 
 	public static void load() {
 		final ObjectContext oc = VacationCore.newContext();
@@ -64,6 +64,7 @@ public class SeedData {
 			trip.setStart( LocalDate.parse( json.start() ) );
 			trip.setEnd( LocalDate.parse( json.end() ) );
 			trip.setDescription( json.description() );
+			trip.setSharedAlbumToken( json.sharedAlbum() );
 			tripsBySlug.put( json.slug(), trip );
 		}
 

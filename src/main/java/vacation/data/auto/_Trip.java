@@ -39,6 +39,7 @@ public abstract class _Trip extends PersistentObject {
     public static final StringProperty<String> DESCRIPTION = PropertyFactory.createString("description", String.class);
     public static final DateProperty<LocalDate> END = PropertyFactory.createDate("end", LocalDate.class);
     public static final StringProperty<String> NAME = PropertyFactory.createString("name", String.class);
+    public static final StringProperty<String> SHARED_ALBUM_TOKEN = PropertyFactory.createString("sharedAlbumToken", String.class);
     public static final StringProperty<String> SLUG = PropertyFactory.createString("slug", String.class);
     public static final DateProperty<LocalDate> START = PropertyFactory.createDate("start", LocalDate.class);
     public static final StringProperty<String> STATUS = PropertyFactory.createString("status", String.class);
@@ -51,6 +52,7 @@ public abstract class _Trip extends PersistentObject {
     protected String description;
     protected LocalDate end;
     protected String name;
+    protected String sharedAlbumToken;
     protected String slug;
     protected LocalDate start;
     protected String status;
@@ -89,6 +91,16 @@ public abstract class _Trip extends PersistentObject {
     public String name() {
         beforePropertyRead("name");
         return this.name;
+    }
+
+    public void setSharedAlbumToken(String sharedAlbumToken) {
+        beforePropertyWrite("sharedAlbumToken", this.sharedAlbumToken, sharedAlbumToken);
+        this.sharedAlbumToken = sharedAlbumToken;
+    }
+
+    public String sharedAlbumToken() {
+        beforePropertyRead("sharedAlbumToken");
+        return this.sharedAlbumToken;
     }
 
     public void setSlug(String slug) {
@@ -199,6 +211,8 @@ public abstract class _Trip extends PersistentObject {
                 return this.end;
             case "name":
                 return this.name;
+            case "sharedAlbumToken":
+                return this.sharedAlbumToken;
             case "slug":
                 return this.slug;
             case "start":
@@ -235,6 +249,9 @@ public abstract class _Trip extends PersistentObject {
                 break;
             case "name":
                 this.name = (String)val;
+                break;
+            case "sharedAlbumToken":
+                this.sharedAlbumToken = (String)val;
                 break;
             case "slug":
                 this.slug = (String)val;
@@ -279,6 +296,7 @@ public abstract class _Trip extends PersistentObject {
         out.writeObject(this.description);
         out.writeObject(this.end);
         out.writeObject(this.name);
+        out.writeObject(this.sharedAlbumToken);
         out.writeObject(this.slug);
         out.writeObject(this.start);
         out.writeObject(this.status);
@@ -295,6 +313,7 @@ public abstract class _Trip extends PersistentObject {
         this.description = (String)in.readObject();
         this.end = (LocalDate)in.readObject();
         this.name = (String)in.readObject();
+        this.sharedAlbumToken = (String)in.readObject();
         this.slug = (String)in.readObject();
         this.start = (LocalDate)in.readObject();
         this.status = (String)in.readObject();

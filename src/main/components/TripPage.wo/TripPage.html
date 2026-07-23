@@ -24,6 +24,16 @@
 
 	<p><wo:link href="$calendarLink">Dagatalið &rarr;</wo:link></p>
 
+	<wo:if condition="$hasAlbumPhotos">
+		<h2>Myndaalbúmið</h2>
+		<div style="display: flex; gap: 8px; flex-wrap: wrap">
+			<wo:repetition list="$albumPreview" item="$currentAlbumPhoto">
+				<wo:element elementName="img" src="$currentAlbumPhoto.url" style="height: 140px; width: auto; border-radius: 6px; display: block" />
+			</wo:repetition>
+		</div>
+		<p><wo:link href="$trip.sharedAlbumURL">Allt albúmið í iCloud (<wo:str value="$albumPhotoCount" /> myndir) &rarr;</wo:link></p>
+	</wo:if>
+
 	<wo:if condition="$hasImages">
 		<h2>Myndirnar</h2>
 		<wo:link href="$photosLink" style="display: flex; gap: 8px; flex-wrap: wrap; text-decoration: none">

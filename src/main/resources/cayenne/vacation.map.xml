@@ -61,6 +61,7 @@
 		<db-attribute name="end_date" type="DATE" isMandatory="true"/>
 		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isGenerated="true" isMandatory="true"/>
 		<db-attribute name="name" type="VARCHAR" isMandatory="true" length="1024"/>
+		<db-attribute name="shared_album_token" type="VARCHAR" length="1024"/>
 		<db-attribute name="slug" type="VARCHAR" isMandatory="true" length="1024"/>
 		<db-attribute name="start_date" type="DATE" isMandatory="true"/>
 		<db-attribute name="status" type="VARCHAR" length="1024"/>
@@ -120,6 +121,7 @@
 		<obj-attribute name="description" type="java.lang.String" db-attribute-path="description"/>
 		<obj-attribute name="end" type="java.time.LocalDate" db-attribute-path="end_date"/>
 		<obj-attribute name="name" type="java.lang.String" db-attribute-path="name"/>
+		<obj-attribute name="sharedAlbumToken" type="java.lang.String" db-attribute-path="shared_album_token"/>
 		<obj-attribute name="slug" type="java.lang.String" db-attribute-path="slug"/>
 		<obj-attribute name="start" type="java.time.LocalDate" db-attribute-path="start_date"/>
 		<obj-attribute name="status" type="java.lang.String" db-attribute-path="status"/>
