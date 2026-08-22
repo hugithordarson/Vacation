@@ -54,10 +54,28 @@
 		"slug": "neskaupstadur-2026",
 		"name": "Neskaupstaður 2026",
 		"status": "planning",
-		"start": "2026-08-01",
+		"start": "2026-07-31",
 		"end": "2026-08-05",
-		"description": "Austur á firði: fimm dagar með bækistöð í 'off-grid' kofanum á Héraði — Norðfjörður, Hérað og firðirnir eftir hentugleika.",
+		"description": "Austur á firði með viðkomu á Sigló: yfir Kjöl norður 31. júlí, gist í Málarahúsinu, svo austur í kofann á Eiðum — Norðfjörður, Hérað og firðirnir 1.–5. ágúst.",
 		"events": [
+			{
+				"title": "Ekið norður um Kjöl á Siglufjörð",
+				"start": "2026-07-31",
+				"route": "kjolur-siglo",
+				"description": "422 km, ~7:37 í akstur — Gullfoss, Kjölur og Skagafjörður."
+			},
+			{
+				"title": "Gist í Málarahúsinu",
+				"start": "2026-07-31",
+				"spot": "malarahusid-siglufirdi",
+				"description": "Ein nótt á Sigló."
+			},
+			{
+				"title": "Ekið frá Siglufirði austur á Eiðar",
+				"start": "2026-08-01",
+				"route": "siglo-eidar",
+				"description": "337 km, ~5:14 — göngin, Akureyri, Mývatn, Egilsstaðir."
+			},
 			{
 				"title": "Innritun í kofann",
 				"start": "2026-08-01",

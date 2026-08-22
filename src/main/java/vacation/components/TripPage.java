@@ -1,6 +1,8 @@
 package vacation.components;
 
+import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Locale;
 
 import com.webobjects.appserver.WOContext;
 
@@ -70,6 +72,13 @@ public class TripPage extends VacationComponent {
 		return !albumPhotos().isEmpty();
 	}
 
+	/**
+	 * @return True when the trip has an album linked but its photos haven't arrived from iCloud yet
+	 */
+	public boolean albumLoading() {
+		return trip.sharedAlbumToken() != null && albumPhotos().isEmpty();
+	}
+
 	public List<SharedAlbum.AlbumPhoto> albumPreview() {
 		return albumPhotos()
 				.stream()
@@ -106,22 +115,39 @@ public class TripPage extends VacationComponent {
 		return imageSpots().size();
 	}
 
+	public Spot currentGisting;
+
+	private static final DateTimeFormatter STAY_FORMATTER = DateTimeFormatter.ofPattern( "d. MMMM", Locale.of( "is" ) );
+
 	/**
-	 * @return The trip's lodging — its "Gisting"-category spot, if it has one
+	 * @return The trip's lodgings — its "Gisting"-category spots, in visit order (a trip can rent several properties)
 	 */
-	public Spot gisting() {
+	public List<Spot> gistings() {
 		return Spots.forTrip( trip )
 				.stream()
 				.filter( spot -> "Gisting".equals( spot.category() ) )
+				.toList();
+	}
+
+	public boolean hasGistings() {
+		return !gistings().isEmpty();
+	}
+
+	public String currentGistingLink() {
+		return "/spot/" + currentGisting.slug();
+	}
+
+	/**
+	 * @return The stay span of the current lodging on this trip, e.g. "31. júlí – 1. ágúst" — null when the visit is undated
+	 */
+	public String currentGistingStayLabel() {
+		return currentGisting.visits()
+				.stream()
+				.filter( visit -> trip.equals( visit.trip() ) && visit.date() != null )
 				.findFirst()
+				.map( visit -> visit.end() == null || visit.end().equals( visit.date() )
+						? STAY_FORMATTER.format( visit.date() )
+						: STAY_FORMATTER.format( visit.date() ) + " – " + STAY_FORMATTER.format( visit.end() ) )
 				.orElse( null );
-	}
-
-	public boolean hasGistingImage() {
-		return gisting() != null && gisting().image() != null;
-	}
-
-	public String gistingLink() {
-		return "/spot/" + gisting().slug();
 	}
 }

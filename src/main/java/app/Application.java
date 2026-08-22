@@ -11,6 +11,7 @@ import er.extensions.routes.RouteInvocation;
 import er.extensions.routes.RouteTable;
 import vacation.Routes;
 import vacation.SeedData;
+import vacation.SharedAlbum;
 import vacation.Spots;
 import vacation.Trips;
 import vacation.data.DrivingRoute;
@@ -29,6 +30,7 @@ public class Application extends ERXApplication {
 	public Application() {
 		VacationCore.runtime();
 		SeedData.load();
+		SharedAlbum.warmUp( Trips.all().stream().map( Trip::sharedAlbumToken ).toList() );
 		setupRoutes();
 	}
 

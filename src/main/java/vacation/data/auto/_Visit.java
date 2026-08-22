@@ -33,12 +33,14 @@ public abstract class _Visit extends PersistentObject {
     public static final String ID_PK_COLUMN = "id";
 
     public static final DateProperty<LocalDate> DATE = PropertyFactory.createDate("date", LocalDate.class);
+    public static final DateProperty<LocalDate> END = PropertyFactory.createDate("end", LocalDate.class);
     public static final StringProperty<String> NOTES = PropertyFactory.createString("notes", String.class);
     public static final StringProperty<String> STATUS = PropertyFactory.createString("status", String.class);
     public static final EntityProperty<Spot> SPOT = PropertyFactory.createEntity("spot", Spot.class);
     public static final EntityProperty<Trip> TRIP = PropertyFactory.createEntity("trip", Trip.class);
 
     protected LocalDate date;
+    protected LocalDate end;
     protected String notes;
     protected String status;
 
@@ -53,6 +55,16 @@ public abstract class _Visit extends PersistentObject {
     public LocalDate date() {
         beforePropertyRead("date");
         return this.date;
+    }
+
+    public void setEnd(LocalDate end) {
+        beforePropertyWrite("end", this.end, end);
+        this.end = end;
+    }
+
+    public LocalDate end() {
+        beforePropertyRead("end");
+        return this.end;
     }
 
     public void setNotes(String notes) {
@@ -100,6 +112,8 @@ public abstract class _Visit extends PersistentObject {
         switch(propName) {
             case "date":
                 return this.date;
+            case "end":
+                return this.end;
             case "notes":
                 return this.notes;
             case "status":
@@ -122,6 +136,9 @@ public abstract class _Visit extends PersistentObject {
         switch (propName) {
             case "date":
                 this.date = (LocalDate)val;
+                break;
+            case "end":
+                this.end = (LocalDate)val;
                 break;
             case "notes":
                 this.notes = (String)val;
@@ -152,6 +169,7 @@ public abstract class _Visit extends PersistentObject {
     protected void writeState(ObjectOutputStream out) throws IOException {
         super.writeState(out);
         out.writeObject(this.date);
+        out.writeObject(this.end);
         out.writeObject(this.notes);
         out.writeObject(this.status);
         out.writeObject(this.spot);
@@ -162,6 +180,7 @@ public abstract class _Visit extends PersistentObject {
     protected void readState(ObjectInputStream in) throws IOException, ClassNotFoundException {
         super.readState(in);
         this.date = (LocalDate)in.readObject();
+        this.end = (LocalDate)in.readObject();
         this.notes = (String)in.readObject();
         this.status = (String)in.readObject();
         this.spot = in.readObject();

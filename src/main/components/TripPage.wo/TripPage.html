@@ -33,26 +33,37 @@
 		</div>
 		<p><wo:link href="$trip.sharedAlbumURL">Allt albúmið í iCloud (<wo:str value="$albumPhotoCount" /> myndir) &rarr;</wo:link></p>
 	</wo:if>
+	<wo:if condition="$albumLoading">
+		<h2>Myndaalbúmið</h2>
+		<p style="color: #777">Myndirnar eru að berast frá iCloud — endurhlaðið síðuna eftir smástund, eða <wo:link href="$trip.sharedAlbumURL">opnið albúmið beint &rarr;</wo:link></p>
+	</wo:if>
 
 	<wo:if condition="$hasImages">
-		<h2>Myndirnar</h2>
+		<h2>Myndir af stöðum í nágrenninu</h2>
 		<wo:link href="$photosLink" style="display: flex; gap: 8px; flex-wrap: wrap; text-decoration: none">
 			<wo:repetition list="$imagePreview" item="$currentImageSpot">
 				<wo:img filename="$currentImageSpot.image" style="width: 108px; height: 108px; object-fit: cover; border-radius: 6px; display: block" />
 			</wo:repetition>
 		</wo:link>
-		<p><wo:link href="$photosLink">Allar myndirnar (<wo:str value="$imageCount" />) &rarr;</wo:link></p>
+		<p><wo:link href="$photosLink">Allar staðamyndirnar (<wo:str value="$imageCount" />) &rarr;</wo:link></p>
 	</wo:if>
 
-	<wo:if condition="$hasGistingImage">
+	<wo:if condition="$hasGistings">
 		<h2>Gistingin</h2>
-		<wo:link href="$gistingLink" style="display: flex; flex-wrap: wrap; align-items: stretch; text-decoration: none; color: inherit; background: #f0f4f8; border-radius: 10px; overflow: hidden">
-			<wo:img filename="$gisting.image" style="width: 300px; height: auto; max-width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; flex: 0 0 auto" />
-			<div style="flex: 1 1 260px; min-width: 240px; padding: 14px 18px">
-				<strong><wo:str value="$gisting.name" /></strong>
-				<p style="color: #555; margin: 8px 0"><wo:str value="$gisting.description" /></p>
-				<span style="color: #0b62a4">Nánar um gistinguna &rarr;</span>
-			</div>
-		</wo:link>
+		<wo:repetition list="$gistings" item="$currentGisting">
+			<wo:link href="$currentGistingLink" style="display: flex; flex-wrap: wrap; align-items: stretch; text-decoration: none; color: inherit; background: #f0f4f8; border-radius: 10px; overflow: hidden; margin-bottom: 12px">
+				<wo:if condition="$currentGisting.image">
+					<wo:img filename="$currentGisting.image" style="width: 300px; height: auto; max-width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; flex: 0 0 auto" />
+				</wo:if>
+				<div style="flex: 1 1 260px; min-width: 240px; padding: 14px 18px">
+					<strong><wo:str value="$currentGisting.name" /></strong>
+					<wo:if condition="$currentGistingStayLabel">
+						<span style="color: #b8860b">&middot; <wo:str value="$currentGistingStayLabel" /></span>
+					</wo:if>
+					<p style="color: #555; margin: 8px 0"><wo:str value="$currentGisting.description" /></p>
+					<span style="color: #0b62a4">Nánar um gistinguna &rarr;</span>
+				</div>
+			</wo:link>
+		</wo:repetition>
 	</wo:if>
 </wo:PageWrapper>

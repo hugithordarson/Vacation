@@ -584,10 +584,16 @@
 		"category": "Gisting",
 		"lat": 65.33605,
 		"lon": -14.31347,
-		"description": "Airbnb-kofinn: 'off-grid', 2 svefnherbergi, 6 rúm og foss í túnfætinum. Staðsetning skv. Airbnb (þokað hnit) — uppfærist þegar nákvæmt heimilisfang berst.",
+		"description": "Airbnb-kofinn á Eiðum: 'off-grid', 2 svefnherbergi, 6 rúm og foss í túnfætinum. Staðsetning skv. Airbnb (þokað hnit) — uppfærist þegar nákvæmt heimilisfang berst.",
 		"url": "https://www.airbnb.com/rooms/1425584760545652273",
 		"image": "spots/kofinn.jpg",
-		"trip": "neskaupstadur-2026"
+		"visits": [
+			{
+				"trip": "neskaupstadur-2026",
+				"date": "2026-08-01",
+				"end": "2026-08-05"
+			}
+		]
 	},
 	{
 		"slug": "hengifoss",
@@ -712,5 +718,22 @@
 		"url": "https://www.forestlagoon.is",
 		"trip": "varmahlid-2026",
 		"image": "spots/skogarbodin.jpg"
+	},
+	{
+		"slug": "malarahusid-siglufirdi",
+		"name": "Málarahúsið á Siglufirði",
+		"category": "Gisting",
+		"lat": 66.1547,
+		"lon": -18.9085,
+		"description": "Næturgisting fyrri ferðadagsins: 'The Painter's house' — 4 rúm undir fjallshlíðinni á Sigló. Staðsetning skv. Airbnb (þokað hnit).",
+		"url": "https://www.airbnb.com/rooms/809945059653158990",
+		"image": "spots/malarahusid-siglufirdi.jpg",
+		"visits": [
+			{
+				"trip": "neskaupstadur-2026",
+				"date": "2026-07-31",
+				"end": "2026-08-01"
+			}
+		]
 	}
 ]

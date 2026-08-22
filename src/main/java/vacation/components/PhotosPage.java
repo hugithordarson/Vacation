@@ -23,7 +23,7 @@ public class PhotosPage extends VacationComponent {
 	}
 
 	public String heading() {
-		return trip == null ? "Myndirnar" : "Myndirnar: " + trip.name();
+		return trip == null ? "Myndir af stöðum" : "Myndir af stöðum: " + trip.name();
 	}
 
 	public List<Spot> spotsWithImages() {

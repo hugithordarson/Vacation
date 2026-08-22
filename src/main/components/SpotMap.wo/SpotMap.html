@@ -4,10 +4,24 @@
 
 	const map = L.map( 'map' );
 
-	L.tileLayer( 'https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	const kort = L.tileLayer( 'https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		maxZoom: 19,
 		attribution: '&copy; OpenStreetMap'
 	} ).addTo( map );
+
+	const esriImagery = () => L.tileLayer( 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+		maxZoom: 19,
+		attribution: 'Tiles &copy; Esri &mdash; Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community'
+	} );
+
+	// Esri's transparent reference layers: roads (with names) and place/feature labels
+	const esriTransport = L.tileLayer( 'https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19 } );
+	const esriLabels = L.tileLayer( 'https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19 } );
+
+	const loftmynd = esriImagery();
+	const loftmyndMedNofnum = L.layerGroup( [esriImagery(), esriTransport, esriLabels] );
+
+	const baseLayers = { 'Kort': kort, 'Loftmynd': loftmynd, 'Loftmynd með nöfnum': loftmyndMedNofnum };
 
 	const coloredIcon = color => new L.Icon( {
 		iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-${color}.png`,
@@ -91,7 +105,6 @@
 			} );
 	} );
 
-	if( Object.keys( tripGroups ).length > 1 ) {
-		L.control.layers( null, tripGroups, { collapsed: false, position: 'topright' } ).addTo( map );
-	}
+	const overlays = Object.keys( tripGroups ).length > 1 ? tripGroups : null;
+	L.control.layers( baseLayers, overlays, { collapsed: false, position: 'topright' } ).addTo( map );
 </script>

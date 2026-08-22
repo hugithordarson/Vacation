@@ -261,5 +261,29 @@
 			"skogarbodin"
 		],
 		"trip": "varmahlid-2026"
+	},
+	{
+		"slug": "kjolur-siglo",
+		"name": "Norður um Kjöl á Siglufjörð",
+		"color": "#8d6e63",
+		"distanceKm": 422,
+		"durationMin": 457,
+		"description": "Fyrsti leggur ferðarinnar, 31. júlí: upp hjá Gullfossi, Kjölur endilangur (35) og svo norður Skagafjörð út á Siglufjörð. Gist í Málarahúsinu.",
+		"spots": [
+			"malarahusid-siglufirdi"
+		],
+		"trip": "neskaupstadur-2026"
+	},
+	{
+		"slug": "siglo-eidar",
+		"name": "Frá Siglufirði austur á Eiðar",
+		"color": "#26a69a",
+		"distanceKm": 337,
+		"durationMin": 314,
+		"description": "Annar leggur, 1. ágúst: stysta leið austur — Héðinsfjarðargöng, Akureyri, framhjá Mývatni og um Egilsstaði í kofann á Eiðum.",
+		"spots": [
+			"kofinn"
+		],
+		"trip": "neskaupstadur-2026"
 	}
 ]

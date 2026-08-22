@@ -50,6 +50,7 @@
 	</db-entity>
 	<db-entity name="v_visit">
 		<db-attribute name="date" type="DATE"/>
+		<db-attribute name="end_date" type="DATE"/>
 		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isGenerated="true" isMandatory="true"/>
 		<db-attribute name="notes" type="VARCHAR" length="1000000"/>
 		<db-attribute name="spot_id" type="INTEGER" isMandatory="true"/>
@@ -114,6 +115,7 @@
 	</obj-entity>
 	<obj-entity name="Visit" className="vacation.data.Visit" dbEntityName="v_visit">
 		<obj-attribute name="date" type="java.time.LocalDate" db-attribute-path="date"/>
+		<obj-attribute name="end" type="java.time.LocalDate" db-attribute-path="end_date"/>
 		<obj-attribute name="notes" type="java.lang.String" db-attribute-path="notes"/>
 		<obj-attribute name="status" type="java.lang.String" db-attribute-path="status"/>
 	</obj-entity>

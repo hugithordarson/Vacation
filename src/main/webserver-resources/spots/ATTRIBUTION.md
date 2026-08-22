@@ -56,3 +56,4 @@ All images from Wikimedia Commons via Wikipedia page summaries (free licenses �
 - `kerlingarfjoll.jpg` — from [https://is.wikipedia.org/wiki/Kerlingarfj%C3%B6ll](https://is.wikipedia.org/wiki/Kerlingarfj%C3%B6ll), original: https://upload.wikimedia.org/wikipedia/commons/f/f4/Kerlingarfj%C3%B6ll_valley.JPG
 - `bustadurinn-varmahlid.jpg` — hero photo from our Airbnb listing (https://www.airbnb.com/rooms/28271396), © the host — family use, not freely licensed
 - `skogarbodin.jpg` — geotagged Commons image [File:OK view (3808767519).jpg](https://commons.wikimedia.org/wiki/File:OK_view_(3808767519).jpg) — the view over Eyjafjörður from the Vaðlaskógur shore where Skógarböðin sit
+- `malarahusid-siglufirdi.jpg` — hero photo from our Airbnb listing (https://www.airbnb.com/rooms/809945059653158990), © the host — family use, not freely licensed

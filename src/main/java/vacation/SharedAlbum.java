@@ -10,6 +10,8 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,7 +28,11 @@ import com.google.gson.GsonBuilder;
  * The dance: (1) POST to sharedstreams.icloud.com resolves the partition host (HTTP 330
  * with X-Apple-MMe-Host in the body), (2) POST webstream lists photos and their derivative
  * sizes, (3) POST webasseturls resolves short-lived download URLs for chosen derivatives.
- * Results are cached for a few minutes since the asset URLs expire anyway.
+ *
+ * Apple can take 10+ seconds to answer for a large album, so pages never wait on iCloud:
+ * photos() always returns immediately from the cache (possibly empty or stale) and a
+ * refresh runs in the background when the cache is missing or older than the TTL.
+ * Failures are remembered briefly too, so a broken album doesn't trigger a fetch per request.
  */
 
 public class SharedAlbum {
@@ -34,18 +40,36 @@ public class SharedAlbum {
 	private static final Logger logger = LoggerFactory.getLogger( SharedAlbum.class );
 
 	private static final Duration CACHE_TTL = Duration.ofMinutes( 10 );
+	private static final Duration RETRY_AFTER_FAILURE = Duration.ofMinutes( 2 );
+	private static final Duration REQUEST_TIMEOUT = Duration.ofSeconds( 60 );
 
-	private static final HttpClient client = HttpClient.newBuilder().connectTimeout( Duration.ofSeconds( 5 ) ).build();
+	private static final HttpClient client = HttpClient.newBuilder().connectTimeout( Duration.ofSeconds( 10 ) ).build();
 	private static final Gson gson = new GsonBuilder().create();
+	private static final ExecutorService executor = Executors.newSingleThreadExecutor( r -> {
+		final Thread t = new Thread( r, "SharedAlbum-refresh" );
+		t.setDaemon( true );
+		return t;
+	} );
 
 	private static final Map<String, CachedAlbum> cache = new ConcurrentHashMap<>();
 
 	public record AlbumPhoto( String guid, String url, int width, int height, String caption ) {}
 
-	private record CachedAlbum( List<AlbumPhoto> photos, long fetchedAt ) {}
+	/**
+	 * @param photos The last successfully fetched photos (empty if never)
+	 * @param fetchedAt When photos were last fetched successfully (0 if never)
+	 * @param attemptedAt When a fetch was last started (success or failure)
+	 * @param refreshing Whether a background refresh is currently running
+	 */
+	private record CachedAlbum( List<AlbumPhoto> photos, long fetchedAt, long attemptedAt, boolean refreshing ) {
+
+		CachedAlbum withRefreshing( boolean value ) {
+			return new CachedAlbum( photos, fetchedAt, attemptedAt, value );
+		}
+	}
 
 	/**
-	 * @return The album's photos, oldest first — empty on any failure (logged), so pages degrade gracefully
+	 * @return The album's photos from cache, oldest first — possibly empty while the first fetch runs in the background
 	 */
 	public static List<AlbumPhoto> photos( final String token ) {
 
@@ -53,23 +77,50 @@ public class SharedAlbum {
 			return List.of();
 		}
 
-		final CachedAlbum cached = cache.get( token );
+		final CachedAlbum cached = cache.getOrDefault( token, new CachedAlbum( List.of(), 0, 0, false ) );
+		final long now = System.currentTimeMillis();
+		final boolean stale = now - cached.fetchedAt() > CACHE_TTL.toMillis();
+		final boolean recentlyAttempted = now - cached.attemptedAt() < RETRY_AFTER_FAILURE.toMillis();
 
-		if( cached != null && System.currentTimeMillis() - cached.fetchedAt() < CACHE_TTL.toMillis() ) {
-			return cached.photos();
+		if( stale && !cached.refreshing() && !recentlyAttempted ) {
+			refreshInBackground( token );
 		}
 
-		try {
-			final List<AlbumPhoto> photos = fetch( token );
-			cache.put( token, new CachedAlbum( photos, System.currentTimeMillis() ) );
-			return photos;
-		}
-		catch( final Exception e ) {
-			logger.warn( "Failed to fetch shared album {}: {}", token, e.toString() );
+		return cached.photos();
+	}
 
-			// Keep serving stale data if we have it — better than an empty strip
-			return cached != null ? cached.photos() : List.of();
+	/**
+	 * Start fetching the given albums in the background — call at startup so the first visitor finds a warm cache
+	 */
+	public static void warmUp( final List<String> tokens ) {
+		for( final String token : tokens ) {
+			if( token != null && !token.isEmpty() ) {
+				refreshInBackground( token );
+			}
 		}
+	}
+
+	private static synchronized void refreshInBackground( final String token ) {
+		final CachedAlbum current = cache.getOrDefault( token, new CachedAlbum( List.of(), 0, 0, false ) );
+
+		if( current.refreshing() ) {
+			return;
+		}
+
+		cache.put( token, new CachedAlbum( current.photos(), current.fetchedAt(), System.currentTimeMillis(), true ) );
+
+		executor.submit( () -> {
+			try {
+				final long started = System.currentTimeMillis();
+				final List<AlbumPhoto> photos = fetch( token );
+				cache.put( token, new CachedAlbum( photos, System.currentTimeMillis(), started, false ) );
+				logger.info( "Fetched shared album {}: {} photos in {} ms", token, photos.size(), System.currentTimeMillis() - started );
+			}
+			catch( final Exception e ) {
+				logger.warn( "Failed to fetch shared album {}: {}", token, e.toString() );
+				cache.computeIfPresent( token, ( t, c ) -> c.withRefreshing( false ) );
+			}
+		} );
 	}
 
 	@SuppressWarnings("unchecked")
@@ -139,7 +190,7 @@ public class SharedAlbum {
 	private static String resolveHost( final String token ) throws Exception {
 		final HttpRequest request = HttpRequest.newBuilder()
 				.uri( URI.create( "https://sharedstreams.icloud.com/%s/sharedstreams/webstream".formatted( token ) ) )
-				.timeout( Duration.ofSeconds( 10 ) )
+				.timeout( REQUEST_TIMEOUT )
 				.header( "Content-Type", "text/plain" )
 				.POST( HttpRequest.BodyPublishers.ofString( "{\"streamCtag\":null}" ) )
 				.build();
@@ -154,7 +205,7 @@ public class SharedAlbum {
 	private static Map<String, Object> postJSON( final String url, final String body ) throws Exception {
 		final HttpRequest request = HttpRequest.newBuilder()
 				.uri( URI.create( url ) )
-				.timeout( Duration.ofSeconds( 10 ) )
+				.timeout( REQUEST_TIMEOUT )
 				.header( "Content-Type", "text/plain" )
 				.POST( HttpRequest.BodyPublishers.ofString( body ) )
 				.build();
