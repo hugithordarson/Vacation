@@ -1,11 +1,9 @@
 package app;
 
 import org.apache.cayenne.ObjectContext;
-import org.apache.cayenne.access.dbsync.CreateIfNoSchemaStrategy;
-import org.apache.cayenne.access.dbsync.SchemaUpdateStrategyFactory;
+import org.apache.cayenne.configuration.DataNodeDescriptor;
 import org.apache.cayenne.reflect.NonPrefixedBeanAccessor;
 import org.apache.cayenne.runtime.CayenneRuntime;
-import org.apache.cayenne.runtime.CayenneRuntimeBuilder;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -47,9 +45,7 @@ public class VacationCore {
 
 	public static CayenneRuntime runtime() {
 		if( _runtime == null ) {
-			final CayenneRuntimeBuilder builder = CayenneRuntime
-					.builder()
-					.addConfig( "cayenne/cayenne-Vacation.xml" );
+			final DataNodeDescriptor.Builder dnd = DataNodeDescriptor.of( "node1" );
 
 			final HikariConfig config = new HikariConfig();
 
@@ -65,14 +61,18 @@ public class VacationCore {
 				// We override the SchemaUpdateStrategyFactory rather than binding SchemaUpdateStrategy directly:
 				// DefaultSchemaUpdateStrategyFactory reads the strategy from the DataNodeDescriptor and
 				// instantiates it reflectively, never consulting a SchemaUpdateStrategy DI binding.
-				builder.addModule( b -> b.bind( SchemaUpdateStrategyFactory.class ).toInstance( _ -> new CreateIfNoSchemaStrategy() ) );
+				dnd.createSchemaIfNeeded();
 
 				config.setDriverClassName( "org.h2.Driver" );
 				config.setJdbcUrl( "jdbc:h2:mem:vacation" );
 			}
 
-			_runtime = builder
-					.dataSource( new HikariDataSource( config ) )
+			dnd.dataSource( new HikariDataSource( config ) );
+
+			_runtime = CayenneRuntime
+					.of()
+					.addConfig( "cayenne/cayenne-Vacation.xml" )
+					.defaultDataNode( dnd.build() )
 					.build();
 		}
 
