@@ -22,7 +22,7 @@ if [ -z "${JM_PW:-}" ]; then
 fi
 
 echo "== Building"
-mvn clean package -Dlaunch.jvm=/opt/jdk-26/bin/java
+mvn clean package -Dlaunch.jvm=/opt/jdk-27/bin/java
 
 echo "== Moving the old .woa aside (kept as $APP.woa.previous for rollback)"
 ssh "$SERVER" "rm -rf $DEPLOY_DIR/$APP.woa.previous; [ -d $DEPLOY_DIR/$APP.woa ] && mv $DEPLOY_DIR/$APP.woa $DEPLOY_DIR/$APP.woa.previous || true"
