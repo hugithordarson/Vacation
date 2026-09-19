@@ -1,9 +1,6 @@
 er.extensions.ERXProperties.loadOptionalProperties=false
 er.extensions.stackTrace.cleanup=true
 
-# Use the Jetty adaptor from wo-adaptor-jetty. The port comes from ~/WebObjects.properties or -WOPort.
-WOAdaptor=WOAdaptorJetty
-
 # Log4j Configuration
 log4j.loggerFactory=er.extensions.logging.ERXLogger$Factory
 log4j.rootCategory=INFO,A1
