@@ -17,7 +17,7 @@
 		<webobjects.version>5.4.3</webobjects.version>
 
 		<wonder.group>is.rebbi.slim</wonder.group>
-		<wonder.version>8.0.6</wonder.version>
+		<wonder.version>8.0.7</wonder.version>
 
 		<cayenne.version>5.0-M3</cayenne.version>
 	</properties>
