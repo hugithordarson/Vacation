@@ -84,11 +84,6 @@
 		</dependency>
 		<dependency>
 			<groupId>${wonder.group}</groupId>
-			<artifactId>ERLoggingReload4j</artifactId>
-			<version>${wonder.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>${wonder.group}</groupId>
 			<artifactId>AjaxSlim</artifactId>
 			<version>${wonder.version}</version>
 		</dependency>
