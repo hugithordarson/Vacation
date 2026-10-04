@@ -7,8 +7,8 @@ import com.webobjects.appserver.WOActionResults;
 import com.webobjects.appserver.WOResponse;
 
 import er.extensions.appserver.ERXApplication;
-import er.extensions.routes.RouteInvocation;
-import er.extensions.routes.RouteTable;
+import er.extensions.routing.ERXRouter;
+import er.extensions.routing.RouteInvocation;
 import vacation.Routes;
 import vacation.SeedData;
 import vacation.SharedAlbum;
@@ -35,14 +35,16 @@ public class Application extends ERXApplication {
 	}
 
 	private void setupRoutes() {
-		RouteTable.defaultRouteTable().map( "/", FrontPage.class );
-		RouteTable.defaultRouteTable().map( "/trip/*", this::tripPage );
-		RouteTable.defaultRouteTable().map( "/map/*", this::mapPage );
-		RouteTable.defaultRouteTable().map( "/calendar/*", this::calendarPage );
-		RouteTable.defaultRouteTable().map( "/photos/*", this::photosPage );
-		RouteTable.defaultRouteTable().map( "/spot/*", this::spotPage );
-		RouteTable.defaultRouteTable().map( "/route/*", this::routePage );
-		RouteTable.defaultRouteTable().map( "/route-geo/*", this::routeGeometry );
+		ERXRouter.declare( routes -> {
+			routes.map( "/", FrontPage.class );
+			routes.map( "/trip/*", this::tripPage );
+			routes.map( "/map/*", this::mapPage );
+			routes.map( "/calendar/*", this::calendarPage );
+			routes.map( "/photos/*", this::photosPage );
+			routes.map( "/spot/*", this::spotPage );
+			routes.map( "/route/*", this::routePage );
+			routes.map( "/route-geo/*", this::routeGeometry );
+		} );
 	}
 
 	private WOActionResults routePage( RouteInvocation invocation ) {
