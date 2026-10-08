@@ -20,8 +20,8 @@ The port comes from `~/WebObjects.properties` (1200 on this machine) or `-WOPort
 - `/map/` — full-page map of all spots (Leaflet + OpenStreetMap)
 - `/calendar/` — day-by-day calendar for the trip (July 12th–19th 2026), events from `vacation.Events`
 - `/spot/<slug>` — detail page for a spot
-- `/route/<slug>` — detail page for a driving route
-- `/route-geo/<slug>` — road-following GeoJSON geometry for a route
+- `/drive/<slug>` — detail page for a driving route
+- `/drive-geo/<slug>` — road-following GeoJSON geometry for a route
 
 ## Data
 

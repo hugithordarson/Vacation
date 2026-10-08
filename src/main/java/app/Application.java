@@ -42,13 +42,13 @@ public class Application extends ERXApplication {
 			routes.map( "/calendar/*", this::calendarPage );
 			routes.map( "/photos/*", this::photosPage );
 			routes.map( "/spot/*", this::spotPage );
-			routes.map( "/route/*", this::routePage );
-			routes.map( "/route-geo/*", this::routeGeometry );
+			routes.map( "/drive/*", this::routePage );
+			routes.map( "/drive-geo/*", this::routeGeometry );
 		} );
 	}
 
 	private WOActionResults routePage( RouteInvocation invocation ) {
-		final DrivingRoute route = Routes.bySlug( lastPathComponent( invocation, "/route/" ) );
+		final DrivingRoute route = Routes.bySlug( lastPathComponent( invocation, "/drive/" ) );
 
 		if( route == null ) {
 			return notFound( "Engin leið með þessari slóð" );
@@ -60,7 +60,7 @@ public class Application extends ERXApplication {
 	}
 
 	private WOActionResults routeGeometry( RouteInvocation invocation ) {
-		final String geometryJSON = Routes.geometryJSON( lastPathComponent( invocation, "/route-geo/" ) );
+		final String geometryJSON = Routes.geometryJSON( lastPathComponent( invocation, "/drive-geo/" ) );
 
 		if( geometryJSON == null ) {
 			return notFound( "Engin leið með þessari slóð" );

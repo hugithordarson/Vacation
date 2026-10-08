@@ -212,7 +212,7 @@ public class CalendarPage extends VacationComponent {
 		}
 
 		if( event.route() != null ) {
-			return "/route/" + event.route().slug();
+			return "/drive/" + event.route().slug();
 		}
 
 		return null;

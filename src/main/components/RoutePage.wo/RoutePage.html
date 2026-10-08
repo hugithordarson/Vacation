@@ -50,7 +50,7 @@
 				.addTo( map );
 		} );
 
-		fetch( '/route-geo/<wo:str value="$route.slug" />' )
+		fetch( '/drive-geo/<wo:str value="$route.slug" />' )
 			.then( response => response.json() )
 			.then( doc => {
 				const line = L.geoJSON( doc.geometry, { style: { color: '<wo:str value="$route.color" />', weight: 4, dashArray: <wo:str value="$dashArrayJS" escapeHTML="false" /> } } ).addTo( map );

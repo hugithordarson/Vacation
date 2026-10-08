@@ -39,7 +39,7 @@ public class TripPage extends VacationComponent {
 	}
 
 	public String currentRouteLink() {
-		return "/route/" + currentRoute.slug();
+		return "/drive/" + currentRoute.slug();
 	}
 
 	public String currentRouteDotStyle() {

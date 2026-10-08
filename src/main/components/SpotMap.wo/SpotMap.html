@@ -92,14 +92,14 @@
 			tripGroups[groupName] = L.layerGroup().addTo( map );
 		}
 
-		fetch( `/route-geo/${route.slug}` )
+		fetch( `/drive-geo/${route.slug}` )
 			.then( response => response.json() )
 			.then( doc => {
 				L.geoJSON( doc.geometry, { style: { color: route.color, weight: 4, opacity: 0.7, dashArray: route.dashed ? '8 8' : null } } )
 					.bindPopup( `
 						<strong>${route.name}</strong><br>
 						<span style="color: #555">${doc.distanceKm} km</span><br>
-						<a href="/route/${route.slug}">Nánar</a>
+						<a href="/drive/${route.slug}">Nánar</a>
 					` )
 					.addTo( tripGroups[groupName] );
 			} );
