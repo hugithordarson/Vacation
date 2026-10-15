@@ -98,5 +98,27 @@
 		"end": "2026-02-22",
 		"description": "Vetrarhelgi í Skagafirði — bústaður með heitum potti í Varmahlíð. (Á eftir að fylla inn leiðir og staði.)",
 		"events": []
+	},
+	{
+		"slug": "munchen-2026",
+		"name": "München 2026",
+		"status": "planning",
+		"start": "2026-11-04",
+		"end": "2026-11-15",
+		"description": "Einkaferð Huga til München 4.–15. nóvember — íbúð í Bogenhausen, austan Isar. Fyrsta utanlandsferðin í kerfinu.",
+		"events": [
+			{
+				"title": "Innritun í íbúðina",
+				"start": "2026-11-04",
+				"spot": "ibudin-munchen",
+				"description": "Íbúðin í Bogenhausen er mín frá og með deginum."
+			},
+			{
+				"title": "Skil á íbúðinni",
+				"start": "2026-11-15",
+				"spot": "ibudin-munchen",
+				"description": "Pakkað saman og haldið heim."
+			}
+		]
 	}
 ]

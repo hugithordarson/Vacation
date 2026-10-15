@@ -285,5 +285,44 @@
 			"kofinn"
 		],
 		"trip": "neskaupstadur-2026"
+	},
+	{
+		"slug": "dachau",
+		"name": "Í minningarsetrið í Dachau",
+		"color": "#455a64",
+		"distanceKm": 28,
+		"durationMin": 31,
+		"status": "tillaga",
+		"description": "Hálftíma akstur: KZ-Gedenkstätte Dachau — fyrsta fangabúðasvæði nasista, nú minningar- og fræðslusetur. Þungt en nauðsynlegt fyrir söguáhugamann; gefið því heilan dag í huganum þó aksturinn sé stuttur.",
+		"spots": [
+			"dachau-minningarsetrid"
+		],
+		"trip": "munchen-2026"
+	},
+	{
+		"slug": "neuschwanstein",
+		"name": "Að Neuschwanstein",
+		"color": "#1565c0",
+		"distanceKm": 123,
+		"durationMin": 112,
+		"status": "tillaga",
+		"description": "Ævintýrakastali Lúðvíks II í Alpafjallsrótunum — táknmynd rómantísku Bæjaralands og fyrirmynd Disney-kastalans. Nóvember þýðir færri túristar og mögulega snjókrýndur kastali. Vegalengd aðra leið.",
+		"spots": [
+			"neuschwanstein"
+		],
+		"trip": "munchen-2026"
+	},
+	{
+		"slug": "andechs",
+		"name": "Í Andechs-klaustur",
+		"color": "#9e9d24",
+		"distanceKm": 48,
+		"durationMin": 51,
+		"status": "tillaga",
+		"description": "Pílagrímaklaustur frá 15. öld á hæð yfir Ammersee — Benediktsmunkar sem brugga einn virtasta klausturbjór Bæjaralands. Saga, tónlist (Carl Orff er grafinn þar) og bjórstofa í einni ferð. Vegalengd aðra leið.",
+		"spots": [
+			"andechs"
+		],
+		"trip": "munchen-2026"
 	}
 ]

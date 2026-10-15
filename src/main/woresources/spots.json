@@ -735,5 +735,174 @@
 				"end": "2026-08-01"
 			}
 		]
+	},
+	{
+		"slug": "ibudin-munchen",
+		"name": "Íbúðin í Bogenhausen",
+		"category": "Gisting",
+		"lat": 48.14152,
+		"lon": 11.6138,
+		"description": "Airbnb-íbúðin í Bogenhausen, austan Isar: 1 svefnherbergi — passleg fyrir einn. Staðsetning skv. Airbnb (þokað hnit).",
+		"url": "https://www.airbnb.com/rooms/710500111980106564",
+		"image": "spots/ibudin-munchen.jpg",
+		"visits": [
+			{
+				"trip": "munchen-2026",
+				"date": "2026-11-04",
+				"end": "2026-11-15"
+			}
+		]
+	},
+	{
+		"slug": "deutsches-museum",
+		"name": "Deutsches Museum",
+		"category": "Safn",
+		"lat": 48.13,
+		"lon": 11.5829,
+		"status": "tillaga",
+		"description": "Stærsta vísinda- og tæknisafn heims, á eyju í Isar — og í göngufæri frá Bogenhausen meðfram ánni. Gesturinn áætlar: þetta safn eitt getur étið tvo daga.",
+		"trip": "munchen-2026",
+		"image": "spots/deutsches-museum.jpg"
+	},
+	{
+		"slug": "residenz",
+		"name": "Residenz München",
+		"category": "Söguslóðir",
+		"lat": 48.1408,
+		"lon": 11.5776,
+		"status": "tillaga",
+		"description": "Borgarhöll Wittelsbach-ættarinnar í 500 ár — Antiquarium, skartgripasafnið og Cuvilliés-leikhúsið. Konungssaga Bæjaralands á einum stað.",
+		"trip": "munchen-2026",
+		"image": "spots/residenz.jpg"
+	},
+	{
+		"slug": "alte-pinakothek",
+		"name": "Alte Pinakothek",
+		"category": "Safn",
+		"lat": 48.1483,
+		"lon": 11.57,
+		"status": "tillaga",
+		"description": "Gömlu meistararnir — Dürer, Rubens, Rembrandt — í einu elsta listasafnshúsi heims. Kunstareal-hverfið allt í kring ef lystin vex.",
+		"trip": "munchen-2026",
+		"image": "spots/alte-pinakothek.jpg"
+	},
+	{
+		"slug": "lenbachhaus",
+		"name": "Lenbachhaus",
+		"category": "Safn",
+		"lat": 48.1469,
+		"lon": 11.5635,
+		"status": "tillaga",
+		"description": "Der Blaue Reiter: Kandinsky, Gabriele Münter og félagarnir sem umturnuðu myndlistinni — í München sjálfri. Fallega endurbyggt safn í Kunstareal.",
+		"trip": "munchen-2026",
+		"image": "spots/lenbachhaus.jpg"
+	},
+	{
+		"slug": "ns-dokuzentrum",
+		"name": "NS-Dokumentationszentrum",
+		"category": "Söguslóðir",
+		"lat": 48.1454,
+		"lon": 11.5677,
+		"status": "tillaga",
+		"description": "Á lóð gamla 'Brúna hússins', flokksheimilis nasista: hreinskilin sýning um hvernig München varð 'höfuðborg hreyfingarinnar' — og hvað það kostaði. Sterkt samhengi fyrir Dachau-ferðina.",
+		"trip": "munchen-2026",
+		"image": "spots/ns-dokuzentrum.jpg"
+	},
+	{
+		"slug": "nationaltheater",
+		"name": "Bayerische Staatsoper",
+		"category": "Tónlist",
+		"lat": 48.1393,
+		"lon": 11.5784,
+		"status": "tillaga",
+		"description": "Þjóðleikhúsið við Max-Joseph-Platz — eitt fremsta óperuhús heims. Gesturinn mælir með: kíkið á dagskrána strax, nóvembersýningar seljast upp.",
+		"trip": "munchen-2026",
+		"image": "spots/nationaltheater.jpg"
+	},
+	{
+		"slug": "isarphilharmonie",
+		"name": "Isarphilharmonie",
+		"category": "Tónlist",
+		"lat": 48.1114,
+		"lon": 11.5537,
+		"status": "tillaga",
+		"description": "Tónleikasalur Münchner Philharmoniker í Sendling — hljómburður sem fær gagnrýnendur til að gleyma að Gasteig sé í viðgerð.",
+		"trip": "munchen-2026",
+		"image": "spots/isarphilharmonie.jpg"
+	},
+	{
+		"slug": "eisbachwelle",
+		"name": "Eisbachwelle og Englischer Garten",
+		"category": "Náttúra",
+		"lat": 48.1435,
+		"lon": 11.5878,
+		"status": "tillaga",
+		"description": "Brimbrettafólkið á standbylgjunni í Eisbach — í nóvember, í votbúningum, af fullri alvöru. Englischer Garten þar fyrir aftan; allt í göngufæri frá íbúðinni.",
+		"trip": "munchen-2026",
+		"image": "spots/eisbachwelle.jpg"
+	},
+	{
+		"slug": "viktualienmarkt",
+		"name": "Viktualienmarkt",
+		"category": "Matur",
+		"lat": 48.1355,
+		"lon": 11.5767,
+		"status": "tillaga",
+		"description": "Matarmarkaður borgarinnar frá 1807 — ostar, brauð, Obazda og bjórgarður í miðjunni. Hádegisstopp miðbæjardaganna.",
+		"trip": "munchen-2026",
+		"image": "spots/viktualienmarkt.jpg"
+	},
+	{
+		"slug": "weyerer-cafe",
+		"name": "Weyerer Cafe",
+		"category": "Kaffi",
+		"lat": 48.14218,
+		"lon": 11.61405,
+		"status": "tillaga",
+		"description": "Hverfiskaffihúsið — 80 metra frá útidyrunum skv. OSM. Morgunkaffið þitt er fundið.",
+		"trip": "munchen-2026"
+	},
+	{
+		"slug": "baeckerei-nobel",
+		"name": "Bäckerei & Konditorei Nobel",
+		"category": "Kaffi",
+		"lat": 48.14193,
+		"lon": 11.61737,
+		"status": "tillaga",
+		"description": "Bakarí og konditorí í 270 m fjarlægð — brauðið í morgunmatinn og Krapfen í kaffitímanum.",
+		"trip": "munchen-2026"
+	},
+	{
+		"slug": "dachau-minningarsetrid",
+		"name": "KZ-Gedenkstätte Dachau",
+		"category": "Söguslóðir",
+		"lat": 48.2704,
+		"lon": 11.4683,
+		"status": "tillaga",
+		"description": "Minningar- og fræðslusetrið á fyrsta fangabúðasvæði nasista, opnað 1933. Þungur dagur en fáir staðir kenna söguna jafn skýrt.",
+		"trip": "munchen-2026",
+		"image": "spots/dachau-minningarsetrid.jpg"
+	},
+	{
+		"slug": "neuschwanstein",
+		"name": "Schloss Neuschwanstein",
+		"category": "Söguslóðir",
+		"lat": 47.5576,
+		"lon": 10.7497,
+		"status": "tillaga",
+		"description": "Kastali Lúðvíks II — rómantíska Bæjaraland holdi klætt, með Alpana í bakgrunni.",
+		"trip": "munchen-2026",
+		"image": "spots/neuschwanstein.jpg"
+	},
+	{
+		"slug": "andechs",
+		"name": "Kloster Andechs",
+		"category": "Söguslóðir",
+		"lat": 47.9744,
+		"lon": 11.1831,
+		"status": "tillaga",
+		"description": "Pílagrímaklaustrið á 'heilaga fjallinu' yfir Ammersee — klausturbjór, barokkirkja og gröf Carls Orff.",
+		"trip": "munchen-2026",
+		"image": "spots/andechs.jpg"
 	}
 ]
