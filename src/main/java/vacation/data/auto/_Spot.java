@@ -1,8 +1,5 @@
 package vacation.data.auto;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.util.List;
 
 import org.apache.cayenne.PersistentObject;
@@ -26,8 +23,6 @@ import vacation.data.Visit;
  * If you need to make any customizations, please use subclass.
  */
 public abstract class _Spot extends PersistentObject {
-
-    private static final long serialVersionUID = 1L;
 
     public static final SelfProperty<Spot> SELF = PropertyFactory.createSelf(Spot.class);
 
@@ -276,47 +271,4 @@ public abstract class _Spot extends PersistentObject {
                 super.writePropertyDirectly(propName, val);
         }
     }
-
-    private void writeObject(ObjectOutputStream out) throws IOException {
-        writeSerialized(out);
-    }
-
-    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-        readSerialized(in);
-    }
-
-    @Override
-    protected void writeState(ObjectOutputStream out) throws IOException {
-        super.writeState(out);
-        out.writeObject(this.category);
-        out.writeObject(this.description);
-        out.writeObject(this.image);
-        out.writeDouble(this.lat);
-        out.writeDouble(this.lon);
-        out.writeObject(this.name);
-        out.writeObject(this.slug);
-        out.writeObject(this.url);
-        out.writeObject(this.events);
-        out.writeObject(this.photos);
-        out.writeObject(this.routeStops);
-        out.writeObject(this.visits);
-    }
-
-    @Override
-    protected void readState(ObjectInputStream in) throws IOException, ClassNotFoundException {
-        super.readState(in);
-        this.category = (String)in.readObject();
-        this.description = (String)in.readObject();
-        this.image = (String)in.readObject();
-        this.lat = in.readDouble();
-        this.lon = in.readDouble();
-        this.name = (String)in.readObject();
-        this.slug = (String)in.readObject();
-        this.url = (String)in.readObject();
-        this.events = in.readObject();
-        this.photos = in.readObject();
-        this.routeStops = in.readObject();
-        this.visits = in.readObject();
-    }
-
 }

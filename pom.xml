@@ -19,7 +19,7 @@
 		<wonder.group>is.rebbi.slim</wonder.group>
 		<wonder.version>8.1.2</wonder.version>
 
-		<cayenne.version>5.0-M3</cayenne.version>
+		<cayenne.version>5.0-SNAPSHOT</cayenne.version>
 	</properties>
 
 	<build>

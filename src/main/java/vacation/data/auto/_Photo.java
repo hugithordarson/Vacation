@@ -1,8 +1,5 @@
 package vacation.data.auto;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.time.LocalDateTime;
 
 import org.apache.cayenne.PersistentObject;
@@ -24,8 +21,6 @@ import vacation.data.Trip;
  * If you need to make any customizations, please use subclass.
  */
 public abstract class _Photo extends PersistentObject {
-
-    private static final long serialVersionUID = 1L;
 
     public static final SelfProperty<Photo> SELF = PropertyFactory.createSelf(Photo.class);
 
@@ -139,33 +134,4 @@ public abstract class _Photo extends PersistentObject {
                 super.writePropertyDirectly(propName, val);
         }
     }
-
-    private void writeObject(ObjectOutputStream out) throws IOException {
-        writeSerialized(out);
-    }
-
-    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-        readSerialized(in);
-    }
-
-    @Override
-    protected void writeState(ObjectOutputStream out) throws IOException {
-        super.writeState(out);
-        out.writeObject(this.caption);
-        out.writeObject(this.filename);
-        out.writeObject(this.taken);
-        out.writeObject(this.spot);
-        out.writeObject(this.trip);
-    }
-
-    @Override
-    protected void readState(ObjectInputStream in) throws IOException, ClassNotFoundException {
-        super.readState(in);
-        this.caption = (String)in.readObject();
-        this.filename = (String)in.readObject();
-        this.taken = (LocalDateTime)in.readObject();
-        this.spot = in.readObject();
-        this.trip = in.readObject();
-    }
-
 }

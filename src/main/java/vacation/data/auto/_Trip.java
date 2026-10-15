@@ -1,8 +1,5 @@
 package vacation.data.auto;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -28,8 +25,6 @@ import vacation.data.Visit;
  * If you need to make any customizations, please use subclass.
  */
 public abstract class _Trip extends PersistentObject {
-
-    private static final long serialVersionUID = 1L;
 
     public static final SelfProperty<Trip> SELF = PropertyFactory.createSelf(Trip.class);
 
@@ -281,47 +276,4 @@ public abstract class _Trip extends PersistentObject {
                 super.writePropertyDirectly(propName, val);
         }
     }
-
-    private void writeObject(ObjectOutputStream out) throws IOException {
-        writeSerialized(out);
-    }
-
-    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-        readSerialized(in);
-    }
-
-    @Override
-    protected void writeState(ObjectOutputStream out) throws IOException {
-        super.writeState(out);
-        out.writeObject(this.description);
-        out.writeObject(this.end);
-        out.writeObject(this.name);
-        out.writeObject(this.sharedAlbumToken);
-        out.writeObject(this.slug);
-        out.writeObject(this.start);
-        out.writeObject(this.status);
-        out.writeObject(this.events);
-        out.writeObject(this.journalEntries);
-        out.writeObject(this.photos);
-        out.writeObject(this.routes);
-        out.writeObject(this.visits);
-    }
-
-    @Override
-    protected void readState(ObjectInputStream in) throws IOException, ClassNotFoundException {
-        super.readState(in);
-        this.description = (String)in.readObject();
-        this.end = (LocalDate)in.readObject();
-        this.name = (String)in.readObject();
-        this.sharedAlbumToken = (String)in.readObject();
-        this.slug = (String)in.readObject();
-        this.start = (LocalDate)in.readObject();
-        this.status = (String)in.readObject();
-        this.events = in.readObject();
-        this.journalEntries = in.readObject();
-        this.photos = in.readObject();
-        this.routes = in.readObject();
-        this.visits = in.readObject();
-    }
-
 }

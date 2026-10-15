@@ -1,8 +1,5 @@
 package vacation.data.auto;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -26,8 +23,6 @@ import vacation.data.Trip;
  * If you need to make any customizations, please use subclass.
  */
 public abstract class _CalendarEvent extends PersistentObject {
-
-    private static final long serialVersionUID = 1L;
 
     public static final SelfProperty<CalendarEvent> SELF = PropertyFactory.createSelf(CalendarEvent.class);
 
@@ -224,43 +219,4 @@ public abstract class _CalendarEvent extends PersistentObject {
                 super.writePropertyDirectly(propName, val);
         }
     }
-
-    private void writeObject(ObjectOutputStream out) throws IOException {
-        writeSerialized(out);
-    }
-
-    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-        readSerialized(in);
-    }
-
-    @Override
-    protected void writeState(ObjectOutputStream out) throws IOException {
-        super.writeState(out);
-        out.writeObject(this.description);
-        out.writeObject(this.end);
-        out.writeObject(this.endTime);
-        out.writeObject(this.person);
-        out.writeObject(this.start);
-        out.writeObject(this.startTime);
-        out.writeObject(this.title);
-        out.writeObject(this.route);
-        out.writeObject(this.spot);
-        out.writeObject(this.trip);
-    }
-
-    @Override
-    protected void readState(ObjectInputStream in) throws IOException, ClassNotFoundException {
-        super.readState(in);
-        this.description = (String)in.readObject();
-        this.end = (LocalDate)in.readObject();
-        this.endTime = (LocalTime)in.readObject();
-        this.person = (String)in.readObject();
-        this.start = (LocalDate)in.readObject();
-        this.startTime = (LocalTime)in.readObject();
-        this.title = (String)in.readObject();
-        this.route = in.readObject();
-        this.spot = in.readObject();
-        this.trip = in.readObject();
-    }
-
 }

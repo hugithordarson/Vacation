@@ -14,9 +14,6 @@ import vacation.SeedData;
 import vacation.SharedAlbum;
 import vacation.Spots;
 import vacation.Trips;
-import vacation.data.DrivingRoute;
-import vacation.data.Spot;
-import vacation.data.Trip;
 import vacation.components.CalendarPage;
 import vacation.components.FrontPage;
 import vacation.components.MapPage;
@@ -24,6 +21,9 @@ import vacation.components.PhotosPage;
 import vacation.components.RoutePage;
 import vacation.components.SpotPage;
 import vacation.components.TripPage;
+import vacation.data.DrivingRoute;
+import vacation.data.Spot;
+import vacation.data.Trip;
 
 public class Application extends ERXApplication {
 
