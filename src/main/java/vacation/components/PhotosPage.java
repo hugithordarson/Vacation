@@ -2,9 +2,8 @@ package vacation.components;
 
 import java.util.List;
 
-import com.webobjects.appserver.WOContext;
-
 import app.VacationComponent;
+import ng.appserver.NGContext;
 import vacation.Spots;
 import vacation.data.Spot;
 import vacation.data.Trip;
@@ -18,7 +17,7 @@ public class PhotosPage extends VacationComponent {
 
 	public Spot currentSpot;
 
-	public PhotosPage( WOContext context ) {
+	public PhotosPage( NGContext context ) {
 		super( context );
 	}
 

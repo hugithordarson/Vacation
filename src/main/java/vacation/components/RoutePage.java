@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Map;
 
 import com.google.gson.GsonBuilder;
-import com.webobjects.appserver.WOContext;
 
 import app.VacationComponent;
+import ng.appserver.NGContext;
 import vacation.data.DrivingRoute;
 import vacation.data.Spot;
 
@@ -17,7 +17,7 @@ public class RoutePage extends VacationComponent {
 	public DrivingRoute route;
 	public Spot currentStop;
 
-	public RoutePage( WOContext context ) {
+	public RoutePage( NGContext context ) {
 		super( context );
 	}
 

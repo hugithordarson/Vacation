@@ -2,7 +2,7 @@
 
 Fjölskylduferðaskipulagsappið. Fyrsta ferð: Búðardalur, júlí 2026.
 
-A plain WebObjects app (wonder-slim ERExtensions + AjaxSlim + wo-adaptor-jetty), modelled on the Hugi project but without any database — spot data lives in `src/main/woresources/spots.json` and will migrate to a DB later.
+An [ng-objects](https://github.com/ngobjects/ng-objects) app (ng-appserver + ng-adaptor-jetty, currently on the 0.1.6-SNAPSHOT development version — `mvn install` ng-objects first) with Cayenne on an in-memory H2 database, seeded on startup from the JSON datasets in `src/main/resources/ng/app/app-resources/`.
 
 ## Running
 
@@ -10,9 +10,11 @@ A plain WebObjects app (wonder-slim ERExtensions + AjaxSlim + wo-adaptor-jetty),
 mvn package
 ```
 
-Or import into Eclipse (WOLips incremental builder is configured in `.project`) and launch `app.AppLauncher`.
+Then run `./target/Vacation.woa/Vacation`, or import into Eclipse as a Maven project and launch `app.Application`.
 
-The port comes from `~/WebObjects.properties` (1200 on this machine) or `-WOPort`, so: **http://localhost:1200**.
+The port defaults to 1200 (override with `-WOPort`), so: **http://localhost:1200**.
+
+Templates live in `src/main/resources/ng/app/components/`, spot images in `src/main/resources/ng/app/webserver-resources/spots/` (served at `/nr/app/spots/…`).
 
 ## URLs
 
@@ -25,16 +27,16 @@ The port comes from `~/WebObjects.properties` (1200 on this machine) or `-WOPort
 
 ## Data
 
-`spots.json` holds the spots (slug, name, category, lat/lon, description). `category` says what a place *is* (Náttúra, Laug, Safn…); the separate optional `status` field says how decided we are — `"status": "kannski"` renders the spot semi-transparent on maps and tagged "(kannski?)". Routes carry an ordered `spots` array of slugs — the stops along the way, listed on the route page and drawn on its map. In development mode the files are reloaded on every request, so they can be edited while the app runs. **Coordinates are approximate** — good enough for the overview map, refine as needed.
+`spots.json` holds the spots (slug, name, category, lat/lon, description). `category` says what a place *is* (Náttúra, Laug, Safn…); the separate optional `status` field says how decided we are — `"status": "kannski"` renders the spot semi-transparent on maps and tagged "(kannski?)". Routes carry an ordered `spots` array of slugs — the stops along the way, listed on the route page and drawn on its map. The files are read once on startup (into the DB), so restart the app after editing them. **Coordinates are approximate** — good enough for the overview map, refine as needed.
 
-`routes.json` holds driving-route metadata; `routes/<slug>.geojson` holds each route's road-following geometry, fetched **once** from the public OSRM API (`router.project-osrm.org`) and committed as a resource — nothing external is called at runtime. To add or change a route, pick waypoints (lon,lat pairs), fetch, and save:
+`routes.json` holds driving-route metadata; `routes/<slug>.geojson` (also in app-resources) holds each route's road-following geometry, fetched **once** from the public OSRM API (`router.project-osrm.org`) and committed as a resource — nothing external is called at runtime. To add or change a route, pick waypoints (lon,lat pairs), fetch, and save:
 
 ```
 curl "https://router.project-osrm.org/route/v1/driving/LON1,LAT1;LON2,LAT2?overview=full&geometries=geojson"
-# wrap the result as {distanceKm, durationMin, geometry} in routes/<slug>.geojson, add metadata to routes.json
+# wrap the result as {distanceKm, durationMin, geometry} in app-resources/routes/<slug>.geojson, add metadata to routes.json
 ```
 
 ## Next steps
 
-- Category filtering on the map (AjaxSlim)
+- Category filtering on the map
 - Trip entity + DB, so Búðardalur becomes vacation #1 of many

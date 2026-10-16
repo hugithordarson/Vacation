@@ -10,9 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import com.webobjects.appserver.WOContext;
-
 import app.VacationComponent;
+import ng.appserver.NGContext;
 import vacation.Events;
 import vacation.Trips;
 import vacation.data.Trip;
@@ -52,7 +51,7 @@ public class CalendarPage extends VacationComponent {
 	public CalendarEvent currentEvent;
 	public String currentDayName;
 
-	public CalendarPage( WOContext context ) {
+	public CalendarPage( NGContext context ) {
 		super( context );
 	}
 

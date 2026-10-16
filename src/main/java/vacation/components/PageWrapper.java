@@ -1,12 +1,13 @@
 package vacation.components;
 
-import com.webobjects.appserver.WOContext;
+import java.util.Objects;
 
 import app.VacationComponent;
+import ng.appserver.NGContext;
 
 public class PageWrapper extends VacationComponent {
 
-	public PageWrapper( WOContext context ) {
+	public PageWrapper( NGContext context ) {
 		super( context );
 	}
 
@@ -16,10 +17,10 @@ public class PageWrapper extends VacationComponent {
 	}
 
 	public String title() {
-		return stringValueForBinding( "title", "Svaka partí" );
+		return Objects.requireNonNullElse( (String)valueForBinding( "title" ), "Svaka partí" );
 	}
 
 	public String mainStyle() {
-		return "max-width: %s; margin: 0 auto; padding: 24px 16px".formatted( stringValueForBinding( "width", "720px" ) );
+		return "max-width: %s; margin: 0 auto; padding: 24px 16px".formatted( Objects.requireNonNullElse( (String)valueForBinding( "width" ), "720px" ) );
 	}
 }

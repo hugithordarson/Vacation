@@ -1,6 +1,6 @@
 <wo:container elementName="div" id="map" style="$style"></wo:container>
 <script>
-	const spots = <wo:str value="$spotsJSON" escapeHTML="false" />;
+	const spots = <wo:str value="$spotsJSON" escapeHTML="$false" />;
 
 	const map = L.map( 'map' );
 
@@ -80,7 +80,7 @@
 		focusMarker.openPopup();
 	}
 
-	const routes = <wo:str value="$routesJSON" escapeHTML="false" />;
+	const routes = <wo:str value="$routesJSON" escapeHTML="$false" />;
 
 	// Routes are grouped per trip; on maps spanning several trips a layer control lets you toggle each trip's routes
 	const tripGroups = {};

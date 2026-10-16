@@ -1,15 +1,14 @@
 package vacation.components;
 
-import com.webobjects.appserver.WOContext;
-
 import app.VacationComponent;
+import ng.appserver.NGContext;
 import vacation.data.Spot;
 
 public class SpotPage extends VacationComponent {
 
 	public Spot spot;
 
-	public SpotPage( WOContext context ) {
+	public SpotPage( NGContext context ) {
 		super( context );
 	}
 }

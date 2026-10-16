@@ -1,7 +1,6 @@
 package vacation;
 
 import java.lang.reflect.Type;
-import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
@@ -15,8 +14,8 @@ import org.slf4j.LoggerFactory;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
+import app.Application;
 import app.VacationCore;
-import er.extensions.foundation.ERXUtilities;
 import vacation.data.DrivingRoute;
 import vacation.data.RouteStop;
 import vacation.data.Spot;
@@ -25,7 +24,7 @@ import vacation.data.CalendarEvent;
 import vacation.data.Visit;
 
 /**
- * Populates the (in-memory) DB from the JSON datasets in woresources on startup.
+ * Populates the (in-memory) DB from the JSON datasets in app-resources on startup.
  * The JSON files remain the editable source of truth until we move to actual-production postgres.
  */
 
@@ -156,7 +155,7 @@ public class SeedData {
 	}
 
 	private static <T> List<T> parse( final String resourceName, final Type type ) {
-		final String jsonString = ERXUtilities.readStringFromBundleResource( resourceName, null, null, StandardCharsets.UTF_8 );
+		final String jsonString = Application.appResourceString( resourceName );
 		return new GsonBuilder().create().fromJson( jsonString, type );
 	}
 }

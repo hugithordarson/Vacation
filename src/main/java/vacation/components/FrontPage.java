@@ -3,9 +3,8 @@ package vacation.components;
 import java.util.Comparator;
 import java.util.List;
 
-import com.webobjects.appserver.WOContext;
-
 import app.VacationComponent;
+import ng.appserver.NGContext;
 import vacation.Spots;
 import vacation.Trips;
 import vacation.data.Spot;
@@ -20,7 +19,7 @@ public class FrontPage extends VacationComponent {
 
 	public Trip currentTrip;
 
-	public FrontPage( WOContext context ) {
+	public FrontPage( NGContext context ) {
 		super( context );
 	}
 

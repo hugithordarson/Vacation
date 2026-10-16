@@ -4,9 +4,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Locale;
 
-import com.webobjects.appserver.WOContext;
-
 import app.VacationComponent;
+import ng.appserver.NGContext;
 import vacation.SharedAlbum;
 import vacation.Spots;
 import vacation.data.DrivingRoute;
@@ -26,7 +25,7 @@ public class TripPage extends VacationComponent {
 
 	public DrivingRoute currentRoute;
 
-	public TripPage( WOContext context ) {
+	public TripPage( NGContext context ) {
 		super( context );
 	}
 

@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 import com.google.gson.GsonBuilder;
-import com.webobjects.appserver.WOContext;
 
 import app.VacationComponent;
-import vacation.Routes;
+import ng.appserver.NGContext;
+import ng.appserver.NGResourceRequestHandler;
+import vacation.DrivingRoutes;
 import vacation.Spots;
 import vacation.data.DrivingRoute;
 import vacation.data.Spot;
@@ -22,7 +24,7 @@ import vacation.data.Trip;
 
 public class SpotMap extends VacationComponent {
 
-	public SpotMap( WOContext context ) {
+	public SpotMap( NGContext context ) {
 		super( context );
 	}
 
@@ -40,7 +42,7 @@ public class SpotMap extends VacationComponent {
 	}
 
 	private List<DrivingRoute> scopedRoutes() {
-		return trip() == null ? Routes.all() : trip().routes();
+		return trip() == null ? DrivingRoutes.all() : trip().routes();
 	}
 
 	public String spotsJSON() {
@@ -56,7 +58,7 @@ public class SpotMap extends VacationComponent {
 			map.put( "status", spot.visitStatus() );
 
 			if( spot.image() != null ) {
-				map.put( "imageURL", application().resourceManager().urlForResourceNamed( spot.image(), null, null, context().request() ) );
+				map.put( "imageURL", NGResourceRequestHandler.urlForWebserverResourceNamed( "app", spot.image() ).orElse( null ) );
 			}
 
 			result.add( map );
@@ -82,6 +84,6 @@ public class SpotMap extends VacationComponent {
 	}
 
 	public String style() {
-		return "height: " + stringValueForBinding( "height", "600px" );
+		return "height: " + Objects.requireNonNullElse( (String)valueForBinding( "height" ), "600px" );
 	}
 }

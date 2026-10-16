@@ -13,11 +13,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<webobjects.group>com.webobjects</webobjects.group>
-		<webobjects.version>5.4.3</webobjects.version>
-
-		<wonder.group>is.rebbi.slim</wonder.group>
-		<wonder.version>8.1.2</wonder.version>
+		<ng.version>0.1.6-SNAPSHOT</ng.version>
 
 		<cayenne.version>5.0-SNAPSHOT</cayenne.version>
 	</properties>
@@ -73,34 +69,18 @@
 	</build>
 	<dependencies>
 		<dependency>
-			<groupId>${wonder.group}</groupId>
-			<artifactId>ERExtensions</artifactId>
-			<version>${wonder.version}</version>
+			<groupId>is.rebbi.ng</groupId>
+			<artifactId>ng-appserver</artifactId>
+			<version>${ng.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>is.rebbi</groupId>
-			<artifactId>wo-adaptor-jetty</artifactId>
-			<version>0.12.2</version>
-		</dependency>
-		<dependency>
-			<groupId>${wonder.group}</groupId>
-			<artifactId>AjaxSlim</artifactId>
-			<version>${wonder.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>${webobjects.group}</groupId>
-			<artifactId>JavaWebObjects</artifactId>
-			<version>${webobjects.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>${webobjects.group}</groupId>
-					<artifactId>JavaXML</artifactId>
-				</exclusion>
-			</exclusions>
+			<groupId>is.rebbi.ng</groupId>
+			<artifactId>ng-adaptor-jetty</artifactId>
+			<version>${ng.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
+			<artifactId>slf4j-simple</artifactId>
 			<version>2.0.20</version>
 		</dependency>
 		<dependency>

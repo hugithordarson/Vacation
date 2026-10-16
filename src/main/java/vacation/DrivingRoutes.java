@@ -1,15 +1,14 @@
 package vacation;
 
-import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 import org.apache.cayenne.query.ObjectSelect;
 
+import app.Application;
 import app.VacationCore;
-import er.extensions.foundation.ERXUtilities;
 import vacation.data.DrivingRoute;
 
-public class Routes {
+public class DrivingRoutes {
 
 	public static List<DrivingRoute> all() {
 		return ObjectSelect.query( DrivingRoute.class )
@@ -31,6 +30,6 @@ public class Routes {
 			return null;
 		}
 
-		return ERXUtilities.readStringFromBundleResource( "routes/" + slug + ".geojson", null, null, StandardCharsets.UTF_8 );
+		return Application.appResourceString( "routes/" + slug + ".geojson" );
 	}
 }

@@ -1,8 +1,7 @@
 package vacation.components;
 
-import com.webobjects.appserver.WOContext;
-
 import app.VacationComponent;
+import ng.appserver.NGContext;
 import vacation.data.Trip;
 
 public class MapPage extends VacationComponent {
@@ -12,7 +11,7 @@ public class MapPage extends VacationComponent {
 	 */
 	public Trip trip;
 
-	public MapPage( WOContext context ) {
+	public MapPage( NGContext context ) {
 		super( context );
 	}
 

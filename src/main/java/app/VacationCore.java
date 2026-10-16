@@ -12,7 +12,7 @@ import com.zaxxer.hikari.HikariDataSource;
  * The basics for accessing the DB through Cayenne.
  *
  * By default runs against an in-memory H2 database whose schema Cayenne creates on first use —
- * seed data is then loaded from the JSON files in woresources (see SeedData). Once we move to
+ * seed data is then loaded from the JSON files in app-resources (see SeedData). Once we move to
  * actual-production, set -Dvacation.jdbcURL (plus username/password) to point at postgres instead.
  */
 
